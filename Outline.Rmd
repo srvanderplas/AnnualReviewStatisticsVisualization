@@ -1,5 +1,5 @@
 ---
-title: "Outline"
+title: "Testing Statistical Graphics"
 author: "Heike Hofmann & Susan VanderPlas"
 date: "12/12/2018"
 output: pdf_document
@@ -10,14 +10,12 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = F)
 ```
 
-# Testing Statistical Graphics
 
-## Introduction
+# Introduction
 
 - Overview of contributory disciplines
-    - psychophysics 
-    - mathematical psychology 
-        - [@fernandez_is_2009; @sun_framework_2012; @varshney_why_2013; @dehaene_neural_2003]
+    - psychophysics <!--[@lu_visual_2013]-->
+    - mathematical psychology <!--[@fernandez_is_2009; @sun_framework_2012; @varshney_why_2013; @dehaene_neural_2003]-->
     - cognitive psychology 
     - human/computer interaction 
 - Different approaches to graphics
@@ -27,8 +25,8 @@ knitr::opts_chunk$set(echo = F)
 - Grammar of graphics
     - data mappings
     - separate physical representation from the underlying data - makes testing much easier
-
-## Testing Methods
+    
+# Testing Methods
 
 - Psychophysics - method of adjustment/limits
 - Standard psychology paradigms
@@ -38,13 +36,13 @@ knitr::opts_chunk$set(echo = F)
     - Eye Tracking
     - Preattentive judgements a la Healey
         - don't obviously translate to how graphics are actually used
-- Visual Inference [@buja_statistical_2009; @wickham_graphical_2010; @hofmann_graphical_2012; @chowdhury_wheres_2012; @zhao_mind_2013; @majumder_validation_2013]
+- Visual Inference <!--[@buja_statistical_2009; @wickham_graphical_2010; @hofmann_graphical_2012; @chowdhury_wheres_2012; @zhao_mind_2013; @majumder_validation_2013] -->
     - removes the exact question problem (mostly)
     - visual system conducts a ton of tests simultaneously
     - powerful when combined with grammar of graphics
-    - can test salience of data features with two-target design [@vanderplas_clusters_2017]
+    - can test salience of data features with two-target design <!--[@vanderplas_clusters_2017]-->
 
-## Actual conclusions about best graphical practice
+# Actual conclusions about best graphical practice
 
 Potential Topics
 
@@ -55,6 +53,6 @@ Potential Topics
 - Double encoding vs. chartjunk
 - 
 
-## Current open questions
+# Current open questions
 
 # References
