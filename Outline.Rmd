@@ -1,15 +1,9 @@
 ---
 title: "Testing Statistical Graphics"
 author: "Heike Hofmann & Susan VanderPlas"
-date: "12/12/2018"
 output: pdf_document
 bibliography: references.bib
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
-```
-
 
 # Introduction
 
