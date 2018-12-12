@@ -41,8 +41,10 @@ Di, are we missing anything here?
     - Think-aloud (more qualitative)
     - Eye Tracking
 - Visual Inference <!--[@buja_statistical_2009; @wickham_graphical_2010; @hofmann_graphical_2012; @chowdhury_wheres_2012; @zhao_mind_2013; @majumder_validation_2013] -->
+    - incorporates a quantification of the significance of a visual finding
     - removes the exact question problem (mostly)
     - visual system conducts a ton of tests simultaneously
+    - can be used to test for statistical power and to decide between different designs
     - powerful when combined with grammar of graphics
     - can test salience of data features with two-target design <!--[@vanderplas_clusters_2017]-->
 
