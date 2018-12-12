@@ -9,19 +9,20 @@ bibliography: references.bib
 
 Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. This section will discuss the different approaches to graphics research and design. Specifically, we will discuss the different approaches to graphical design: aesthetics, utility, experimental validation, and pragmatism. We will also highlight the grammar of graphics as an important development which facilitates analysis of statistical graphics from a scientific and experimental perspective. 
 
-<!-- One of the interesting facets of graphics research is that a large subset of the groups which use statistical graphics to present results also occasionally study the effectiveness of those same charts. Marketing, Psychology, Statistics, Computer Science, and Communications journals all publish papers relevant to statistical graphics. In addition, there are several disciplines who contribute foundational research that impacts the study of statistical graphics, but has a much wider area of application. Cognitive and mathematical psychology, psychophysics, and human computer interaction all apply to .  -->
-<!-- - Overview of contributory disciplines -->
-<!--     - psychophysics <!--[@lu_visual_2013]--> -->
-<!--     - mathematical psychology <!--[@fernandez_is_2009; @sun_framework_2012; @varshney_why_2013; @dehaene_neural_2003]--> -->
-<!--     - cognitive psychology  -->
-<!--     - human/computer interaction  -->
-<!-- - Different approaches to graphics -->
-<!--     - Tufte/chartjunk -->
-<!--     - Experimentally validated recommendations -->
-<!--     - Aesthetics -->
-<!-- - Grammar of graphics -->
-<!--     - data mappings -->
-<!--     - separate physical representation from the underlying data - makes testing much easier -->
+<!-- One of the interesting facets of graphics research is that a large subset of the groups which use statistical graphics to present results also occasionally study the effectiveness of those same charts. Marketing, Psychology, Statistics, Computer Science, and Communications journals all publish papers relevant to statistical graphics. In addition, there are several disciplines who contribute foundational research that impacts the study of statistical graphics, but has a much wider area of application. Cognitive and mathematical psychology, psychophysics, and human computer interaction all apply to . 
+- Overview of contributory disciplines
+    - psychophysics [@lu_visual_2013]
+    - mathematical psychology [@fernandez_is_2009; @sun_framework_2012; @varshney_why_2013; @dehaene_neural_2003]
+    - cognitive psychology
+    - human/computer interaction
+- Different approaches to graphics
+    - Tufte/chartjunk
+    - Experimentally validated recommendations
+    - Aesthetics
+- Grammar of graphics
+    - data mappings
+    - separate physical representation from the underlying data - makes testing much easier
+    -->
     
 # Testing Methods
 
