@@ -17,17 +17,23 @@ knitr::opts_chunk$set(echo = F)
     - psychophysics
     - cognitive psychology
     - human/computer interaction
+- Different approaches to graphics
+    - Tufte/chartjunk
+    - Experimentally validated recommendations
+    - Aesthetics
 - Grammar of graphics
     - data mappings
     - separate physical representation from the underlying data - makes testing much easier
 
 ## Testing Methods
 
-- Cleveland & McGill style straight estimation
-    - heavily depends on the exact questions asked
-- Eye Tracking
-- Preattentive judgements a la Healey
-    - don't obviously translate to how graphics are actually used
+- Psychophysics - method of adjustment/limits
+- Standard psychology paradigms
+    - Cleveland & McGill style straight estimation
+        - heavily depends on the exact questions asked
+    - Eye Tracking
+    - Preattentive judgements a la Healey
+        - don't obviously translate to how graphics are actually used
 - Visual Inference
     - removes the exact question problem (mostly)
     - visual system conducts a ton of tests simultaneously
@@ -37,4 +43,7 @@ knitr::opts_chunk$set(echo = F)
 ## Actual conclusions about best graphical practice
 
 - Polar coordinate systems are (mostly) bad
+- Double encoding vs. chartjunk
 - 
+
+## Current open questions
