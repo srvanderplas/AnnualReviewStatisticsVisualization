@@ -1,0 +1,40 @@
+---
+title: "Outline"
+author: "Heike Hofmann & Susan VanderPlas"
+date: "12/12/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+# Testing Statistical Graphics
+
+## Introduction
+
+- Overview of contributory disciplines
+    - psychophysics
+    - cognitive psychology
+    - human/computer interaction
+- Grammar of graphics
+    - data mappings
+    - separate physical representation from the underlying data - makes testing much easier
+
+## Testing Methods
+
+- Cleveland & McGill style straight estimation
+    - heavily depends on the exact questions asked
+- Eye Tracking
+- Preattentive judgements a la Healey
+    - don't obviously translate to how graphics are actually used
+- Visual Inference
+    - removes the exact question problem (mostly)
+    - visual system conducts a ton of tests simultaneously
+    - powerful when combined with grammar of graphics
+    - can test salience of data features with two-target design
+
+## Actual conclusions about best graphical practice
+
+- Polar coordinate systems are (mostly) bad
+- 
