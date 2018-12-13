@@ -7,13 +7,13 @@ bibliography: references.bib
 
 
 
-The over-arching theme of the paper is the question "What makes a good chart?". We are presenting a review of methods to measure what makes a chart 'good', highlight approaches from other disciplines, and discuss how results from this research is currently incorporated (or not) into our everyday charts. 
+The over-arching theme of the paper is the question "What makes a good chart?". We will present a review of methods used to measure what makes a chart 'good', highlight approaches from other disciplines, and discuss how results from this area are currently incorporated (or not) into our everyday use of statistical charts and graphs. 
 
 # Introduction (6-7 pages)
 
-Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. This section will discuss the different approaches to graphics research and design. Specifically, we will discuss the different approaches to graphical design: aesthetics, utility, experimental validation, and pragmatism. We will also highlight the grammar of graphics as an important development which facilitates analysis of statistical graphics from a scientific and experimental perspective. 
+Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages). We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages). We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
-<!-- One of the interesting facets of graphics research is that a large subset of the groups which use statistical graphics to present results also occasionally study the effectiveness of those same charts. Marketing, Psychology, Statistics, Computer Science, and Communications journals all publish papers relevant to statistical graphics. In addition, there are several disciplines who contribute foundational research that impacts the study of statistical graphics, but has a much wider area of application. Cognitive and mathematical psychology, psychophysics, and human computer interaction all apply to . 
+<!-- 
 - Overview of contributory disciplines (1.5 pages)
     - psychophysics [@lu_visual_2013]
     - mathematical psychology [@fernandez_is_2009; @sun_framework_2012; @varshney_why_2013; @dehaene_neural_2003]
@@ -26,50 +26,55 @@ Graphics research is conducted across a wide range of research areas, from stati
 - Grammar of graphics (3 pages)
     - data mappings
     - separate physical representation from the underlying data - makes testing much easier
-    -->
+-->
     
 # Testing Methods (8 pages)
 
-Di, are we missing anything here?
+In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: XXX Need to figure out how to separate visual inference from psych based methods... I'm leaning towards something like 'human focused' vs. 'chart focused' or 'data focused' XXX. 
 
+### XXX psych methods XXX (3-4 pages)
+We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
+
+### XXX visual inference XXX (4-5 pages)
+This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the XXX psych methods XXX discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
+
+XXX Di, are we missing anything here? XXX
+
+<!--
 - Preattentive judgements a la Healey (don't obviously translate to how graphics are actually used) (1 page)
 - Cleveland & McGill style straight estimation (heavily depends on the exact questions asked), Spence (1 page)
 - Psychophysics - method of adjustment/limits (Sine illusion, Michael Bach style - shiny app) 
 - Think-aloud (more qualitative) (0.5 page)
 - Eye Tracking (0.5 page)
-- Visual Inference (5 pages) <!--[@buja_statistical_2009; @wickham_graphical_2010; @hofmann_graphical_2012; @chowdhury_wheres_2012; @zhao_mind_2013; @majumder_validation_2013] -->
+- Visual Inference (5 pages) [@buja_statistical_2009; @wickham_graphical_2010; @hofmann_graphical_2012; @chowdhury_wheres_2012; @zhao_mind_2013; @majumder_validation_2013] 
     - incorporates a quantification of the significance of a visual finding
     - removes the exact question problem (mostly)
     - visual system conducts a ton of tests simultaneously
     - can be used to test for statistical power and to decide between different designs
     - powerful when combined with grammar of graphics
-    - can test salience of data features with two-target design <!--[@vanderplas_clusters_2017]-->
+    - can test salience of data features with two-target design [@vanderplas_clusters_2017]
+-->
 
 # Current Best Graphical Practice (3.5 pages)
 
-The idea is to summarise conclusions from the previously discussed testing methods by topic. Potential topics include:
-
-- Bar Charts
-- Use of color/Shading
-- Maps - chloropleth, hex, etc.?
-- Polar coordinate systems are (mostly) bad
-- Double encoding vs. chartjunk
-- 
-
+The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems. 
 
 # Discussion of the acceptance of results (3.5 pages)
 
-Discussion of a really bad chart (eg candle stick plot) using elements of the testing framework. 
+There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts. 
 
+<!-- Discussion of a really bad chart (eg candle stick plot) using elements of the testing framework. 
 
-- problems in acceptance: 
-    e.g. Barcharts are still being beaten up by Pie charts: visual system versus aesthetically pleasing designs (but the Prime minister wants to have a pie chart)
-    overcoming standard practice
+ - problems in acceptance: 
+     e.g. Barcharts are still being beaten up by Pie charts: visual system versus aesthetically pleasing designs (but the Prime minister wants to have a pie chart) 
+     overcoming standard practice -->
     
 
 # Future/open questions (3 pages)
 
-- interactice visualizations (both depressingly historic and futuristic)
+We will conclude by identifying promising areas of active research. We will also discuss the use and testing of interactive graphics. 
+
+<!-- - interactice visualizations (both depressingly historic and futuristic) -->
 
 
-# References
+<!-- # References -->
