@@ -30,13 +30,17 @@ Graphics research is conducted across a wide range of research areas, from stati
     
 # Testing Methods (8 pages)
 
-In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: XXX Need to figure out how to separate visual inference from psych based methods... I'm leaning towards something like 'human focused' vs. 'chart focused' or 'data focused' XXX. 
+In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli. 
 
-### XXX psych methods XXX (3-4 pages)
+<!-- implicit structure as a name is a bit of a cop-out, since the structure is hidden in the null model data generation... but it does at least cover the fact that participants have to find not only the answer but also the question -->
+
+### Explicitly structured graphical tests (3-4 pages)
 We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
 
-### XXX visual inference XXX (4-5 pages)
-This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the XXX psych methods XXX discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
+<!-- Transition to implicit tests by discussing Heer & Bostock (2010) -->
+
+### Implicit graphical tests using visual inference (4-5 pages)
+This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
 
 XXX Di, are we missing anything here? Heer and Bostock (2010); Robbins (2005); Healy (2018). I think it might be good to weave Tamara Munzer's book in somehow
 
@@ -74,7 +78,7 @@ XXX Di says: I think the metric should be "a different decision is made based on
 
 # Future/open questions (3 pages)
 
-We will conclude by identifying promising areas of active research. We will also discuss the use and testing of interactive graphics. 
+We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics. 
 
 <!-- - interactice visualizations (both depressingly historic and futuristic) -->
 
