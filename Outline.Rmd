@@ -38,11 +38,11 @@ We will briefly discuss experiments involving preattentive graph perception (1 p
 ### XXX visual inference XXX (4-5 pages)
 This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the XXX psych methods XXX discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
 
-XXX Di, are we missing anything here? XXX
+XXX Di, are we missing anything here? Heer and Bostock (2010); Robbins (2005); Healy (2018). I think it might be good to weave Tamara Munzer's book in somehow
 
 <!--
 - Preattentive judgements a la Healey (don't obviously translate to how graphics are actually used) (1 page)
-- Cleveland & McGill style straight estimation (heavily depends on the exact questions asked), Spence (1 page)
+- Cleveland & McGill style straight estimation (heavily depends on the exact questions asked), Spence (1 page) include Heer and Bostock update here. 
 - Psychophysics - method of adjustment/limits (Sine illusion, Michael Bach style - shiny app) 
 - Think-aloud (more qualitative) (0.5 page)
 - Eye Tracking (0.5 page)
@@ -64,6 +64,8 @@ The previous section discussed methods for testing hypotheses about best graphic
 There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts. 
 
 <!-- Discussion of a really bad chart (eg candle stick plot) using elements of the testing framework. 
+
+XXX Di says: I think the metric should be "a different decision is made based on different plots" instead of whether the reader can return the values accurately. If you can make an argument that the wrong decision is being made it has more weight than whether they got the answer exactly right. Pie charts are just fine when the differences between classes is large, they fall over only when proportions are similar, but maybe the right answer is that the groups are similar and shouldn't be considered to be different. 
 
  - problems in acceptance: 
      e.g. Barcharts are still being beaten up by Pie charts: visual system versus aesthetically pleasing designs (but the Prime minister wants to have a pie chart) 
