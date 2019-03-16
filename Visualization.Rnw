@@ -55,121 +55,41 @@ keywords, separated by comma, no full stop, lowercase
 
 % Heading 1
 \section{INTRODUCTION}
-Please begin the main text of your article here. 
+% Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages). 
+
+\subsection{Approaches to Graphical Design}
+% We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages). 
+
+\subsection{The Grammar of Graphics}
+%We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
 
+\section{TESTING METHODS} % 8 pages
+% In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli. 
 
-%Heading 1
-\section{FIRST-LEVEL HEADING}
-This is dummy text. 
 % Heading 2
-\subsection{Second-Level Heading}
-This is dummy text. This is dummy text. This is dummy text. This is dummy text.
+\subsection{Explicitly Structured Graphical Tests} % 3-4 pages
+% We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
+\subsubsection{Preattentive Graph Perception} % 1 page
 
-% Heading 3
-\subsubsection{Third-Level Heading}
-This is dummy text. This is dummy text. This is dummy text. This is dummy text. 
+\subsubsection{Attention Mediated Testing Methods}
+\paragraph{Numerical Estimation} % 1 page
+\paragraph{Interactive Adjustment} % .5 page
+\paragraph{Thinking Aloud} % .5 page
+\paragraph{Eye Tracking} % .5 page
 
-% Heading 4
-\paragraph{Fourth-Level Heading} Fourth-level headings are placed as part of the paragraph.
-
-%Example of a Figure
-\section{ELEMENTS\ OF\ THE\ MANUSCRIPT} 
-\subsection{Figures}Figures should be cited in the main text in chronological order. This is dummy text with a citation to the first figure (\textbf{Figure \ref{fig1}}). Citations to \textbf{Figure \ref{fig1}} (and other figures) will be bold. 
-
-\begin{figure}[h]
-\includegraphics[width=3in]{SampleFigure}
-\caption{Figure caption with descriptions of parts a and b}
-\label{fig1}
-\end{figure}
-
-% Example of a Table
-\subsection{Tables} Tables should also be cited in the main text in chronological order (\textbf {Table \ref{tab1}}).
-
-\begin{table}[h]
-\tabcolsep7.5pt
-\caption{Table caption}
-\label{tab1}
-\begin{center}
-\begin{tabular}{@{}l|c|c|c|c@{}}
-\hline
-Head 1 &&&&Head 5\\
-{(}units)$^{\rm a}$ &Head 2 &Head 3 &Head 4 &{(}units)\\
-\hline
-Column 1 &Column 2 &Column3$^{\rm b}$ &Column4 &Column\\
-Column 1 &Column 2 &Column3 &Column4 &Column\\
-Column 1 &Column 2 &Column3 &Column4 &Column\\
-Column 1 &Column 2 &Column3 &Column4 &Column\\
-\hline
-\end{tabular}
-\end{center}
-\begin{tabnote}
-$^{\rm a}$Table footnote; $^{\rm b}$second table footnote.
-\end{tabnote}
-\end{table}
-
-% Example of lists
-\subsection{Lists and Extracts} Here is an example of a numbered list:
-\begin{enumerate}
-\item List entry number 1,
-\item List entry number 2,
-\item List entry number 3,\item List entry number 4, and
-\item List entry number 5.
-\end{enumerate}
-
-Here is an example of a extract.
-\begin{extract}
-This is an example text of quote or extract.
-This is an example text of quote or extract.
-\end{extract}
-
-\subsection{Sidebars and Margin Notes}
-% Margin Note
-\begin{marginnote}[]
-\entry{Term A}{definition}
-\entry{Term B}{definition}
-\entry{Term C}{defintion}
-\end{marginnote}
-
-\begin{textbox}[h]\section{SIDEBARS}
-Sidebar text goes here.
-\subsection{Sidebar Second-Level Heading}
-More text goes here.\subsubsection{Sidebar third-level heading}
-Text goes here.\end{textbox}
+\subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
+% This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
 
 
+\section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
+% The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems. 
 
-\subsection{Equations}
-% Example of a single-line equation
-\begin{equation}
-a = b \ {\rm ((Single\ Equation\ Numbered))}
-\end{equation}
-%Example of multiple-line equation
-Equations can also be multiple lines as shown in Equations 2 and 3.
-\begin{eqnarray}
-c = 0 \ {\rm ((Multiple\  Lines, \ Numbered))}\\
-ac = 0 \ {\rm ((Multiple \ Lines, \ Numbered))}
-\end{eqnarray}
+\section{ACCEPTANCE OF RESULTS} % 3.5 pages
+% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts. 
 
-% Summary Points
-\begin{summary}[SUMMARY POINTS]
-\begin{enumerate}
-\item Summary point 1. These should be full sentences.
-\item Summary point 2. These should be full sentences.
-\item Summary point 3. These should be full sentences.
-\item Summary point 4. These should be full sentences.
-\end{enumerate}
-\end{summary}
-
-% Future Issues
-\begin{issues}[FUTURE ISSUES]
-\begin{enumerate}
-\item Future issue 1. These should be full sentences.
-\item Future issue 2. These should be full sentences.
-\item Future issue 3. These should be full sentences.
-\item Future issue 4. These should be full sentences.
-\end{enumerate}
-\end{issues}
+\section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
+% We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics. 
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
@@ -180,127 +100,226 @@ might be perceived as affecting the objectivity of this review.
 \section*{ACKNOWLEDGMENTS}
 Acknowledgements, general annotations, funding.
 
-% References
-%
-% Margin notes within bibliography
-\section*{LITERATURE\ CITED}
-
-To download the appropriate bibliography style file, please see \url{http://www.annualreviews.org/page/authors/author-instructions/preparing/latex}. \\
-
-\noindent
-Please see the Style Guide document for instructions on preparing your Literature Cited.
-
-The citations should be listed in alphabetical order, with titles. For example: 
-
-
-
-
-
-
-\begin{verbatim}
-\begin{thebibliography}{00}
-\bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
-Acevedo O, Fitzjarrald D. 2001.
-The early evening surface-layer transition: temporal and spatial variability.
-\textit{J. Atmos. Sci.} 58:2650--67
-
-\bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
-  Campos]{Acevedo:09}
-Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
-Is friction velocity the most appropriate scale for correcting nocturnal carbon
-  dioxide fluxes?
-\textit{Agric. For. Meteorol.} 149:1--10
-
-\bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
-Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
-Exploring self-correlation in the flux-gradient relationships for stably
-  stratified conditions.
-\textit{J. Atmos. Sci.} 63:3045--54
-
-\bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
-Badran F, Thiria S, Crepon M. 1991.
-Wind ambiguity removal by the use of neural network techniques.
-\textit{J. Geophys. Res.} 96:20,521--29
-
-\bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
-Bakas NA, Ioannou PJ. 2007.
-Momentum and energy transport by gravity waves in stochastically driven
-  stratified flows. {Part I}: radiation of gravity waves from a shear layer.
-\textit{J. Atmos. Sci.} 64:1509--29
-
-\bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
-Calanca P, Forrer J, Rotach M. 1998.
-Toward an integral formulation of the turbulent transfer in a stably stratified
-  boundary layer over an ice sheet.
-\textit{Q. J. R. Meteorol. Soc.} 124:1--18
-
-\bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
-D'Asaro EA, Lien RC. 2000.
-The wave-turbulence transition for stratified flows.
-\textit{J. Phys. Oceanog.} 30:123--45
-
-\bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
-de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
-Evolution of kelvin-helmholtz billows in nature and laboratory.
-\textit{Earth Planetary Sci. Let.} 143:217--31
-
-
-\end{thebibliography}
-\end{verbatim}
-
-
-
-
-\begin{thebibliography}{00}
-
-\bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
-Acevedo O, Fitzjarrald D. 2001.
-The early evening surface-layer transition: temporal and spatial variability.
-\textit{J. Atmos. Sci.} 58:2650--67
-
-\bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
-  Campos]{Acevedo:09}
-Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
-Is friction velocity the most appropriate scale for correcting nocturnal carbon
-  dioxide fluxes?
-\textit{Agric. For. Meteorol.} 149:1--10
-
-\bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
-Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
-Exploring self-correlation in the flux-gradient relationships for stably
-  stratified conditions.
-\textit{J. Atmos. Sci.} 63:3045--54
-
-\bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
-Badran F, Thiria S, Crepon M. 1991.
-Wind ambiguity removal by the use of neural network techniques.
-\textit{J. Geophys. Res.} 96:20,521--29
-
-\bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
-Bakas NA, Ioannou PJ. 2007.
-Momentum and energy transport by gravity waves in stochastically driven
-  stratified flows. {Part I}: radiation of gravity waves from a shear layer.
-\textit{J. Atmos. Sci.} 64:1509--29
-
-\bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
-Calanca P, Forrer J, Rotach M. 1998.
-Toward an integral formulation of the turbulent transfer in a stably stratified
-  boundary layer over an ice sheet.
-\textit{Q. J. R. Meteorol. Soc.} 124:1--18
-
-\bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
-D'Asaro EA, Lien RC. 2000.
-The wave-turbulence transition for stratified flows.
-\textit{J. Phys. Oceanog.} 30:123--45
-
-\bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
-de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
-Evolution of kelvin-helmholtz billows in nature and laboratory.
-\textit{Earth Planetary Sci. Let.} 143:217--31
-
-
-
-\end{thebibliography}
 
 
 \end{document}
+% %Example of a Figure
+% \section{ELEMENTS\ OF\ THE\ MANUSCRIPT} 
+% \subsection{Figures}Figures should be cited in the main text in chronological order. This is dummy text with a citation to the first figure (\textbf{Figure \ref{fig1}}). Citations to \textbf{Figure \ref{fig1}} (and other figures) will be bold. 
+% 
+% \begin{figure}[h]
+% \includegraphics[width=3in]{SampleFigure}
+% \caption{Figure caption with descriptions of parts a and b}
+% \label{fig1}
+% \end{figure}
+% 
+% % Example of a Table
+% \subsection{Tables} Tables should also be cited in the main text in chronological order (\textbf {Table \ref{tab1}}).
+% 
+% \begin{table}[h]
+% \tabcolsep7.5pt
+% \caption{Table caption}
+% \label{tab1}
+% \begin{center}
+% \begin{tabular}{@{}l|c|c|c|c@{}}
+% \hline
+% Head 1 &&&&Head 5\\
+% {(}units)$^{\rm a}$ &Head 2 &Head 3 &Head 4 &{(}units)\\
+% \hline
+% Column 1 &Column 2 &Column3$^{\rm b}$ &Column4 &Column\\
+% Column 1 &Column 2 &Column3 &Column4 &Column\\
+% Column 1 &Column 2 &Column3 &Column4 &Column\\
+% Column 1 &Column 2 &Column3 &Column4 &Column\\
+% \hline
+% \end{tabular}
+% \end{center}
+% \begin{tabnote}
+% $^{\rm a}$Table footnote; $^{\rm b}$second table footnote.
+% \end{tabnote}
+% \end{table}
+% 
+% % Example of lists
+% \subsection{Lists and Extracts} Here is an example of a numbered list:
+% \begin{enumerate}
+% \item List entry number 1,
+% \item List entry number 2,
+% \item List entry number 3,\item List entry number 4, and
+% \item List entry number 5.
+% \end{enumerate}
+% 
+% Here is an example of a extract.
+% \begin{extract}
+% This is an example text of quote or extract.
+% This is an example text of quote or extract.
+% \end{extract}
+% 
+% \subsection{Sidebars and Margin Notes}
+% % Margin Note
+% \begin{marginnote}[]
+% \entry{Term A}{definition}
+% \entry{Term B}{definition}
+% \entry{Term C}{defintion}
+% \end{marginnote}
+% 
+% \begin{textbox}[h]\section{SIDEBARS}
+% Sidebar text goes here.
+% \subsection{Sidebar Second-Level Heading}
+% More text goes here.\subsubsection{Sidebar third-level heading}
+% Text goes here.\end{textbox}
+% 
+% 
+% 
+% \subsection{Equations}
+% % Example of a single-line equation
+% \begin{equation}
+% a = b \ {\rm ((Single\ Equation\ Numbered))}
+% \end{equation}
+% %Example of multiple-line equation
+% Equations can also be multiple lines as shown in Equations 2 and 3.
+% \begin{eqnarray}
+% c = 0 \ {\rm ((Multiple\  Lines, \ Numbered))}\\
+% ac = 0 \ {\rm ((Multiple \ Lines, \ Numbered))}
+% \end{eqnarray}
+% 
+% % Summary Points
+% \begin{summary}[SUMMARY POINTS]
+% \begin{enumerate}
+% \item Summary point 1. These should be full sentences.
+% \item Summary point 2. These should be full sentences.
+% \item Summary point 3. These should be full sentences.
+% \item Summary point 4. These should be full sentences.
+% \end{enumerate}
+% \end{summary}
+% 
+% % Future Issues
+% \begin{issues}[FUTURE ISSUES]
+% \begin{enumerate}
+% \item Future issue 1. These should be full sentences.
+% \item Future issue 2. These should be full sentences.
+% \item Future issue 3. These should be full sentences.
+% \item Future issue 4. These should be full sentences.
+% \end{enumerate}
+% \end{issues}
+
+
+% % References
+% %
+% % Margin notes within bibliography
+% \section*{LITERATURE\ CITED}
+% 
+% To download the appropriate bibliography style file, please see \url{http://www.annualreviews.org/page/authors/author-instructions/preparing/latex}. \\
+% 
+% \noindent
+% Please see the Style Guide document for instructions on preparing your Literature Cited.
+% 
+% The citations should be listed in alphabetical order, with titles. For example: 
+% 
+% 
+% 
+% 
+% 
+% 
+% \begin{verbatim}
+% \begin{thebibliography}{00}
+% \bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
+% Acevedo O, Fitzjarrald D. 2001.
+% The early evening surface-layer transition: temporal and spatial variability.
+% \textit{J. Atmos. Sci.} 58:2650--67
+% 
+% \bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
+%   Campos]{Acevedo:09}
+% Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
+% Is friction velocity the most appropriate scale for correcting nocturnal carbon
+%   dioxide fluxes?
+% \textit{Agric. For. Meteorol.} 149:1--10
+% 
+% \bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
+% Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
+% Exploring self-correlation in the flux-gradient relationships for stably
+%   stratified conditions.
+% \textit{J. Atmos. Sci.} 63:3045--54
+% 
+% \bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
+% Badran F, Thiria S, Crepon M. 1991.
+% Wind ambiguity removal by the use of neural network techniques.
+% \textit{J. Geophys. Res.} 96:20,521--29
+% 
+% \bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
+% Bakas NA, Ioannou PJ. 2007.
+% Momentum and energy transport by gravity waves in stochastically driven
+%   stratified flows. {Part I}: radiation of gravity waves from a shear layer.
+% \textit{J. Atmos. Sci.} 64:1509--29
+% 
+% \bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
+% Calanca P, Forrer J, Rotach M. 1998.
+% Toward an integral formulation of the turbulent transfer in a stably stratified
+%   boundary layer over an ice sheet.
+% \textit{Q. J. R. Meteorol. Soc.} 124:1--18
+% 
+% \bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
+% D'Asaro EA, Lien RC. 2000.
+% The wave-turbulence transition for stratified flows.
+% \textit{J. Phys. Oceanog.} 30:123--45
+% 
+% \bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
+% de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
+% Evolution of kelvin-helmholtz billows in nature and laboratory.
+% \textit{Earth Planetary Sci. Let.} 143:217--31
+% 
+% 
+% \end{thebibliography}
+% \end{verbatim}
+% 
+% 
+% 
+% 
+% \begin{thebibliography}{00}
+% 
+% \bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
+% Acevedo O, Fitzjarrald D. 2001.
+% The early evening surface-layer transition: temporal and spatial variability.
+% \textit{J. Atmos. Sci.} 58:2650--67
+% 
+% \bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
+%   Campos]{Acevedo:09}
+% Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
+% Is friction velocity the most appropriate scale for correcting nocturnal carbon
+%   dioxide fluxes?
+% \textit{Agric. For. Meteorol.} 149:1--10
+% 
+% \bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
+% Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
+% Exploring self-correlation in the flux-gradient relationships for stably
+%   stratified conditions.
+% \textit{J. Atmos. Sci.} 63:3045--54
+% 
+% \bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
+% Badran F, Thiria S, Crepon M. 1991.
+% Wind ambiguity removal by the use of neural network techniques.
+% \textit{J. Geophys. Res.} 96:20,521--29
+% 
+% \bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
+% Bakas NA, Ioannou PJ. 2007.
+% Momentum and energy transport by gravity waves in stochastically driven
+%   stratified flows. {Part I}: radiation of gravity waves from a shear layer.
+% \textit{J. Atmos. Sci.} 64:1509--29
+% 
+% \bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
+% Calanca P, Forrer J, Rotach M. 1998.
+% Toward an integral formulation of the turbulent transfer in a stably stratified
+%   boundary layer over an ice sheet.
+% \textit{Q. J. R. Meteorol. Soc.} 124:1--18
+% 
+% \bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
+% D'Asaro EA, Lien RC. 2000.
+% The wave-turbulence transition for stratified flows.
+% \textit{J. Phys. Oceanog.} 30:123--45
+% 
+% \bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
+% de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
+% Evolution of kelvin-helmholtz billows in nature and laboratory.
+% \textit{Earth Planetary Sci. Let.} 143:217--31
+% 
+% 
+% 
+% \end{thebibliography}
