@@ -8,10 +8,15 @@
 %
 % For tracking purposes => this is v1.0 - Apr. 2013
 
-\documentclass[letterpaper]{ar}
+\documentclass{ar}
 
 
 \usepackage[comma]{natbib}
+\bibliographystyle{ar-style1}
+
+
+\usepackage[table]{xcolor}
+\newcommand{\svp}[1]{{\color{blue} #1}}
 
 \setcounter{secnumdepth}{4}
 
@@ -55,6 +60,14 @@ keywords, separated by comma, no full stop, lowercase
 % Heading 1
 \section{INTRODUCTION}
 % Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages). 
+Any survey of literature on statistical charts and graphs will be complicated by the fragmentation of the literature. Any discipline which uses charts to summarize information generally also has individuals who research and assess the utility of these graphics. A quick survey reveals publications in journals from computer science, psychology, marketing and business, economics, ergonomics and human factors, statistics, sociology, communication and rhetoric, and education. A review of early surveys of graphical forms suggests that this problem has long plagued the study of graphics, as \citet{funkhouserHistoricalDevelopmentGraphical1937} discusses the broad displines affected by statistical graphics and \citet{kruskalVisionsMapsGraphs1977} addresses the difficulty of a comprehensive review of the relevant literature. 
+
+% \begin{quote}
+% Whatever relates to extent and quantity may be represented by geometrical figures. Statistical projections which speak to the senses without fatiguing the mind, possess the advantage of fixing the attention on a great number of important facts." - Alexander von Humboldt, 1811, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
+% \end{quote}
+
+Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing spatial information using maps\citep{smithImagoMundiLogo1996} with varying degrees of abstraction. \svp{there has to be a better transition here, but I've spent too much time on it to bother right now} The polymaths who developed the foundations of current scientific pursuits spent considerable time collecting demographic and economic data as well as observations about the natural world; as a result, they began to experiment with methods for exploring that data visually. During the 18th and 19th centuries, governments became involved, assembling data and graphical representations into the statistical atlases created by A. F. W. Crome\citep{roystonStudiesHistoryProbability1956}, William Playfair\citep{playfair1801statistical}, Francis Walker\citep{atlas}, and contemporaries. As new charts were invented to represent data differently and highlight features of data, discussions about the use of statistical graphics began to appear in the literature\citep{wickham2013graphical,brinton1917graphic,karsten1923charts}\svp{I'd prefer to cite the originals here, but I went looking and did not find anything all that promising. Granted, I don't read French, but I found the book online (https://gallica.bnf.fr/ark:/12148/btv1b86266127/f98.item) and can't find any reference to statistics or charts on the pages around i86/186/86}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based, rather than based on experimentation. 
+
 
 \subsection{Approaches to Graphical Design}
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages). 
@@ -100,7 +113,8 @@ might be perceived as affecting the objectivity of this review.
 \section*{ACKNOWLEDGMENTS}
 % Acknowledgements, general annotations, funding.
 
-
+\section*{REFERENCES}
+\bibliography{references}
 
 \end{document}
 % %Example of a Figure
