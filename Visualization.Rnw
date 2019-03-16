@@ -8,7 +8,7 @@
 %
 % For tracking purposes => this is v1.0 - Apr. 2013
 
-\documentclass{ar-1col}
+\documentclass[letterpaper]{ar}
 
 
 \usepackage[comma]{natbib}
@@ -18,7 +18,7 @@
 % Metadata Information
 \jname{Xxxx. Xxx. Xxx. Xxx.}
 \jvol{AA}
-\jyear{YYYY}
+\jyear{2019}
 \doi{10.1146/((please add article doi))}
 
 
@@ -26,18 +26,17 @@
 \begin{document}
 
 % Page header
-\markboth{Author et al.}{Short title}
+\markboth{Author et al.}{Testing Statistical Graphics}
 
 % Title
 \title{Testing Statistical Graphics: What makes a good chart?}
 
 
 %Authors, affiliations address.
-\author{Author B. Authorone,$^1$ Firstname C. Authortwo,$^2$ and D. Name Authorthree$^3$
-\affil{$^1$Department/Institute, University, City, Country, Postal code; email: author@email.edu}
-\affil{$^2$Department/Institute, University, City, Country, Postal code}
-\affil{$^3$Department/Institute, University, City, Country, Postal code}}
-
+% No idea how this should be ordered, so just doing it alphabetically for now :)
+\author{Dianne Cook,$^1$ Heike Hofmann,$^2$ and Susan Vanderplas$^2$}
+\affil{$^1$Department/Institute, Monash University, Melbourne, Australia, Postal code}
+\affil{$^2$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011; email: author@email.edu}
 %Abstract
 \begin{abstract}
 Abstract text, approximately 150 words. 
@@ -93,12 +92,13 @@ keywords, separated by comma, no full stop, lowercase
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
-If the authors have noting to disclose, the following statement will be used: The authors are not aware of any affiliations, memberships, funding, or financial holdings that
+% If the authors have noting to disclose, the following statement will be used: 
+The authors are not aware of any affiliations, memberships, funding, or financial holdings that
 might be perceived as affecting the objectivity of this review. 
 
 % Acknowledgements
 \section*{ACKNOWLEDGMENTS}
-Acknowledgements, general annotations, funding.
+% Acknowledgements, general annotations, funding.
 
 
 
