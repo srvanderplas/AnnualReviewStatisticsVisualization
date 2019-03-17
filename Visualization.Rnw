@@ -67,7 +67,6 @@ keywords, separated by comma, no full stop, lowercase
 %Table of Contents
 \tableofcontents
 
-
 % Heading 1
 \section{INTRODUCTION}
 % Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages). 
@@ -77,42 +76,83 @@ Any survey of literature on statistical charts and graphs will be complicated by
 % Whatever relates to extent and quantity may be represented by geometrical figures. Statistical projections which speak to the senses without fatiguing the mind, possess the advantage of fixing the attention on a great number of important facts." - Alexander von Humboldt, 1811, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
 % \end{quote}
 
-Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing spatial information using maps\citep{smithImagoMundiLogo1996} with varying degrees of abstraction. \svp{there has to be a better transition here, but I've spent too much time on it to bother right now} The polymaths who developed the foundations of current scientific pursuits spent considerable time collecting demographic and economic data as well as observations about the natural world; as a result, they began to experiment with methods for exploring that data visually. During the 18th and 19th centuries, governments became involved, assembling data and graphical representations into the statistical atlases created by A. F. W. Crome\citep{roystonStudiesHistoryProbability1956}, William Playfair\citep{playfair1801statistical}, Francis Walker\citep{atlas}, and contemporaries. As new charts were invented to represent data differently and highlight features of data, discussions about the use of statistical graphics began to appear in the literature\citep{wickham2013graphical,brinton1917graphic,karsten1923charts}\svp{I'd prefer to cite the originals here, but I went looking and did not find anything all that promising. Granted, I don't read French, but I found the book online (https://gallica.bnf.fr/ark:/12148/btv1b86266127/f98.item) and can't find any reference to statistics or charts on the pages around i86/186/86}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based, rather than based on experimentation. 
+Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing spatial information using maps\citep{smithImagoMundiLogo1996} with varying degrees of abstraction. \svp{there has to be a better transition here, but I've spent too much time on it to bother right now} The polymaths who developed the foundations of current scientific pursuits spent considerable time collecting demographic and economic data as well as observations about the natural world; as a result, they began to experiment with methods for exploring that data visually. During the 18th and 19th centuries, governments became involved, assembling data and graphical representations into the statistical atlases and government issued reports created by A. F. W. Crome, William \citet{playfair1801statistical}, Francis \citet{atlas}, and contemporaries such as Charles Minard. 
+
+As new charts were invented to represent data differently and highlight features of data, discussions about the use of statistical graphics began to appear in the literature\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}. 
+
+\begin{marginnote}
+% \begin{quote}
+All the graphic methods enumerated already exist and it is unlikely that
+a completely new one will be invented. Since they have been used separately
+up until the present time it would be convenient to classify them by analogy,
+according to the categories above...
+- \citet{EmploiCartographieMethode1858}, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
+% \end{quote}
+\end{marginnote}
+
+\todo{Need better transitions here between playfair and experimental graphics. Should probably discuss Tukey, the rise of computer generated graphics...}
+
+Eventually, calls for experimental validation of the perception of statistical charts were heeded, though at first the experiments were fraught with methodological issues \citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, but eventually cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. 
 
 
 \subsection{Approaches to Graphical Design}
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages). 
 
+
+Charts and graphs are used for many purposes: to summarize data, for analysis, discovery, and diagnosis of statistical relationships(as in \textbf{\autoref{fig:hrdiagram}}), to make a rhetorical argument, or to show raw data as a substitute for tables \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}. The initial heyday of graphic design enabled by color lithography used charts and graphs to tell stories about nations and events\citep{kostelnickReEmergenceEmotionalAppeals2016}. In some cases, the different purposes motivating the creation of the chart influence the form and complexity of the chart; consideration of the intended audience and reach of the chart may also influence the result. In any case, it is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent - the infographic is designed to attract attention and tell a story, while the statistical chart is designed to effectively and accurately show the data (potentially with accompanying statistical model); any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}.
+
+
+% Sample plots for some of these purposes might be good - HR diagram (discovery/analysis), Minard/Napoleon (rhetorical argument), pie chart or mosaic plot from the statistical atlas or a pictoral chart as in Vernon (1946) (table substitute), data summary (some sort of process control chart? - dupont?)
+\begin{minipage}{.475\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figure/HRDiagram.png}
+\captionof{figure}{The Hertzsprung-Russell diagram, which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
+\end{minipage}\hfill
+\begin{minipage}{.475\textwidth}
+\end{minipage}
+
+
 \subsection{The Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
+\lipsum
 
 
 \section{TESTING METHODS} % 8 pages
 % In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli. 
 
+In the discussion of the importance of empirical testing of charts and graphs, \citet{kruskalVisionsMapsGraphs1977} list 3 main criteria for good a good experiment: \begin{enumerate}\item Testing should be in collaboration with good psychologists, \item it should be based on proper experimental designs, and \item it should lead to usable perceptual theory for the future.\end{enumerate} 
+
 % Heading 2
 \subsection{Explicitly Structured Graphical Tests} % 3-4 pages
 % We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
 \subsubsection{Preattentive Graph Perception} % 1 page
+\lipsum
 
 \subsubsection{Attention Mediated Testing Methods}
 \paragraph{Numerical Estimation} % 1 page
+\lipsum
 \paragraph{Interactive Adjustment} % .5 page
+\lipsum
 \paragraph{Thinking Aloud} % .5 page
+\lipsum
 \paragraph{Eye Tracking} % .5 page
 
 \subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
 % This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
+\lipsum
 
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems. 
+\lipsum
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts. 
+\lipsum
 
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics. 
+\lipsum
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
@@ -123,8 +163,8 @@ might be perceived as affecting the objectivity of this review.
 % Acknowledgements
 \section*{ACKNOWLEDGMENTS}
 % Acknowledgements, general annotations, funding.
-
-\section*{REFERENCES}
+\clearpage
+% \section*{REFERENCES}
 \bibliography{references}
 
 \end{document}
