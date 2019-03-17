@@ -8,43 +8,54 @@
 %
 % For tracking purposes => this is v1.0 - Apr. 2013
 
-\documentclass{ar}
+\documentclass{ar-1col}
 
 
 \usepackage[comma]{natbib}
 \bibliographystyle{ar-style1}
 
+\setcounter{secnumdepth}{4}
 
-\usepackage[table]{xcolor}
-\newcommand{\svp}[1]{{\color{blue} #1}}
+\usepackage{lipsum}
+
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% \usepackage{xcolor}
+\definecolor{blue}{cmyk}{1,1,0,0}
+\definecolor{pink}{cmyk}{0,1,0,0}
+\newcommand{\todo}[1]{\textcolor{pink}{#1}}
+\newcommand{\svp}[1]{\textcolor{blue}{#1}}
 
 \setcounter{secnumdepth}{4}
 
 % Metadata Information
 \jname{Xxxx. Xxx. Xxx. Xxx.}
 \jvol{AA}
-\jyear{2019}
+\jyear{YYYY}
 \doi{10.1146/((please add article doi))}
-
 
 % Document starts
 \begin{document}
 
 % Page header
-\markboth{Author et al.}{Testing Statistical Graphics}
+\markboth{Author et al.}{Testing Statistical Charts}
 
 % Title
-\title{Testing Statistical Graphics: What makes a good chart?}
-
+\title{Testing Statistical Charts: What makes a good graph?}
 
 %Authors, affiliations address.
 % No idea how this should be ordered, so just doing it alphabetically for now :)
-\author{Dianne Cook,$^1$ Heike Hofmann,$^2$ and Susan Vanderplas$^2$}
+\author{Dianne Cook,$^1$ Heike Hofmann,$^2$ and Susan Vanderplas$^3$
 \affil{$^1$Department/Institute, Monash University, Melbourne, Australia, Postal code}
 \affil{$^2$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011; email: author@email.edu}
+\affil{$^3$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011}}
+
 %Abstract
 \begin{abstract}
-Abstract text, approximately 150 words. 
+% Abstract text, approximately 150 words. 
+\lipsum[3-4]
 \end{abstract}
 
 %Keywords, etc.
