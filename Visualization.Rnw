@@ -123,7 +123,6 @@ In any case, it is useful to consider a continuum from utilitarianism to artistr
 
 \subsection{The Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
-\lipsum
 
 
 \section{TESTING METHODS} % 8 pages
@@ -212,30 +211,46 @@ Extending this work, \citet{healeyHighspeedVisualEstimation1996} has used the sa
 they do show the utility of designing with the preattentive perceptual process in mind.
 
 \subsubsection{Attention Mediated Testing Methods}
-\paragraph{Numerical Estimation} % 1 page
-\lipsum
-\paragraph{Interactive Adjustment} % .5 page
-\lipsum
+Creators of a chart or graph typically operate under the (hopefully safe) assumption that readers will spend more than 300 milliseconds considering its contents; as a result, attention mediated testing methods allow a more realistic mechanism for testing overall performance of different graphical forms. \citet{clevelandGraphicalPerceptionVisual1987} discuss the different approaches to research methodology in this area, and while they do not include all of the experimental approaches we discuss, the paper makes an important distinction between informal and formal graphical exploration. In the informal approach, changes are made to the graph and the iterative versions are compared to determine what information can easily be gleamed; in the formal approach, an experiment is designed and participants are tested in a controlled manner. This section describes several different experimental approaches which can be used to answer the general question of ``how effective is this graph?"
+
+\paragraph{Direct Observation: Numerical Estimation, Speed, and Error Rates} % 1 page
+One of the simplest ways to test the utility of a graph is to verify that information can be accurately read from it. Charts are, after all, generally recognized as having more utility than tables for presenting information in an accessible and useful way; if that information cannot be read back out in a relatively accurate manner, the graph's utility is suspect. Early experiments, such as \citet{eellsRelativeMeritsCircles1926}, \citet{croxtonBarChartsCircle1927} and \citet{croxtonGraphicComparisonsBars1932} used accuracy alongside speed and other considerations for plot evaluation. Later studies\citep{petersonHowAccuratelyAre1954,cleveland_graphical_1984,broersmaGraphicalPerceptionDistributional,dunnFramedRectangleCharts1988,tanHumanProcessingTwodimensional1994,amerBiasDueVisual2005} were conducted with similar methodology; in essence, the participants are provided with a chart and asked to estimate some quantity or answer a predefined question using the information provided in the chart. The accuracy of various types of charts, as measured by participants responses to the questions, is then used to determine which charts are superior. It is important to ensure that the specific charts and questions used are aligned; studies are commonly critiqued on the basis that the charts or the questions were not appropriate for the task (indeed, the first studies of pie vs. bar charts were heavily criticized on these grounds \citep{vonhuhnFurtherStudiesGraphic1927}).
+
+A similar type of study avoids the pitfalls associated with numerical estimation by showing participants multiple charts in sequence, and asking them to evaluate the differences in the charts with respect to the dimension of interest. \citet{shahConceptualLimitationsComprehending1995} required participants to examine the relationship between three variables as shown in several different types of line charts.
+
+In some studies, response time is the main quantity of interest. Participants are provided with a certain chart or stimulus, and the amount of time spent considering the stimulus before answering (as well as the error rate when answering) are used to assess the difficulty of the task, with the logic that more difficult or mentally demanding tasks will require more time before a response is generated. \citet{carswellInformationIntegrationObject1987} uses the error rate and response time to determine whether object displays are superior to bar graphs; \citet{leggeEfficiencyGraphicalPerception1989} uses efficiency, a function of time and accuracy, to assess different types of charts.
+
+There are limits to what one can test using direct estimation: it is generally preferable to test only very simple assessments of the content of a chart or graph, to fit within a simple experimental paradigm, and open-ended estimation tasks elicit certain well-known biases such as the tendency to round to multiples of 5 or 10\citep{bairdRelativeFrequenciesNumerical1970}. Long-term interaction with a complex graph or chart is generally not ideal within this paradigm, which may explain why there are so few studies of rich, complex graphics that may require domain expertise in addition to the ability to read information from a visual display. To approach situations with more complicated graphics, or charts which are known to induce perceptual biases in the participants, it is often more useful to utilize other experimental paradigms that facilitate examination of specific parts of the perceptual process - such as the use of eye tracking to measure attention and motivation, or the use of verbal descriptions to assess more complicated graphs. The next sections cover some of these more nuanced approaches to explicit testing of graphs.
+
+\paragraph{Psychophysics and Signal Detection Theory} % .5 page
+Some studies of graphs utilize psychophysics methods to assess data visualizations. Initially, of course, a significant portion of the research in statistical graphics came from the fields of psychophysics and cognitive psychology\citep{spenceVisualPsychophysicsSimple1990,teghtsoonian_judgment_1965, lewandowskyPerceptionStatisticalGraphs1989}, but in most cases this was not accompanied by a  use of the methods of psychophysics for experimental testing of charts and graphs. Psychophysical experimental design is focused on whether an effect is detectable, and whether the magnitude of the effect can be accurately estimated. Common methods, such as the method of constant stimuli and the method of adjustment, involve repeatedly presenting a participant with charts and asking them to evaluate the chart on the basis of a particular question of interest. In the method of adjustment, this is done with the control of the participant, who adjusts the stimuli interactively until the effect is just barely noticable; in the method of constant stimuli, the effect size changes randomly from trial to trial to reduce continuity effects. In graphical testing, \citet{hughesJustNoticeableDifferences2001} used the method of constant stimuli to assess the ability to detect a difference in height in 2D or 3D barcharts; \citet{vanderplas_signs_2015} used the method of adjustment to experimentally determine the size of the line-width illusion's distortion of variance perception. Psychophysics methods also seem to be relatively common in studies of map perception, particularly when the goal is to estimate the amount of exaggeration or other corrective distortion necessary for realistic perception of the map \citep[for an overview of relevant cartography studies, see][]{brandesPresentStatePerceptual1976}.
+
+
 \paragraph{Thinking Aloud} % .5 page
-\lipsum
+\begin{itemize}
+\item \citet{dunbar1995scientists} - not charts, but scientific reasoning using talk-aloud
+\item \citet{trickettDipsyDoodlesStreamingMotions2000} and \citet{trickett2000blobs} - exploratory data analysis using talk-aloud protocol
+\item \citet{gregorytraftonTurningPicturesNumbers2000} for complex, domain-specific visualizations and interactivity
+\end{itemize}
+
 \paragraph{Eye Tracking} % .5 page
 
 \subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
 % This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set.
-\lipsum
+
 
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
-\lipsum
+
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
-\lipsum
+
 
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
-\lipsum
+
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
