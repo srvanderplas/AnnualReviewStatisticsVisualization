@@ -18,9 +18,9 @@
 
 \usepackage{lipsum}
 
+\usepackage{graphicx}
 \usepackage{caption}
 \usepackage{hyperref}
-\usepackage{graphicx}
 
 % \usepackage{xcolor}
 \definecolor{blue}{cmyk}{1,1,0,0}
@@ -120,11 +120,13 @@ Charts and graphs are used for many purposes: to summarize data, for analysis, d
 \section{TESTING METHODS} % 8 pages
 % In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli. 
 
-In the discussion of the importance of empirical testing of charts and graphs, \citet{kruskalVisionsMapsGraphs1977} list 3 main criteria for good a good experiment: \begin{enumerate}\item Testing should be in collaboration with good psychologists, \item it should be based on proper experimental designs, and \item it should lead to usable perceptual theory for the future.\end{enumerate} 
+% In the discussion of the importance of empirical testing of charts and graphs, \citet{kruskalVisionsMapsGraphs1977} list 3 main criteria for good a good experiment involving statistical graphics: \begin{enumerate}\item Testing should be in collaboration with good psychologists, \item it should be based on proper experimental designs, and \item it should lead to usable perceptual theory for the future.\end{enumerate} % not wild about the way this is phrased, but I like his criteria given the studies that were available at the time...
+In this section, we will distinguish between explicitly structured graphical tests, which require the participants to answer specific questions about the graphical objects under experimentation, and implicitly structured tests, where the participant must determine the questions of interest from the provided stimuli. 
 
 % Heading 2
 \subsection{Explicitly Structured Graphical Tests} % 3-4 pages
 % We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
+During the perceptual process, information from a visual scene is processed by the brain, with information extracted at many different levels of the cognitive process. Preattentive perceptual effects are those which do not require sustained cognitive attention; they are processed automatically within the first 500 milliseconds of viewing a chart or graph. 
 \subsubsection{Preattentive Graph Perception} % 1 page
 \lipsum
 
