@@ -9,7 +9,12 @@
 % For tracking purposes => this is v1.0 - Apr. 2013
 
 \documentclass{ar-1col}
-
+<<initial-setup, echo = F, include = F>>=
+library(tidyverse)
+library(RColorBrewer)
+library(knitr)
+opts_chunk$set(echo = F, include = F)
+@
 
 \usepackage[comma]{natbib}
 \bibliographystyle{ar-style1}
@@ -133,13 +138,74 @@ During the perceptual process, information from a visual scene is processed by t
 
 Initial research into preattentive perception used a search task, where participants had to identify a particular object in a field of distractors, manipulating display size and varying one or more features such as color or shape; participants' search times were measured to determine the amount of effort necessary to complete the search task. Preattentively perceived features showed a near constant reaction time over increasing display size, while features which are processed attentively show an increasing reaction time with increased display size \citep{treismanFeatureIntegrationTheoryAttention1980}. A primary question in the discussion of preattentive graph perception is whether there are advantages in designing a graph to promote the preattentive perception of features, ideally, reducing cognitive load.
 
-We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design is much simpler. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}.
 
-<<hue-brightness-array>>=
+<<hue-brightness-array, fig.width = 6, fig.height = 2>>=
 # Callaghan 1984
+hb <- tibble(id = 1:4,
+             hue = rep(c("orange", "purple"), each = 2),
+             brightness = rep(c("light", "dark"), times = 2),
+             color = brewer.pal(10, "Paired")[7:10])
+correlated <- matrix(rep(c(1, 4), each = 8), nrow = 4, ncol = 4, byrow = T) %>%
+  magrittr::set_colnames(as.character(1:4)) %>%
+  as_tibble() %>%
+  mutate(row = 1:4) %>%
+  gather(key = col, value = id, -row) %>%
+  mutate(col = as.numeric(col)) %>%
+  left_join(hb) %>%
+  mutate(type = "Correlated")
+
+orth_hue <- matrix(c(rep(c(1, 2), times = 2),
+                     rep(c(2, 1), times = 2),
+                     rep(c(3, 4), times = 2),
+                     rep(c(4, 3), times = 2)),
+                   nrow = 4, ncol = 4, byrow = T) %>%
+  magrittr::set_colnames(as.character(1:4)) %>%
+  as_tibble() %>%
+  mutate(row = 1:4) %>%
+  gather(key = col, value = id, -row) %>%
+  mutate(col = as.numeric(col)) %>%
+  left_join(hb) %>%
+  mutate(type = "Orthogonal Hue")
+orth_bright <- matrix(c(rep(c(1, 3), times = 2),
+                        rep(c(3, 1), times = 2),
+                        rep(c(2, 4), times = 2),
+                        rep(c(4, 2), times = 2)),
+                      nrow = 4, ncol = 4, byrow = T) %>%
+  magrittr::set_colnames(as.character(1:4)) %>%
+  as_tibble() %>%
+  mutate(row = 1:4) %>%
+  gather(key = col, value = id, -row) %>%
+  mutate(col = as.numeric(col)) %>%
+  left_join(hb) %>%
+  mutate(type = "Orthogonal Brightness")
+
+all_dat <- bind_rows(correlated, orth_hue, orth_bright)
+
+ggplot(data = all_dat) +
+  facet_wrap(~type) +
+  coord_fixed() +
+  geom_point(aes(x = col, y = row, color = color), shape = 16, size = 10) +
+  scale_color_identity() +
+  scale_x_continuous(limits = c(.5, 4.5)) +
+  scale_y_continuous(limits = c(.5, 4.5)) +
+  theme_void(base_size = 12) +
+  theme(strip.background = element_rect(fill = "grey70", color = "grey50"),
+        panel.border = element_rect(fill = NA, color = "grey50"),
+        plot.margin = grid::unit(c(0,0,0,0), "mm"))
 @
 
+\noindent\begin{minipage}[c]{.575\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figure/hue-brightness-array-1}
+\end{minipage}\hfill
+\begin{minipage}[c]{.4\textwidth}
+\captionof{figure}{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived.}\label{fig:hue-brightness-array}
+\end{minipage}
 
+We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design does not involve any display of actual data. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}. Other preattentively processed features include shape, angle, size, and texture; however, typically, combinations of preattentive features which represent separate features in the data are processed attentively.
+
+Extending this work, \citet{healeyHighspeedVisualEstimation1996} has used the same segmentation paradigm, applied to more complex charts utilizing actual data, with the goal of exploring region segmentation using preattentive cues. Healey's experiments use multivariate displays, leveraging the preattentive grouping of similar objects to separately represent features using color, height, and texture\citep{healeyLargeDatasetsGlance1999}. While these displays may not follow best graphical practice in other respects, % sorry, can't resist
+they do show the utility of designing with the preattentive perceptual process in mind.
 
 \subsubsection{Attention Mediated Testing Methods}
 \paragraph{Numerical Estimation} % 1 page
