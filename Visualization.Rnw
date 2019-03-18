@@ -54,7 +54,7 @@
 
 %Abstract
 \begin{abstract}
-% Abstract text, approximately 150 words. 
+% Abstract text, approximately 150 words.
 \lipsum[3-4]
 \end{abstract}
 
@@ -69,16 +69,16 @@ keywords, separated by comma, no full stop, lowercase
 
 % Heading 1
 \section{INTRODUCTION}
-% Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages). 
-Any survey of literature on statistical charts and graphs will be complicated by the fragmentation of the literature. Any discipline which uses charts to summarize information generally also has individuals who research and assess the utility of these graphics. A quick survey reveals publications in journals from computer science, psychology, marketing and business, economics, ergonomics and human factors, statistics, sociology, communication and rhetoric, and education. A review of early surveys of graphical forms suggests that this problem has long plagued the study of graphics, as \citet{funkhouserHistoricalDevelopmentGraphical1937} discusses the broad displines affected by statistical graphics and \citet{kruskalVisionsMapsGraphs1977} addresses the difficulty of a comprehensive review of the relevant literature. 
+% Graphics research is conducted across a wide range of research areas, from statistics and computer science to psychology, marketing, and communications. We will first consider the disciplines where this research is currently found as well as its historical origins (1.5 pages).
+Any survey of literature on statistical charts and graphs will be complicated by the fragmentation of the literature. Any discipline which uses charts to summarize information generally also has individuals who research and assess the utility of these graphics. A quick survey reveals publications in journals from computer science, psychology, marketing and business, economics, ergonomics and human factors, statistics, sociology, communication and rhetoric, and instructional design and education. A review of early surveys of graphical forms suggests that this problem has long plagued the study of graphics, as \citet{funkhouserHistoricalDevelopmentGraphical1937} discusses the broad displines affected by statistical graphics and \citet{kruskalVisionsMapsGraphs1977} addresses the difficulty of a comprehensive review of the relevant literature.
 
 % \begin{quote}
 % Whatever relates to extent and quantity may be represented by geometrical figures. Statistical projections which speak to the senses without fatiguing the mind, possess the advantage of fixing the attention on a great number of important facts." - Alexander von Humboldt, 1811, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
 % \end{quote}
 
-Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing spatial information using maps\citep{smithImagoMundiLogo1996} with varying degrees of abstraction. \svp{there has to be a better transition here, but I've spent too much time on it to bother right now} The polymaths who developed the foundations of current scientific pursuits spent considerable time collecting demographic and economic data as well as observations about the natural world; as a result, they began to experiment with methods for exploring that data visually. During the 18th and 19th centuries, governments became involved, assembling data and graphical representations into the statistical atlases and government issued reports created by A. F. W. Crome, William \citet{playfair1801statistical}, Francis \citet{atlas}, and contemporaries such as Charles Minard. 
+Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing spatial information using maps\citep{smithImagoMundiLogo1996} with varying degrees of abstraction. \svp{there has to be a better transition here, but I've spent too much time on it to bother right now} The polymaths who developed the foundations of current scientific pursuits spent considerable time collecting demographic and economic data as well as observations about the natural world; as a result, they began to experiment with methods for exploring that data visually. During the 18th and 19th centuries, governments became involved, assembling data and graphical representations into the statistical atlases and government issued reports created by A. F. W. Crome, William \citet{playfair1801statistical}, Francis \citet{atlas}, and contemporaries such as Charles Minard.
 
-As new charts were invented to represent data differently and highlight features of data, discussions about the use of statistical graphics began to appear in the literature\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}. 
+As new charts were invented to represent data differently and highlight features of data, discussions about the use of statistical graphics began to appear in the literature\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}.
 
 \begin{marginnote}
 % \begin{quote}
@@ -92,11 +92,11 @@ according to the categories above...
 
 \todo{Need better transitions here between playfair and experimental graphics. Should probably discuss Tukey, the rise of computer generated graphics...}
 
-Eventually, calls for experimental validation of the perception of statistical charts were heeded, though at first the experiments were fraught with methodological issues \citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, but eventually cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. 
+Eventually, calls for experimental validation of the perception of statistical charts were heeded, though at first the experiments were fraught with methodological issues \citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, but eventually cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}.
 
 
 \subsection{Approaches to Graphical Design}
-% We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages). 
+% We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
 
 
 Charts and graphs are used for many purposes: to summarize data, for analysis, discovery, and diagnosis of statistical relationships(as in \textbf{\autoref{fig:hrdiagram}}), to make a rhetorical argument, or to show raw data as a substitute for tables \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}. The initial heyday of graphic design enabled by color lithography used charts and graphs to tell stories about nations and events\citep{kostelnickReEmergenceEmotionalAppeals2016}. In some cases, the different purposes motivating the creation of the chart influence the form and complexity of the chart; consideration of the intended audience and reach of the chart may also influence the result. In any case, it is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent - the infographic is designed to attract attention and tell a story, while the statistical chart is designed to effectively and accurately show the data (potentially with accompanying statistical model); any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}.
@@ -118,14 +118,14 @@ Charts and graphs are used for many purposes: to summarize data, for analysis, d
 
 
 \section{TESTING METHODS} % 8 pages
-% In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli. 
+% In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli.
 
 % In the discussion of the importance of empirical testing of charts and graphs, \citet{kruskalVisionsMapsGraphs1977} list 3 main criteria for good a good experiment involving statistical graphics: \begin{enumerate}\item Testing should be in collaboration with good psychologists, \item it should be based on proper experimental designs, and \item it should lead to usable perceptual theory for the future.\end{enumerate} % not wild about the way this is phrased, but I like his criteria given the studies that were available at the time...
-In this section, we will distinguish between explicitly structured graphical tests, which require the participants to answer specific questions about the graphical objects under experimentation, and implicitly structured tests, where the participant must determine the questions of interest from the provided stimuli. 
+In this section, we will distinguish between explicitly structured graphical tests, which require the participants to answer specific questions about the graphical objects under experimentation, and implicitly structured tests, where the participant must determine the questions of interest from the provided stimuli.
 
 % Heading 2
 \subsection{Explicitly Structured Graphical Tests} % 3-4 pages
-% We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages). 
+% We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages).
 During the perceptual process, information from a visual scene is processed by the brain, with information extracted at many different levels of the cognitive process. Preattentive perceptual effects are those which do not require sustained cognitive attention; they are processed automatically within the first 500 milliseconds of viewing a chart or graph. 
 \subsubsection{Preattentive Graph Perception} % 1 page
 \lipsum
@@ -140,27 +140,27 @@ During the perceptual process, information from a visual scene is processed by t
 \paragraph{Eye Tracking} % .5 page
 
 \subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
-% This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set. 
+% This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set.
 \lipsum
 
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
-% The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems. 
+% The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
 \lipsum
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
-% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts. 
+% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
 \lipsum
 
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
-% We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics. 
+% We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 \lipsum
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
-% If the authors have noting to disclose, the following statement will be used: 
+% If the authors have noting to disclose, the following statement will be used:
 The authors are not aware of any affiliations, memberships, funding, or financial holdings that
-might be perceived as affecting the objectivity of this review. 
+might be perceived as affecting the objectivity of this review.
 
 % Acknowledgements
 \section*{ACKNOWLEDGMENTS}
@@ -171,18 +171,18 @@ might be perceived as affecting the objectivity of this review.
 
 \end{document}
 % %Example of a Figure
-% \section{ELEMENTS\ OF\ THE\ MANUSCRIPT} 
-% \subsection{Figures}Figures should be cited in the main text in chronological order. This is dummy text with a citation to the first figure (\textbf{Figure \ref{fig1}}). Citations to \textbf{Figure \ref{fig1}} (and other figures) will be bold. 
-% 
+% \section{ELEMENTS\ OF\ THE\ MANUSCRIPT}
+% \subsection{Figures}Figures should be cited in the main text in chronological order. This is dummy text with a citation to the first figure (\textbf{Figure \ref{fig1}}). Citations to \textbf{Figure \ref{fig1}} (and other figures) will be bold.
+%
 % \begin{figure}[h]
 % \includegraphics[width=3in]{SampleFigure}
 % \caption{Figure caption with descriptions of parts a and b}
 % \label{fig1}
 % \end{figure}
-% 
+%
 % % Example of a Table
 % \subsection{Tables} Tables should also be cited in the main text in chronological order (\textbf {Table \ref{tab1}}).
-% 
+%
 % \begin{table}[h]
 % \tabcolsep7.5pt
 % \caption{Table caption}
@@ -204,7 +204,7 @@ might be perceived as affecting the objectivity of this review.
 % $^{\rm a}$Table footnote; $^{\rm b}$second table footnote.
 % \end{tabnote}
 % \end{table}
-% 
+%
 % % Example of lists
 % \subsection{Lists and Extracts} Here is an example of a numbered list:
 % \begin{enumerate}
@@ -213,13 +213,13 @@ might be perceived as affecting the objectivity of this review.
 % \item List entry number 3,\item List entry number 4, and
 % \item List entry number 5.
 % \end{enumerate}
-% 
+%
 % Here is an example of a extract.
 % \begin{extract}
 % This is an example text of quote or extract.
 % This is an example text of quote or extract.
 % \end{extract}
-% 
+%
 % \subsection{Sidebars and Margin Notes}
 % % Margin Note
 % \begin{marginnote}[]
@@ -227,15 +227,15 @@ might be perceived as affecting the objectivity of this review.
 % \entry{Term B}{definition}
 % \entry{Term C}{defintion}
 % \end{marginnote}
-% 
+%
 % \begin{textbox}[h]\section{SIDEBARS}
 % Sidebar text goes here.
 % \subsection{Sidebar Second-Level Heading}
 % More text goes here.\subsubsection{Sidebar third-level heading}
 % Text goes here.\end{textbox}
-% 
-% 
-% 
+%
+%
+%
 % \subsection{Equations}
 % % Example of a single-line equation
 % \begin{equation}
@@ -247,7 +247,7 @@ might be perceived as affecting the objectivity of this review.
 % c = 0 \ {\rm ((Multiple\  Lines, \ Numbered))}\\
 % ac = 0 \ {\rm ((Multiple \ Lines, \ Numbered))}
 % \end{eqnarray}
-% 
+%
 % % Summary Points
 % \begin{summary}[SUMMARY POINTS]
 % \begin{enumerate}
@@ -257,7 +257,7 @@ might be perceived as affecting the objectivity of this review.
 % \item Summary point 4. These should be full sentences.
 % \end{enumerate}
 % \end{summary}
-% 
+%
 % % Future Issues
 % \begin{issues}[FUTURE ISSUES]
 % \begin{enumerate}
@@ -273,120 +273,120 @@ might be perceived as affecting the objectivity of this review.
 % %
 % % Margin notes within bibliography
 % \section*{LITERATURE\ CITED}
-% 
+%
 % To download the appropriate bibliography style file, please see \url{http://www.annualreviews.org/page/authors/author-instructions/preparing/latex}. \\
-% 
+%
 % \noindent
 % Please see the Style Guide document for instructions on preparing your Literature Cited.
-% 
-% The citations should be listed in alphabetical order, with titles. For example: 
-% 
-% 
-% 
-% 
-% 
-% 
+%
+% The citations should be listed in alphabetical order, with titles. For example:
+%
+%
+%
+%
+%
+%
 % \begin{verbatim}
 % \begin{thebibliography}{00}
 % \bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
 % Acevedo O, Fitzjarrald D. 2001.
 % The early evening surface-layer transition: temporal and spatial variability.
 % \textit{J. Atmos. Sci.} 58:2650--67
-% 
+%
 % \bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
 %   Campos]{Acevedo:09}
 % Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
 % Is friction velocity the most appropriate scale for correcting nocturnal carbon
 %   dioxide fluxes?
 % \textit{Agric. For. Meteorol.} 149:1--10
-% 
+%
 % \bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
 % Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
 % Exploring self-correlation in the flux-gradient relationships for stably
 %   stratified conditions.
 % \textit{J. Atmos. Sci.} 63:3045--54
-% 
+%
 % \bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
 % Badran F, Thiria S, Crepon M. 1991.
 % Wind ambiguity removal by the use of neural network techniques.
 % \textit{J. Geophys. Res.} 96:20,521--29
-% 
+%
 % \bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
 % Bakas NA, Ioannou PJ. 2007.
 % Momentum and energy transport by gravity waves in stochastically driven
 %   stratified flows. {Part I}: radiation of gravity waves from a shear layer.
 % \textit{J. Atmos. Sci.} 64:1509--29
-% 
+%
 % \bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
 % Calanca P, Forrer J, Rotach M. 1998.
 % Toward an integral formulation of the turbulent transfer in a stably stratified
 %   boundary layer over an ice sheet.
 % \textit{Q. J. R. Meteorol. Soc.} 124:1--18
-% 
+%
 % \bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
 % D'Asaro EA, Lien RC. 2000.
 % The wave-turbulence transition for stratified flows.
 % \textit{J. Phys. Oceanog.} 30:123--45
-% 
+%
 % \bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
 % de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
 % Evolution of kelvin-helmholtz billows in nature and laboratory.
 % \textit{Earth Planetary Sci. Let.} 143:217--31
-% 
-% 
+%
+%
 % \end{thebibliography}
 % \end{verbatim}
-% 
-% 
-% 
-% 
+%
+%
+%
+%
 % \begin{thebibliography}{00}
-% 
+%
 % \bibitem[Acevedo \& Fitzjarrald(2001)]{Acevedo:01}
 % Acevedo O, Fitzjarrald D. 2001.
 % The early evening surface-layer transition: temporal and spatial variability.
 % \textit{J. Atmos. Sci.} 58:2650--67
-% 
+%
 % \bibitem[Acevedo et~al.(2009)Acevedo, Moraes, Degrazia, Fitzjarrald, Manzi \&
 %   Campos]{Acevedo:09}
 % Acevedo O, Moraes O, Degrazia G, Fitzjarrald D, Manzi A, Campos J. 2009.
 % Is friction velocity the most appropriate scale for correcting nocturnal carbon
 %   dioxide fluxes?
 % \textit{Agric. For. Meteorol.} 149:1--10
-% 
+%
 % \bibitem[Baas et~al.(2006)Baas, Steeneveld, {van de Weil} \& Holtslag]{Baas:09}
 % Baas P, Steeneveld G, {van de Weil} B, Holtslag A. 2006.
 % Exploring self-correlation in the flux-gradient relationships for stably
 %   stratified conditions.
 % \textit{J. Atmos. Sci.} 63:3045--54
-% 
+%
 % \bibitem[Badran, Thiria \& Crepon(1991)]{Badran:91}
 % Badran F, Thiria S, Crepon M. 1991.
 % Wind ambiguity removal by the use of neural network techniques.
 % \textit{J. Geophys. Res.} 96:20,521--29
-% 
+%
 % \bibitem[Bakas \& Ioannou(2007)]{Bakas:07}
 % Bakas NA, Ioannou PJ. 2007.
 % Momentum and energy transport by gravity waves in stochastically driven
 %   stratified flows. {Part I}: radiation of gravity waves from a shear layer.
 % \textit{J. Atmos. Sci.} 64:1509--29
-% 
+%
 % \bibitem[Calanca, Forrer \& Rotach(1998)]{Calanca:98}
 % Calanca P, Forrer J, Rotach M. 1998.
 % Toward an integral formulation of the turbulent transfer in a stably stratified
 %   boundary layer over an ice sheet.
 % \textit{Q. J. R. Meteorol. Soc.} 124:1--18
-% 
+%
 % \bibitem[D'Asaro \& Lien(2000)]{DAsaro:00}
 % D'Asaro EA, Lien RC. 2000.
 % The wave-turbulence transition for stratified flows.
 % \textit{J. Phys. Oceanog.} 30:123--45
-% 
+%
 % \bibitem[de~Silva et~al.(1996)de~Silva, Fernando, Eaton \& Hebert]{deSilva:96}
 % de~Silva I, Fernando H, Eaton F, Hebert D. 1996.
 % Evolution of kelvin-helmholtz billows in nature and laboratory.
 % \textit{Earth Planetary Sci. Let.} 143:217--31
-% 
-% 
-% 
+%
+%
+%
 % \end{thebibliography}
