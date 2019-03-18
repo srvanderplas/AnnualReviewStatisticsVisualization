@@ -126,7 +126,9 @@ In this section, we will distinguish between explicitly structured graphical tes
 % Heading 2
 \subsection{Explicitly Structured Graphical Tests} % 3-4 pages
 % We will briefly discuss experiments involving preattentive graph perception (1 page), but the remainder of the section will be devoted to attention-mediated testing methods, including numerical estimation (1 page), interactive adjustment (0.5 pages), think-aloud protocols (0.5 pages), and eye tracking (0.5 pages).
-During the perceptual process, information from a visual scene is processed by the brain, with information extracted at many different levels of the cognitive process. Preattentive perceptual effects are those which do not require sustained cognitive attention; they are processed automatically within the first 500 milliseconds of viewing a chart or graph. 
+
+During the perceptual process, information from a visual scene is processed by the brain, with information extracted at many different levels of the cognitive process. Preattentive perceptual effects are those which do not require sustained cognitive attention; they are processed automatically within the first 500 milliseconds of viewing a chart or graph. Components processed preattentively include color and shape, as well as some basic information about coarse relationships between individual components. After the preattentive stage, attention is necessary for subsequent processing; this directed attention scaffolds relationships between components and helps us interpret the chart or graph in context. Most of the insights we gain from charts and graphs occur due to the cognitive processes that occur after attention is focused on specific aspects of the graph; as a result, most of the testing methods we will discuss are focused on this portion of the perceptual process.
+
 \subsubsection{Preattentive Graph Perception} % 1 page
 \lipsum
 
