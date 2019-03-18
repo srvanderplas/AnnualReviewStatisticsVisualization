@@ -130,7 +130,16 @@ In this section, we will distinguish between explicitly structured graphical tes
 During the perceptual process, information from a visual scene is processed by the brain, with information extracted at many different levels of the cognitive process. Preattentive perceptual effects are those which do not require sustained cognitive attention; they are processed automatically within the first 500 milliseconds of viewing a chart or graph. Components processed preattentively include color and shape, as well as some basic information about coarse relationships between individual components. After the preattentive stage, attention is necessary for subsequent processing; this directed attention scaffolds relationships between components and helps us interpret the chart or graph in context. Most of the insights we gain from charts and graphs occur due to the cognitive processes that occur after attention is focused on specific aspects of the graph; as a result, most of the testing methods we will discuss are focused on this portion of the perceptual process.
 
 \subsubsection{Preattentive Graph Perception} % 1 page
-\lipsum
+
+Initial research into preattentive perception used a search task, where participants had to identify a particular object in a field of distractors, manipulating display size and varying one or more features such as color or shape; participants' search times were measured to determine the amount of effort necessary to complete the search task. Preattentively perceived features showed a near constant reaction time over increasing display size, while features which are processed attentively show an increasing reaction time with increased display size \citep{treismanFeatureIntegrationTheoryAttention1980}. A primary question in the discussion of preattentive graph perception is whether there are advantages in designing a graph to promote the preattentive perception of features, ideally, reducing cognitive load.
+
+We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design is much simpler. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}.
+
+<<hue-brightness-array>>=
+# Callaghan 1984
+@
+
+
 
 \subsubsection{Attention Mediated Testing Methods}
 \paragraph{Numerical Estimation} % 1 page
