@@ -35,3 +35,15 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 .Rproj.user
+
+# Latex
+*.bbl
+*.dvi
+*.log
+*.synctex.gz
+*.tex
+*.toc
+
+# Rmarkdown
+*.html
+Outline.pdf
