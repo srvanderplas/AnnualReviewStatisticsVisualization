@@ -24,7 +24,7 @@ opts_chunk$set(echo = F, include = F)
 \usepackage{lipsum}
 
 \usepackage{graphicx}
-\usepackage{caption}
+\usepackage[hypcap=false]{caption}
 \usepackage{hyperref}
 
 % \usepackage{xcolor}
