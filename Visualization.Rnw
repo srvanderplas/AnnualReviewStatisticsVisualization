@@ -60,7 +60,7 @@ opts_chunk$set(echo = F, include = F)
 %Abstract
 \begin{abstract}
 % Abstract text, approximately 150 words.
-\lipsum[3-4]
+\lipsum[3]
 \end{abstract}
 
 %Keywords, etc.
