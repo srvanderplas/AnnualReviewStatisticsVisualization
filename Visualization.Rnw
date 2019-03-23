@@ -244,6 +244,9 @@ Eye tracking and thinking aloud are not always used with explicit graphical test
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
 
+\subsection{Types of Charts}
+
+\subsection{Chart Aesthetics}
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
