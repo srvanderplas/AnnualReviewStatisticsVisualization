@@ -115,9 +115,9 @@ In any case, it is useful to consider a continuum from utilitarianism to artistr
 \begin{minipage}{.475\textwidth}
 \centering
 \includegraphics[width=\textwidth]{figure/HRDiagram.png}
-\captionof{figure}{The Hertzsprung-Russell diagram, which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
 \end{minipage}\hfill
 \begin{minipage}{.475\textwidth}
+\captionof{figure}{The Hertzsprung-Russell diagram, which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
 \end{minipage}
 
 
