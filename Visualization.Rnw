@@ -99,8 +99,6 @@ As new charts were invented to represent data differently and highlight features
 
 Eventually, calls for experimental validation of the perception of statistical charts were heeded, though at first the experiments were fraught with methodological issues \citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, but eventually cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. In most cases, this testing has been limited to simple reading of information off of provided charts, with participants assessed on accuracy or response time; very little work has been done to understand the effect of charts and graphs on higher cognitive processes such as learning or analysis\citep{greenPersonalEquationComplex2011}.
 
-In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson2012grammar}.\todo{more here}
-
 \subsection{Approaches to Graphical Design}
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
 
@@ -123,6 +121,8 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 
 \subsection{The Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
+
+In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}.  \todo{more here}
 
 
 \section{TESTING METHODS} % 8 pages
