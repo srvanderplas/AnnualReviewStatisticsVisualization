@@ -20,8 +20,8 @@ opts_chunk$set(echo = F, include = F)
 \bibliographystyle{ar-style1}
 
 \setcounter{secnumdepth}{4}
-
-\usepackage{lipsum}
+\usepackage{fullpage}
+% \usepackage{lipsum}
 
 \usepackage{graphicx}
 \usepackage[hypcap=false]{caption}
@@ -60,7 +60,7 @@ opts_chunk$set(echo = F, include = F)
 %Abstract
 \begin{abstract}
 % Abstract text, approximately 150 words.
-\lipsum[3]
+% \lipsum[3]
 \end{abstract}
 
 %Keywords, etc.
@@ -122,7 +122,61 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \subsection{The Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
-In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}.  \todo{more here}
+In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations (typologies, in \citet{wilkinson1999grammar}) generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The assessment of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations while maintaining the same underlying data structure. Implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
+
+<<ggsetup, include = F, echo = F>>=
+data(iris)
+library(ggplot2)
+theme_set(theme_bw())
+@
+<<gg-plots-figs, echo =F, eval = T, fig.width = 4, fig.height = 2>>=
+# Density plot
+ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+  geom_density(position = "stack")
+
+# Dotplot
+ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+  geom_dotplot(method = 'histodot', stackgroups = TRUE)
+
+
+# Histogram
+ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+  geom_histogram(position = "stack")
+@
+\begin{minipage}{.495\textwidth}
+<<gg-plots, include = T, echo = T, eval = F, fig.width = 4, fig.height = 2>>=
+# Density plot
+ggplot(data = iris,
+       aes(x = Sepal.Width,
+           group = Species,
+           fill = Species)) +
+  geom_density(position = "stack")
+
+# Dotplot
+ggplot(data = iris,
+       aes(x = Sepal.Width,
+           group = Species,
+           fill = Species)) +
+  geom_dotplot(method = 'histodot',
+               stackgroups = TRUE)
+
+
+# Histogram
+ggplot(data = iris,
+       aes(x = Sepal.Width,
+           group = Species,
+           fill = Species)) +
+  geom_histogram(position = "stack")
+@
+\end{minipage}
+\begin{minipage}{.495\textwidth}\centering
+\includegraphics[width=\textwidth]{figure/gg-plots-1}\\
+\includegraphics[width=\textwidth]{figure/gg-plots-2}\\
+\includegraphics[width=\textwidth]{figure/gg-plots-3}
+\captionof{figure}{Three different plots of iris data, created using the grammar of graphics as implemented in \texttt{ggplot2}.}\label{fig:grammar-graphics-plots}
+\end{minipage}
+% \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
+
 
 
 \section{TESTING METHODS} % 8 pages
@@ -243,7 +297,7 @@ Many studies use a combination of the explicitly structured graphical tests disc
 \subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
 % This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set.
 
-Eye tracking and thinking aloud are not always used with explicit graphical tests; they can also be used with implicit tests \citep{zhaoMindReadingUsing2013}, that is, tests which require the participant to determine the relevant characteristics under examination before evaluating a series of charts using the identified characteristic. Implicit tests provide a way to explicitly compare graphical designs, extending statistical inference to a visual domain\citep{bujaStatisticalInferenceExploratory2009}.
+Eye tracking and thinking aloud are not always used with explicit graphical tests; they can also be used with implicit tests \citep{zhaoMindReadingUsing2013}, that is, tests which require the participant to determine the relevant characteristics under examination before evaluating a series of charts using the identified characteristic. Implicit tests provide a convenient way to compare graphical designs, extending statistical inference to a visual domain\citep{bujaStatisticalInferenceExploratory2009}.
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
