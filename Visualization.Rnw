@@ -13,7 +13,9 @@
 library(tidyverse)
 library(RColorBrewer)
 library(knitr)
+library(nullabor)
 opts_chunk$set(echo = F, include = F)
+theme_set(theme_bw())
 @
 
 \usepackage[comma]{natbib}
@@ -122,7 +124,15 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \subsection{The Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
-In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations (typologies, in \citet{wilkinson1999grammar}) generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The assessment of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations while maintaining the same underlying data structure. Implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
+In parallel with efforts to understand the perception of charts, there have been many attempts to develop a system for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations (typologies, in \citet{wilkinson1999grammar}) generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. \autoref{fig:grammar-graphics-flowchart} shows the framework of the grammar of graphics, where the data is filtered, variables are mapped, transformations are specified, and then finally, transformed data are linked with plot aesthetics and coordinate system specifications to produce a graphical representation of the data. Full or partial implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{figure/grammar-graphics-flowchart}
+\caption{From data to graphic, from \citep[Fig 2.1]{wilkinson1999grammar}. The schematic representation of the steps required to create a graphic from a dataset, which can be used to specify the variable mapping, data transformations, coordinate system, and aesthetic features independently.}\label{fig:grammar-graphics-flowchart}
+\end{figure}
+
+Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the ggplot2 code to create the plots \footnote{These plots are terrible from a psychological perspective, but serve to illustrate the versatility of the grammar of graphics. In general, stacked density plots, histograms, and dot plots are bad for making numerical comparisons \citep{cleveland_graphical_1985}.}. Comparing these graphics experimentally would be reasonably simple, and the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, the grammar of graphics approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
 
 <<ggsetup, include = F, echo = F>>=
 data(iris)
@@ -143,15 +153,22 @@ ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
 ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
   geom_histogram(position = "stack")
 @
+\begin{figure}
 \begin{minipage}{.495\textwidth}
-<<gg-plots, include = T, echo = T, eval = F, fig.width = 4, fig.height = 2>>=
+<<gg-plots-a, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Density plot
 ggplot(data = iris,
        aes(x = Sepal.Width,
            group = Species,
            fill = Species)) +
   geom_density(position = "stack")
-
+@
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\includegraphics[width=.99\textwidth]{figure/gg-plots-figs-1}
+\end{minipage}\\
+\begin{minipage}{.495\textwidth}
+<<gg-plots-b, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Dotplot
 ggplot(data = iris,
        aes(x = Sepal.Width,
@@ -160,7 +177,13 @@ ggplot(data = iris,
   geom_dotplot(method = 'histodot',
                stackgroups = TRUE)
 
-
+@
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\includegraphics[width=.99\textwidth]{figure/gg-plots-figs-2}
+\end{minipage}\\
+\begin{minipage}{.495\textwidth}
+<<gg-plots-c, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Histogram
 ggplot(data = iris,
        aes(x = Sepal.Width,
@@ -168,16 +191,15 @@ ggplot(data = iris,
            fill = Species)) +
   geom_histogram(position = "stack")
 @
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\includegraphics[width=.99\textwidth]{figure/gg-plots-figs-3}
 \end{minipage}
-\begin{minipage}{.495\textwidth}\centering
-\includegraphics[width=\textwidth]{figure/gg-plots-1}\\
-\includegraphics[width=\textwidth]{figure/gg-plots-2}\\
-\includegraphics[width=\textwidth]{figure/gg-plots-3}
-\captionof{figure}{Three different plots of iris data, created using the grammar of graphics as implemented in \texttt{ggplot2}.}\label{fig:grammar-graphics-plots}
-\end{minipage}
+\caption{Three different plots of iris data, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
+\end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
-
+\svp{Still need another page of content here...}
 
 \section{TESTING METHODS} % 8 pages
 % In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli.
@@ -251,14 +273,15 @@ ggplot(data = all_dat) +
         plot.margin = grid::unit(c(0,0,0,0), "mm"))
 @
 
-\noindent\begin{minipage}[c]{.575\textwidth}
+\noindent\begin{figure}
+\begin{minipage}[c]{.575\textwidth}
 \centering
 \includegraphics[width=\textwidth]{figure/hue-brightness-array-1}
 \end{minipage}\hfill
 \begin{minipage}[c]{.4\textwidth}
-\captionof{figure}{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived.}\label{fig:hue-brightness-array}
+\caption{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived.}\label{fig:hue-brightness-array}
 \end{minipage}
-
+\end{figure}
 We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design does not involve any display of actual data. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}. Other preattentively processed features include shape, angle, size, and texture; however, typically, combinations of preattentive features which represent separate features in the data are processed attentively.
 
 Extending this work, \citet{healeyHighspeedVisualEstimation1996} has used the same segmentation paradigm, applied to more complex charts utilizing actual data, with the goal of exploring region segmentation using preattentive cues. Healey's experiments use multivariate displays, leveraging the preattentive grouping of similar objects to separately represent features using color, height, and texture\citep{healeyLargeDatasetsGlance1999}. While these displays may not follow best graphical practice in other respects, % sorry, can't resist
@@ -297,7 +320,37 @@ Many studies use a combination of the explicitly structured graphical tests disc
 \subsection{Implicit Graphical Tests Using Visual Inference} % 4-5 pages
 % This portion of the section will examine the use of visual inference methods. Visual inference quantifies the significance of a visual finding, sidesteps many of the generalizability issues seen in the explicit tests discussed in the previous section, and leverages the natural power of the human visual system. We will also explore the power of visual inference combined with the grammar of graphics, as well as novel uses of visual inference to examine the effect of specific features of the data set.
 
-Eye tracking and thinking aloud are not always used with explicit graphical tests; they can also be used with implicit tests \citep{zhaoMindReadingUsing2013}, that is, tests which require the participant to determine the relevant characteristics under examination before evaluating a series of charts using the identified characteristic. Implicit tests provide a convenient way to compare graphical designs, extending statistical inference to a visual domain\citep{bujaStatisticalInferenceExploratory2009}.
+% Eye tracking and thinking aloud are not always used with explicit graphical tests; they can also be used with implicit tests \citep{zhaoMindReadingUsing2013}, that is, tests which require the participant to determine the relevant characteristics under examination before evaluating a series of charts using the identified characteristic. Implicit tests provide a convenient way to compare graphical designs, extending statistical inference to a visual domain\citep{bujaStatisticalInferenceExploratory2009}.
+
+Explicit graphical tests, as we have referred to them, are tests where the user is directed to assess a specific feature of a plot or answer a specific question. That is, the tested hypothesis is explicitly stated, providing the user with cues to the intended purpose and function of the plot and/or the relevant features of the data shown within the plot. In contrast, in an implicit graphical test, the user is asked to identify both the purpose and function of the plot and to use that information to evaluate the plots as shown. Typically, these tests are structured as visual inference problems, as introduced in \citep{bujaStatisticalInferenceExploratory2009}. Explicit tests are typically conducted on plots which have been created to showcase specific structure in the data in order to present results; in contrast, implicit tests are designed to inform exploratory data analysis \citep[as advocated by][]{tukeyTechnicalToolsStatistics1965} and the iterative model diagnostic process. During EDA, statisticians typically examine many different plots while considering different aspects of the data, selecting only those results which are visually interesting for further exploration. This introduces a visual analogue of a multiple testing problem - how do we ensure that the `visually interesting' plots selected show actual signal and do not arise by chance? A plot is a visual test statistic, that is, a summary of the data; if the plot generated is significantly different in some way from plots of similar data which arise under the null hypothesis, then it would be more likely to be selected from a group. \autoref{fig:lineup-demo} demonstrates this process, which is referred to as a \emph{statistical lineup}.
+
+\begin{figure}
+\begin{minipage}{.3\textwidth}
+<<lineup-setup, fig.width = 3, fig.height = 3, out.width = "\\textwidth", include = T, echo = F>>=
+set.seed(4209510)
+x <- jitter(seq(0, 1, length.out = 50))
+y <- rnorm(n = length(x), mean = x, sd = .3)
+y <- (y - min(y))/(max(y) - min(y))
+df <- tibble(x = x, y = y)
+qplot(x = x, y = y) +
+  coord_fixed() +
+  theme(axis.text = element_blank(), axis.title = element_blank()) +
+  ggtitle("Original Data")
+@
+\end{minipage}
+\begin{minipage}[c]{.69\textwidth}
+<<lineup-creation, fig.width = 10, fig.height = 8, out.width = "\\textwidth", include = T, echo = F>>=
+lineup(null_permute("y"), df, pos = 9) %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_point() +
+  facet_wrap(~.sample) +
+  coord_fixed() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), plot.title = element_text(size = 20)) +
+  ggtitle("Plot Lineup")
+@
+\end{minipage}
+\caption{The original data (left) is embedded into a set of 19 generated under the null hypothesis. A visual hypothesis test is conducted by asking multiple users to select one (or more) plots which are different; a p-value can then be calculated from the answers. In this particular lineup, plot 9 contains the original data; the other plots are generated by randomizing the vector of y values as in a randomization test.}\label{fig:lineup-demo}
+\end{figure}
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
