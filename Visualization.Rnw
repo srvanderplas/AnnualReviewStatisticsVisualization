@@ -45,6 +45,7 @@ theme_set(theme_bw())
 
 % Document starts
 \begin{document}
+%\SweaveOpts{concordance=TRUE}
 
 % Page header
 \markboth{Author et al.}{Testing Statistical Charts}
@@ -132,35 +133,36 @@ In parallel with efforts to understand the perception of charts, there have been
 \caption{From data to graphic, from \citep[Fig 2.1]{wilkinson1999grammar}. The schematic representation of the steps required to create a graphic from a dataset, which can be used to specify the variable mapping, data transformations, coordinate system, and aesthetic features independently.}\label{fig:grammar-graphics-flowchart}
 \end{figure}
 
-Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the ggplot2 code to create the plots \footnote{These plots are terrible from a psychological perspective, but serve to illustrate the versatility of the grammar of graphics. In general, stacked density plots, histograms, and dot plots are bad for making numerical comparisons \citep{cleveland_graphical_1985}.}. Comparing these graphics experimentally would be reasonably simple, and the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, the grammar of graphics approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
+Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the `ggplot2` code to create the plots \footnote{These plots are terrible from a psychological perspective, but serve to illustrate the versatility of the grammar of graphics. In general, stacked density plots, histograms, and dot plots are bad for making numerical comparisons \citep{cleveland_graphical_1985}.}. Comparing these graphics experimentally would be reasonably simple, and the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, the grammar of graphics approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
 
 <<ggsetup, include = F, echo = F>>=
-data(iris)
+data(banknote, package="alr3")
+banknote$Type <- factor(c("genuine", "counterfeit")[banknote$Y+1])
 library(ggplot2)
 theme_set(theme_bw())
 @
 <<gg-plots-figs, echo =F, eval = T, fig.width = 4, fig.height = 2>>=
 # Density plot
-ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
   geom_density(position = "stack")
 
 # Dotplot
-ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
   geom_dotplot(method = 'histodot', stackgroups = TRUE)
 
 
 # Histogram
-ggplot(data = iris, aes(x = Sepal.Width, group = Species, fill = Species)) +
+ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
   geom_histogram(position = "stack")
 @
 \begin{figure}
 \begin{minipage}{.495\textwidth}
 <<gg-plots-a, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Density plot
-ggplot(data = iris,
-       aes(x = Sepal.Width,
-           group = Species,
-           fill = Species)) +
+ggplot(data = banknote, 
+       aes(x = Diagonal, 
+           group = Type, 
+           fill = Type)) +
   geom_density(position = "stack")
 @
 \end{minipage}\hfill
@@ -170,13 +172,12 @@ ggplot(data = iris,
 \begin{minipage}{.495\textwidth}
 <<gg-plots-b, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Dotplot
-ggplot(data = iris,
-       aes(x = Sepal.Width,
-           group = Species,
-           fill = Species)) +
-  geom_dotplot(method = 'histodot',
+ggplot(data = banknote, 
+       aes(x = Diagonal, 
+           group = Type, 
+           fill = Type)) +
+  geom_dotplot(method = 'histodot', 
                stackgroups = TRUE)
-
 @
 \end{minipage}\hfill
 \begin{minipage}{.45\textwidth}
@@ -185,17 +186,17 @@ ggplot(data = iris,
 \begin{minipage}{.495\textwidth}
 <<gg-plots-c, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Histogram
-ggplot(data = iris,
-       aes(x = Sepal.Width,
-           group = Species,
-           fill = Species)) +
+ggplot(data = banknote, 
+       aes(x = Diagonal, 
+           group = Type, 
+           fill = Type)) +
   geom_histogram(position = "stack")
 @
 \end{minipage}\hfill
 \begin{minipage}{.45\textwidth}
 \includegraphics[width=.99\textwidth]{figure/gg-plots-figs-3}
 \end{minipage}
-\caption{Three different plots of iris data, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
+\caption{Three different plots of the Swiss banknote data \cite{banknote}, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
