@@ -159,9 +159,9 @@ ggplot(data = banknote, aes(x = Bottom, group = Type, fill = Type)) +
 \begin{minipage}{.495\textwidth}
 <<gg-plots-a, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Density plot
-ggplot(data = banknote, 
-       aes(x = Bottom, 
-           group = Type, 
+ggplot(data = banknote,
+       aes(x = Bottom,
+           group = Type,
            fill = Type)) +
   geom_density(position = "stack")
 @
@@ -172,11 +172,11 @@ ggplot(data = banknote,
 \begin{minipage}{.495\textwidth}
 <<gg-plots-b, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Dotplot
-ggplot(data = banknote, 
-       aes(x = Bottom, 
-           group = Type, 
+ggplot(data = banknote,
+       aes(x = Bottom,
+           group = Type,
            fill = Type)) +
-  geom_dotplot(method = 'histodot', 
+  geom_dotplot(method = 'histodot',
                stackgroups = TRUE)
 @
 \end{minipage}\hfill
@@ -186,9 +186,9 @@ ggplot(data = banknote,
 \begin{minipage}{.495\textwidth}
 <<gg-plots-c, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Histogram
-ggplot(data = banknote, 
-       aes(x = Bottom, 
-           group = Type, 
+ggplot(data = banknote,
+       aes(x = Bottom,
+           group = Type,
            fill = Type)) +
   geom_histogram(position = "stack")
 @
@@ -386,10 +386,15 @@ All of the user testing in the world cannot identify the ``best" possible graphi
 
 
 \subsection{Chart Aesthetics}
+two-target lineup study - aesthetics matter in the conclusions we draw from plots.
+
+Need to figure out how to cite follow up study - color palette choice doesn't really affect things too much in the specific context we chose.
+
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
 
+Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
 
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
