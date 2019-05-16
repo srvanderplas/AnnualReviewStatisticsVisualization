@@ -394,7 +394,7 @@ All of the user testing in the world cannot identify the ``best" possible graphi
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
-interactive graphics - \citet{plumbing}, \citet{pipeline}
+interactive graphics - \citet{plumbing}, \citet{pipeline}, \citet{cranvas}
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
