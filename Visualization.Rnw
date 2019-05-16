@@ -143,16 +143,16 @@ theme_set(theme_bw())
 @
 <<gg-plots-figs, echo =F, eval = T, fig.width = 4, fig.height = 2>>=
 # Density plot
-ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
+ggplot(data = banknote, aes(x = Bottom, group = Type, fill = Type)) +
   geom_density(position = "stack")
 
 # Dotplot
-ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
+ggplot(data = banknote, aes(x = Bottom, group = Type, fill = Type)) +
   geom_dotplot(method = 'histodot', stackgroups = TRUE)
 
 
 # Histogram
-ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
+ggplot(data = banknote, aes(x = Bottom, group = Type, fill = Type)) +
   geom_histogram(position = "stack")
 @
 \begin{figure}
@@ -160,7 +160,7 @@ ggplot(data = banknote, aes(x = Diagonal, group = Type, fill = Type)) +
 <<gg-plots-a, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Density plot
 ggplot(data = banknote, 
-       aes(x = Diagonal, 
+       aes(x = Bottom, 
            group = Type, 
            fill = Type)) +
   geom_density(position = "stack")
@@ -173,7 +173,7 @@ ggplot(data = banknote,
 <<gg-plots-b, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Dotplot
 ggplot(data = banknote, 
-       aes(x = Diagonal, 
+       aes(x = Bottom, 
            group = Type, 
            fill = Type)) +
   geom_dotplot(method = 'histodot', 
@@ -187,7 +187,7 @@ ggplot(data = banknote,
 <<gg-plots-c, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # Histogram
 ggplot(data = banknote, 
-       aes(x = Diagonal, 
+       aes(x = Bottom, 
            group = Type, 
            fill = Type)) +
   geom_histogram(position = "stack")
@@ -196,7 +196,7 @@ ggplot(data = banknote,
 \begin{minipage}{.45\textwidth}
 \includegraphics[width=.99\textwidth]{figure/gg-plots-figs-3}
 \end{minipage}
-\caption{Three different plots of the Swiss banknote data \cite{banknote}, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
+\caption{Three different plots of the Swiss banknote data \citep{banknote}, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
