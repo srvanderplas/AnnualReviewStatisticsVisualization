@@ -118,7 +118,7 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \includegraphics[width=\textwidth]{figure/HRDiagram.png}
 \end{minipage}\hfill
 \begin{minipage}{.475\textwidth}
-\captionof{figure}{The Hertzsprung-Russell diagram, which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
+\captionof{figure}{The Hertzsprung-Russell diagram (circa 1910), which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
 \end{minipage}
 
 
@@ -394,6 +394,7 @@ All of the user testing in the world cannot identify the ``best" possible graphi
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
+interactive graphics - \citet{plumbing}, \citet{pipeline}
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
