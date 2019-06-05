@@ -396,10 +396,28 @@ Need to figure out how to cite follow up study - color palette choice doesn't re
 
 Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
 
+
+\section{INTERACTIVE GRAPHICS}
+
+interactive graphics - \citet{plumbing}, \citet{pipeline}, \citet{cranvas}
+
+what is interactive graphics? linked brushing, immediacy of time and location
+
+
+recent interactive approaches - grammar of interactive graphics
+
+vegalite, 
+
+scripting interactive graphics - could be used for testing, Gabe Becker (trackr)
+
+incorporating interactivity into the workflow, no standalone interactive package
+
+
+
+
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
-interactive graphics - \citet{plumbing}, \citet{pipeline}, \citet{cranvas}
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
