@@ -412,8 +412,11 @@ scripting interactive graphics - could be used for testing, Gabe Becker (trackr)
 
 incorporating interactivity into the workflow, no standalone interactive package
 
+is the script  to describe the interactive chart readable?
 
+can we use scripting to precisely and concisely describe a user's action
 
+connecting graphics to knowledge ("fly over" versus meaningful plots that answer questions)
 
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
