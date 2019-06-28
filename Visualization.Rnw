@@ -151,7 +151,9 @@ ggplot(data = bday) +
 \subsection{Statistical Mapping Using a Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
-In parallel with efforts to understand the perception of charts, there have been many attempts to develop systems for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. \autoref{fig:grammar-graphics-flowchart} shows the framework of the grammar of graphics, where the data is filtered, variables are mapped, transformations are specified, and then finally, transformed data are linked with plot aesthetics and coordinate system specifications to produce a graphical representation of the data. Full or partial implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
+In parallel with efforts to understand the perception of charts, there have been many attempts to develop systems for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. An analogy to conceptualise the difference is that the former is like treating plots like creatures in a zoo, with a unique name for each, and the latter is analgous to having a phylogeny based on genetic data showing how plots are related.  
+
+\autoref{fig:grammar-graphics-flowchart} shows the framework of the grammar of graphics, where the data is filtered, variables are mapped, transformations are specified, and then finally, transformed data are linked with plot aesthetics and coordinate system specifications to produce an abstract visual representation of the data. Full or partial implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
 
 \begin{figure}
 \centering
@@ -159,7 +161,7 @@ In parallel with efforts to understand the perception of charts, there have been
 \caption{From data to graphic, from \citep[Fig 2.1]{wilkinson1999grammar}. The schematic representation of the steps required to create a graphic from a dataset, which can be used to specify the variable mapping, data transformations, coordinate system, and aesthetic features independently.}\label{fig:grammar-graphics-flowchart}
 \end{figure}
 
-Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the \texttt{ggplot2} code to create the plots. Comparing these graphics experimentally would be reasonably simple as the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, the grammar of graphics approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
+Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the \texttt{ggplot2} code to create the plots. Comparing these graphics experimentally would be reasonably simple as the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, this approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
 
 <<ggsetup, include = F, echo = F>>=
 data(banknote, package="alr3")
@@ -226,7 +228,17 @@ ggplot(data = banknote,
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
-\svp{Still need another page of content here...}
+The grammar of graphics also enables data plots to be considered to be statistics \citep{majumderValidationVisualStatistical2013}. A statistic is a functional mapping of a variable or set of variables. When data is organised in tidy form~\citep{Wickham:2017:RDS:3086927}:
+
+\begin{enumerate}
+\item Each variable must have its own column.
+\item Each observation must have its own row.
+\item Each value must have its own cell.
+\end{enumerate}
+
+\noindent Variables, as columns in the data table, are then mapped to graphical elements, such as the $x$ axis, or $y$ axis, or to colour, shape or even facet, using the grammar. The data plot can then be treated like other statistics, by imagining what might the plot look like if there really is no structure. One can use statistics to test for the likelihood of perceived structure being significant.
+
+%\svp{Still need another page of content here...}
 
 \section{TESTING METHODS} % 8 pages
 % In this section, we will examine the methods which are used for testing statistical graphics experimentally. We will divide this discussion into two main sections: explicitly structured tests, where the experimenter must ask specific questions about the content of the charts and graphs under examination, and implicitly structured tests, where the participant must identify questions of interest from the provided stimuli.
