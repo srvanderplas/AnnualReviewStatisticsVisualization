@@ -416,25 +416,38 @@ In the ten years since the introduction of the lineup protocol, many studies hav
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
 
-All of the user testing in the world cannot identify the ``best" possible graphic -- we can instead only experimentally assess which graphical designs are better for a specific purpose. This can lead to a rather fragmented approach when describing ``best practice", and so in order to avoid this, we will start from the principle of ``First, do no harm" from the Hippocratic oath.
-
-\subsection{Types of Charts}
-
-
-
-\subsection{Chart Aesthetics}
-two-target lineup study - aesthetics matter in the conclusions we draw from plots.
-
-Need to figure out how to cite follow up study - color palette choice doesn't really affect things too much in the specific context we chose.
+All of the user testing in the world cannot identify the ``best" possible graphic -- we can instead only experimentally assess which graphical designs are better for a specific purpose. This can lead to a rather fragmented approach when describing ``best practice", and so in order to avoid this, we will examine graphical practice using the principle of ``First, do no harm" from the Hippocratic oath.
 
 \subsection{Cognitive Principles}
 
-A useful starting point is to apply Gestalt principles of visual perception (e.g. \cite{gestalt1}, \cite{gestalt2}), for example, figure-ground, similarity, proximity, common fate, continuity, closure, to data plots. Several of these are discussed here.
-
+A useful starting point is to apply Gestalt principles of visual perception \citep{gestalt1,gestalt2}, such as proximity, similarity, common region, common fate, continuity, and closure, to data plots. These principles are useful because good graphics take advantage of the human visual system's ability to process large amounts of visual information with relatively little effort. Understanding the principles which underlie this processing allows us to create charts which require less cognitive effort to read, freeing us to think about the content, rather than the form of the chart.
 
 \subsubsection{Proximity}
 
 The principle is `objects or shapes that are close to one another appear to form groups'. For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{fig:proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are {\em facetted by age}, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB. Conversely, when plots are {\em facetted by gender}, it means that the distribution of counts on age is easier to examine. We would learn that the age distribution of TB incidence for females skews heavily towards younger women. For males, TB incidence is more uniform across ages because there are high counts at young, old and middle age categories. Effectively utilizing proximity in organising plots, makes a huge difference in ease of information communication.
+
+<<tb-setup>>=
+
+tb <- read_csv("data/TB_notifications_2018-03-18.csv") %>%
+  select(country, iso3, year, new_sp_m04:new_sp_fu) %>%
+  gather(stuff, count, new_sp_m04:new_sp_fu) %>%
+  separate(stuff, c("stuff1", "stuff2", "genderage")) %>%
+  select(-stuff1, -stuff2) %>%
+  mutate(gender=substr(genderage, 1, 1),
+         age=substr(genderage, 2, length(genderage))) %>%
+  select(-genderage)
+
+tb_au <- tb %>%
+  filter(country == "Australia") %>%
+  filter(!(age %in% c("04", "014", "514", "u"))) %>%
+  filter(year > 1996, year < 2013)
+
+tb_au_12 <- tb %>%
+  filter(country == "Australia") %>%
+  filter(!(age %in% c("04", "014", "514", "u"))) %>%
+  filter(year == 2012) %>%
+  mutate(age = str_replace_all(age, c("1524" = "15-24", "2534" = "25-34", "3544" = "35-44", "4554" = "45-54", "5564" = "55-64", "65" = "65+")))
+@
 
 \begin{figure}
 \begin{minipage}{.345\textwidth}
@@ -467,8 +480,13 @@ ggplot(tb_au_12,
 \end{minipage}\\
 \caption{Two different arrangements of the same data, to illustrate how the proximity of elements makes a question easier to answer. }\label{fig:proximity}
 \end{figure}
+\subsubsection{Similarity}
+The gestalt principle of similarity suggests that we group things which have similar appearance and exclude objects which have a different appearance. In charts, this principle is often leveraged by coloring points or bars according to a categorical variable, or by using points of different shapes to represent different categories. \citet{vanderplasClustersBeatTrend2017} showed that the addition of color and shape to a scatterplot increases the likelihood that individuals will perceive clustered groups of points. In \autoref{fig:proximity}, the coloring of bars allows us to easily see that the similarly colored rectangles represent the same group of people, even though the bars are separated by facets and other groups. % I don't want to bother with another plot for similarity if we can avoid it
 
-\subsection{Common fate and synchrony}
+\subsubsection{Common Region}
+The gestalt principle of common region suggests that elements contained within a common region belong together. Common region helps us to easily read small multiple plots, because the graphical elements of each small plot are grouped into a single entity that can be examined on its own. In addition, confidence bands and bounding ellipses also activate this gestalt principle by grouping points within the boundaries together \citep{vanderplasClustersBeatTrend2017}, highlighting the presence of outliers which do not belong to the main group.
+
+\subsubsection{Common fate and synchrony}
 
 Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
 
@@ -479,6 +497,15 @@ Facetting:
 Animation: the importance of using fades, or even the full data faintly in background.
 
 Is this maybe lack of persistence of memory than change blindness? The Healey videos might call this change blindness.
+
+\subsection{Types of Charts}
+
+
+
+\subsection{Chart Aesthetics}
+two-target lineup study - aesthetics matter in the conclusions we draw from plots.
+
+Need to figure out how to cite follow up study - color palette choice doesn't really affect things too much in the specific context we chose.
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
