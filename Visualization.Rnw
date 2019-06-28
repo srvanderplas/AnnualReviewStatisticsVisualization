@@ -103,7 +103,7 @@ As new charts were invented to represent data differently and highlight features
 
 Calls for experimental validation of the perception of statistical charts were heeded, though, at first the experiments were fraught with methodological issues~\citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, until cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots~\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. In most cases, this testing has been limited to simply reading information from the charts, using accuracy or response time measurement. Very little work has been done to understand the effect of charts and graphs on higher cognitive processes such as learning or analysis~\citep{greenPersonalEquationComplex2011}.
 
-\subsection{Approaches to Graphical Design}
+\subsection{Statistical Graphical Design}
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
 
 
@@ -123,7 +123,7 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \end{minipage}
 
 
-\subsection{The Grammar of Graphics}
+\subsection{Statistical Mapping Using a Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
 In parallel with efforts to understand the perception of charts, there have been many attempts to develop systems for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. \autoref{fig:grammar-graphics-flowchart} shows the framework of the grammar of graphics, where the data is filtered, variables are mapped, transformations are specified, and then finally, transformed data are linked with plot aesthetics and coordinate system specifications to produce a graphical representation of the data. Full or partial implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
@@ -377,9 +377,7 @@ Statistical lineups have been used experimentally to examine single plot types i
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
 
-All of the user testing in the world cannot identify the ``best" possible graphic; we can instead only experimentally assess which graphical designs are better for a specific purpose. This can lead to a rather fragmented approach when describing ``best practice", and so in order to avoid this, we will start from the principle of ``First, do no harm" from the Hippocratic oath.
-
-
+All of the user testing in the world cannot identify the ``best" possible graphic -- we can instead only experimentally assess which graphical designs are better for a specific purpose. This can lead to a rather fragmented approach when describing ``best practice", and so in order to avoid this, we will start from the principle of ``First, do no harm" from the Hippocratic oath.
 
 
 \subsection{Types of Charts}
@@ -390,6 +388,46 @@ All of the user testing in the world cannot identify the ``best" possible graphi
 two-target lineup study - aesthetics matter in the conclusions we draw from plots.
 
 Need to figure out how to cite follow up study - color palette choice doesn't really affect things too much in the specific context we chose.
+
+\subsection{Cognitive Principles}
+
+
+\subsubsection{Proximity}
+
+\begin{figure}
+\begin{minipage}{.395\textwidth}
+<<tb-plots-1, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
+# gender in age
+ggplot(tb_au_12, 
+       aes(x = gender, 
+           y = count, 
+           fill = gender)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~ age)
+@
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+\includegraphics[width=.99\textwidth]{figure/tb_plot1}
+\end{minipage}\\
+\begin{minipage}{.395\textwidth}
+<<tb-plots-2, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
+# age in gender
+ggplot(tb_au_12, 
+       aes(x = age, 
+           y = count, 
+           fill = age)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~ gender)
+@
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+\includegraphics[width=.99\textwidth]{figure/tb_plot2}
+\end{minipage}\\
+\caption{Two different arrangements of the same data, to illustrate how the proximity of elements makes a question easier to answer. }\label{fig:proximity}
+\end{figure}
+
+\subsubsection{Change blindness}
+
 
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
