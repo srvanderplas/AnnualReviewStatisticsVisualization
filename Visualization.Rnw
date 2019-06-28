@@ -125,12 +125,12 @@ Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illu
 
 \begin{minipage}{.45\textwidth}
 \centering
-\includegraphics[width=\textwidth]{figure/HRDiagram.png}
+\includegraphics[width=.98\textwidth]{figure/HRDiagram.png}
 \captionof{figure}{The Hertzsprung-Russell diagram (circa 1910), which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star.}\label{fig:hrdiagram}
 \end{minipage}\hfill
 \begin{minipage}{.45\textwidth}
 \centering
-\includegraphics[width=\textwidth]{figure/noaa_michael.png}
+\includegraphics[width=.98\textwidth]{figure/noaa_michael.png}
 \captionof{figure}{Hurricane forecast map issued on October 9, 2018, shortly before Hurricane Michael made landfall in the Florida panhandle. The predicted hurricane path, wind field size, and coastal weather status allow consumers to make educated decisions about evacuation orders.}\label{fig:noaa-michael}
 \end{minipage}
 
