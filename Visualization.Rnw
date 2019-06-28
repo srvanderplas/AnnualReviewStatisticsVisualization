@@ -495,17 +495,18 @@ The gestalt principle of similarity suggests that we group things which have sim
 The gestalt principle of common region suggests that elements contained within a common region belong together. Common region helps us to easily read small multiple plots, because the graphical elements of each small plot are grouped into a single entity that can be examined on its own. In addition, confidence bands and bounding ellipses also activate this gestalt principle by grouping points within the boundaries together \citep{vanderplasClustersBeatTrend2017}, highlighting the presence of outliers which do not belong to the main group.
 
 \subsubsection{Common fate}
-The gestalt principle of common fate describes the tendency to group objects which are moving in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provides experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
+The gestalt principle of common fate describes the tendency to group objects which are moving in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Figure \ref{fig:commonfate} shows an example. Four examples are displayed as overlaid time series (top), and another four are shown as scatterplots (bottom). In the time series, plot 4 is likely perceived as having stronger association than plot 3, due to the lines moving roughly in a similar pattern. Strong negative association is not easily detected from overlaid line plots, but is reaily seen in a scatterplot~\citep{tomasetti}. If negative association is suspected, either using a scatterplot, or inverting one series are suggested. 
 
-\todo{need a plot for this}
 \begin{figure}
 \includegraphics[width=.99\textwidth]{figure/common_fate1.pdf}
-\includegraphics[width=.99\textwidth]{figure/common_fate2.pdf}
-\label{fig:commonfate}
-\caption{Four examples of pairs of time series displayed as line plots (top) and scatterplots (bottom). Perception of correlation in overlaid line plots is an example where common fate may dominate. In these four examples of line plots, viewers will likely say that plot 4 has the most similar series, but it is actually plot 3, with strong negative correlation between the two series. A scatterplot clearly shows the negative association. }
+\includegraphics[width=.80\textwidth]{figure/common_fate2.pdf}
+\caption{Four examples of pairs of time series displayed as line plots (top) and scatterplots (bottom). Perception of correlation in overlaid line plots is an example where common fate may dominate. In these four examples of line plots, viewers will likely say that plot 4 has the most similar series, but it is actually plot 3, with strong negative correlation between the two series. A scatterplot clearly shows the negative association.}\label{fig:commonfate}
 \end{figure}
 
-Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
+%Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
+
+Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provides experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
+
 
 \subsubsection{Working Memory}
 Another cognitive limitation that affects plot comprehension is the limit on working memory. Typically, working memory is limited to approximately 7 (plus or minus 2) items, or 'chunks'. In practice, this means that categorical scales with more than 7 categories decrease readability, increase comprehension time, and require significant attentional resources, because it is not possible to hold the legend mapping in working memory. 
