@@ -50,16 +50,16 @@ theme_set(theme_bw())
 %\SweaveOpts{concordance=TRUE}
 
 % Page header
-\markboth{Author et al.}{Testing Statistical Charts}
+\markboth{VanderPlas et al.}{Testing Statistical Charts}
 
 % Title
 \title{Testing Statistical Charts: What makes a good graph?}
 
 %Authors, affiliations address.
 % No idea how this should be ordered, so just doing it alphabetically for now :)
-\author{Dianne Cook,$^1$ Heike Hofmann,$^2$ and Susan Vanderplas$^3$
-\affil{$^1$Department/Institute, Monash University, Melbourne, Australia, Postal code}
-\affil{$^2$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011; email: author@email.edu}
+\author{ Susan Vanderplas$^1, Dianne Cook,$^2$ and  Heike Hofmann,$^3$$
+\affil{$^1$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011; email: srvander@iastate.edu}
+\affil{$^2$Econometrics and Business Statistics, Monash University, Melbourne,  Clayton VIC 3800, Australia}
 \affil{$^3$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011}}
 
 %Abstract
