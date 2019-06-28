@@ -574,6 +574,7 @@ While color is an extremely useful aesthetic for the majority of the population,
 
 Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
 
+% Not sure adding something liek this is useful: That said, there is room for improvement on adoption of best practices. Where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to to improve plots in published articles. 
 
 \section{INTERACTIVE GRAPHICS}
 
