@@ -242,7 +242,7 @@ The grammar of graphics also enables data plots to be considered to be statistic
 \item Each value must have its own cell.
 \end{enumerate}
 
-\noindent Variables, as columns in the data table, are then mapped to graphical elements, such as the $x$ axis, or $y$ axis, or to colour, shape or even facet, using the grammar. The data plot can then be treated like other statistics, by imagining what might the plot look like if there really is no structure. One can use statistics to test for the likelihood of perceived structure being significant.
+\noindent Variables, as columns in the data table, are then mapped to graphical elements, such as the $x$ axis, or $y$ axis, or to colour, shape or even facet, using the grammar. The data plot can then be treated like other statistics: by imagining what the plot might look like in the absence of of any structure, we can use the plot of the actual observed data to test for the likelihood of perceived structure being significant.
 
 %\svp{Still need another page of content here...}
 
