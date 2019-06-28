@@ -491,13 +491,11 @@ The gestalt principle of common fate describes the tendency to group objects whi
 
 Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
 
+\subsubsection{Working Memory}
+Another cognitive limitation that affects plot comprehension is the limit on working memory. Typically, working memory is limited to approximately 7 (plus or minus 2) items, or 'chunks'. In practice, this means that categorical scales with more than 7 categories decrease readability, increase comprehension time, and require significant attentional resources, because it is not possible to hold the legend mapping in working memory. 
+
 \subsubsection{Change blindness}
-
-Facetting:
-
-Animation: the importance of using fades, or even the full data faintly in background.
-
-Is this maybe lack of persistence of memory than change blindness? The Healey videos might call this change blindness.
+Not all information is stored in memory (working or long-term) as it is represented. \citet{simonsChangeBlindness1997} suggests that the vivid details available to us instantaneously when examining the world fade quickly, and are replaced with broad semantic descriptions or less meaningful cognitive representations of a scene. As a result of this compression, it is difficult to identify changes between similar scenes. This phenomenon, known as change blindness, affects both static and interactive plots. In static plots, it can be difficult to compare between different small multiples or facets, because the content of the plots are not reliably represented in working memory when switching attention between them. In animated plots, it is important to use transition effects to connect successive frames of the animation: this reduces change blindness and also activates the gestalt principle of common fate, allowing us to quickly identify groups of objects which are transitioning in the same direction. 
 
 \subsection{Types of Charts}
 
