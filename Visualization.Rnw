@@ -107,21 +107,42 @@ Calls for experimental validation of the perception of statistical charts were h
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
 
 
-Charts and graphs are used for many purposes: to summarize data, for analysis, discovery, and diagnosis of statistical relationships(as in \autoref{fig:hrdiagram}), to make a rhetorical argument, or to show raw data as a substitute for tables \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}. The initial heyday of graphic design enabled by color lithography used charts and graphs to tell stories about nations and events\citep{kostelnickReEmergenceEmotionalAppeals2016}, but in the first half of the 20th century, graphics were regularly used for mundane purposes as well, such as supporting business decisions \citep{chandarGraphStandardizationManagement2012,yatesGraphsManagerialTool1985a}. As technology developed, and charts could be created quickly for exploratory purposes, the divide between graphics for presentation, entertainment, and analysis has widened. The different purposes motivating the creation of the chart influence the form and complexity of the chart, and consideration of the intended audience and reach of the chart also influence the result.
+Charts and graphs are used for many purposes: to summarize data, for analysis, discovery, and diagnosis of statistical relationships(as in \autoref{fig:hrdiagram}), to make a rhetorical argument, or to show raw data as a substitute for tables \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}. The initial heyday of graphic design enabled by color lithography used charts and graphs to tell stories about nations and events\citep{kostelnickReEmergenceEmotionalAppeals2016}, but in the first half of the 20th century, graphics were regularly used for mundane purposes as well, such as supporting business decisions \citep{chandarGraphStandardizationManagement2012,yatesGraphsManagerialTool1985a} and communicating weather forecasts. As technology has developed, allowing charts to be created quickly for exploratory purposes, the divide between graphics for presentation, entertainment, and analysis has widened. The different purposes motivating the creation of the chart influence the form and complexity of the chart, and consideration of the intended audience and reach of the chart also influence the result.
 
-It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent - the infographic is designed to attract attention and tell a story, while the statistical chart is designed to effectively and accurately show the data (potentially with accompanying statistical model); any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}.
+It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent - the infographic is designed to attract attention and tell a story, while the statistical chart is designed to effectively and accurately show the data (potentially with accompanying statistical models); any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}. One example of a type of statistical chart designed to communicate urgent information and facilitate decision-making are the maps produced by the US National Hurricane Center, which show forecasts of the hurricane's path, the wind field, forecasted strength, and coastal warnings. \autoref{fig:noaa-michael} shows one such prediction map from Hurricane Michael, which hit the Florida panhandle in October 2018. The map is primarily utilitarian, with additional decorations such as ocean color and state boundaries provided for geographic context. \autoref{fig:bdaychart} shows an infographic-like chart, designed to tell a story; the interactive version of the chart provides estimated conception dates for each birth date as well as a ranking each date by number of births. There are relatively few babies born on major holidays, such as Memorial Day, Independence Day, and Christmas; there are also considerably more babies born in the summer months than in the winter. 
 
-\todo{use \citet{byrneAcquiredCodesMeaning2016} to assess data visualization vs. infographics}
+% \todo{use \citet{byrneAcquiredCodesMeaning2016} to assess data visualization vs. infographics}
 
 % Sample plots for some of these purposes might be good - HR diagram (discovery/analysis), Minard/Napoleon (rhetorical argument), pie chart or mosaic plot from the statistical atlas or a pictoral chart as in Vernon (1946) (table substitute), data summary (some sort of process control chart? - dupont?)
-\begin{minipage}{.475\textwidth}
+
+
+\begin{minipage}{.45\textwidth}
 \centering
 \includegraphics[width=\textwidth]{figure/HRDiagram.png}
-\end{minipage}\hfill
-\begin{minipage}{.475\textwidth}
 \captionof{figure}{The Hertzsprung-Russell diagram (circa 1910), which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figure/noaa_michael.png}
+\captionof{figure}{Hurricane forecast map issued on October 9, 2018, shortly before Hurricane Michael made landfall in the Florida panhandle. The predicted hurricane path, wind field size, and coastal weather status allow consumers to make educated decisions about evacuation orders.}\label{fig:noaa-michael}
 \end{minipage}
 
+<<bdaychart, fig.width = 9, fig.height = 3, fig.cap = "A static version of the birthday chart, which shows the average number of births on a yearly basis in the United States, by month and day of the month. The interactive version, available at \\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}, provides estimated conception dates in addition to frequency information.", include = T, out.width = "\\textwidth">>=
+bday <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv") %>%
+  group_by(month, date_of_month) %>%
+  summarize(birth = mean(births)) %>%
+  ungroup() %>% 
+  # complete(crossing(month, date_of_month), fill = list(birth = NA)) %>%
+  mutate(birth = pmax(pmin(birth, 12000),9000))
+ggplot(data = bday) + 
+  geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") + 
+  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Greens")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) + 
+  scale_y_continuous("Month", breaks = 1:12, trans = "reverse") + 
+  scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) + 
+  coord_fixed() + 
+  # theme(legend.position = "bottom", legend.direction = "horizontal") + 
+  ggtitle("How Common is Your Birthday?\nUS Births by Date (2000-2014, SSA)")
+@
 
 \subsection{Statistical Mapping Using a Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
