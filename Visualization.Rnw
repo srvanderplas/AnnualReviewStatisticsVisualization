@@ -570,7 +570,7 @@ While color is an extremely useful aesthetic for the majority of the population,
 
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
-% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
+% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts, dual axes, dynamite plots.
 
 Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
 
@@ -639,6 +639,9 @@ connecting graphics to knowledge ("fly over" versus meaningful plots that answer
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
+As cognitive perception research has advanced so dramatically, transitioning what has been learned into improving data plotting practices would be a fruitful direction. 
+
+A data plot is not designed to compete with numerical statistics. If accuracy is what is of interest, showing the data as a table is clearly preferable. Techniques to be able to quantify effectiveness of plots in ways other than accuracy and speed are needed. 
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
