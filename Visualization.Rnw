@@ -32,7 +32,7 @@ theme_set(theme_bw())
 % \usepackage{xcolor}
 \definecolor{blue}{cmyk}{1,1,0,0}
 \definecolor{pink}{cmyk}{0,1,0,0}
-\definecolor{darkgreen}{cmyk}{0, .39, .97, 0)}
+\definecolor{darkgreen}{cmyk}{0, .39, .97, 0}
 \newcommand{\todo}[1]{\textcolor{pink}{#1}}
 \newcommand{\svp}[1]{\textcolor{blue}{#1}}
 \newcommand{\hh}[1]{\textcolor{darkgreen}{#1}}
