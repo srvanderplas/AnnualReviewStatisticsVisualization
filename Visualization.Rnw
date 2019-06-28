@@ -424,7 +424,7 @@ A useful starting point is to apply Gestalt principles of visual perception \cit
 
 The principle is `objects or shapes that are close to one another appear to form groups'. For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{fig:proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are {\em facetted by age}, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB. Conversely, when plots are {\em facetted by gender}, it means that the distribution of counts on age is easier to examine. We would learn that the age distribution of TB incidence for females skews heavily towards younger women. For males, TB incidence is more uniform across ages because there are high counts at young, old and middle age categories. Effectively utilizing proximity in organising plots, makes a huge difference in ease of information communication.
 
-<<tb-setup>>=
+<<tb-setup, include = F, fig.width = 6, fig.height = 3>>=
 
 tb <- read_csv("data/TB_notifications_2018-03-18.csv") %>%
   select(country, iso3, year, new_sp_m04:new_sp_fu) %>%
@@ -435,16 +435,25 @@ tb <- read_csv("data/TB_notifications_2018-03-18.csv") %>%
          age=substr(genderage, 2, length(genderage))) %>%
   select(-genderage)
 
-tb_au <- tb %>%
-  filter(country == "Australia") %>%
-  filter(!(age %in% c("04", "014", "514", "u"))) %>%
-  filter(year > 1996, year < 2013)
-
 tb_au_12 <- tb %>%
   filter(country == "Australia") %>%
   filter(!(age %in% c("04", "014", "514", "u"))) %>%
   filter(year == 2012) %>%
   mutate(age = str_replace_all(age, c("1524" = "15-24", "2534" = "25-34", "3544" = "35-44", "4554" = "45-54", "5564" = "55-64", "65" = "65+")))
+
+
+ggplot(tb_au_12, aes(x = gender, y = count, fill = gender)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~ age) +
+  scale_fill_brewer(palette="Dark2") +
+  theme(legend.position = "none")
+
+ggplot(tb_au_12, aes(x = age, y = count, fill = age)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~ gender) +
+  scale_fill_brewer(palette="Dark2") +
+  theme(legend.position = "none")
+
 @
 
 \begin{figure}
@@ -460,7 +469,7 @@ ggplot(tb_au_12,
 @
 \end{minipage}\hfill
 \begin{minipage}{.60\textwidth}
-\includegraphics[width=.99\textwidth]{figure/tb_plot1}
+\includegraphics[width=.99\textwidth]{figure/tb-setup-1}
 \end{minipage}\\
 \begin{minipage}{.345\textwidth}
 <<tb-plots-2, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
@@ -474,7 +483,7 @@ ggplot(tb_au_12,
 @
 \end{minipage}\hfill
 \begin{minipage}{.60\textwidth}
-\includegraphics[width=.99\textwidth]{figure/tb_plot2}
+\includegraphics[width=.99\textwidth]{figure/tb-setup-2}
 \end{minipage}\\
 \caption{Two different arrangements of the same data, to illustrate how the proximity of elements makes a question easier to answer. }\label{fig:proximity}
 \end{figure}
