@@ -107,9 +107,13 @@ Calls for experimental validation of the perception of statistical charts were h
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
 
 
-Charts and graphs are used for many purposes: to summarize data, for analysis, discovery, and diagnosis of statistical relationships(as in \autoref{fig:hrdiagram}), to make a rhetorical argument, or to show raw data as a substitute for tables \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}. The initial heyday of graphic design enabled by color lithography used charts and graphs to tell stories about nations and events\citep{kostelnickReEmergenceEmotionalAppeals2016}, but in the first half of the 20th century, graphics were regularly used for mundane purposes as well, such as supporting business decisions \citep{chandarGraphStandardizationManagement2012,yatesGraphsManagerialTool1985a} and communicating weather forecasts. As technology has developed, allowing charts to be created quickly for exploratory purposes, the divide between graphics for presentation, entertainment, and analysis has widened. The different purposes motivating the creation of the chart influence the form and complexity of the chart, and consideration of the intended audience and reach of the chart also influence the result.
+Charts and graphs are used for many purposes \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}: to summarize data, for analysis, exploration and discovery, diagnosis of statistical relationships, to make a rhetorical argument, or even as a substitute for tables. The initial heyday of graphic design was enabled by color lithography used charts and graphs to tell stories about nations and events~\citep{kostelnickReEmergenceEmotionalAppeals2016}, but in the first half of the 20th century, graphics were regularly used for mundane purposes as well, such as supporting business decisions \citep{chandarGraphStandardizationManagement2012,yatesGraphsManagerialTool1985a} and communicating weather forecasts. As technology has developed, allowing charts to be created quickly for exploratory purposes, the gaps between graphics for presentation, entertainment, and analysis have widened. The different purposes motivating the creation of the chart influence the form and complexity of the chart, and the intended audience and the reach of the chart are also important considerations.
 
-It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent - the infographic is designed to attract attention and tell a story, while the statistical chart is designed to effectively and accurately show the data (potentially with accompanying statistical models); any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}. One example of a type of statistical chart designed to communicate urgent information and facilitate decision-making are the maps produced by the US National Hurricane Center, which show forecasts of the hurricane's path, the wind field, forecasted strength, and coastal warnings. \autoref{fig:noaa-michael} shows one such prediction map from Hurricane Michael, which hit the Florida panhandle in October 2018. The map is primarily utilitarian, with additional decorations such as ocean color and state boundaries provided for geographic context. \autoref{fig:bdaychart} shows an infographic-like chart, designed to tell a story; the interactive version of the chart provides estimated conception dates for each birth date as well as a ranking each date by number of births. There are relatively few babies born on major holidays, such as Memorial Day, Independence Day, and Christmas; there are also considerably more babies born in the summer months than in the winter. 
+It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent. The infographic, often composed of many small simple lpots, is designed to attract attention and tell a story. While the statistical chart is designed to effectively and accurately show the data, potentially with accompanying statistical model information -- any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}. 
+
+Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illustrate different plots for statistical purpose. The Hertzsprung-Russell diagram allowed astrophysicists to make a convincing argument about the lifecycle of a star, based on its tempoerature, colour, and size. The hurricane forecast map is designed to communicate urgent information and facilitate decision-making by the US National Hurricane Center. It shows forecasts of the hurricane's path, the wind field, forecasted strength, and coastal warnings. Figure \autoref{fig:noaa-michael} shows the prediction map for Hurricane Michael, which hit the Florida panhandle in October 2018. It is primarily utilitarian, with additional decorations such as ocean color and state boundaries provided for geographic context. The birthday chart shows the temporal distribution of birthdays. This plot shown here is a static reproduction of an  interactive plot used as part of a web page (\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}) telling a story about birth dates. It is simple in form, almost infographic style. By engaging with the interactive chart, a reader could easily deduce that there are relatively few babies born on major holidays, such as Memorial Day, Independence Day, and Christmas; there are also considerably more babies born in the summer months than in the winter. 
+
+
 
 % \todo{use \citet{byrneAcquiredCodesMeaning2016} to assess data visualization vs. infographics}
 
@@ -119,7 +123,7 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \begin{minipage}{.45\textwidth}
 \centering
 \includegraphics[width=\textwidth]{figure/HRDiagram.png}
-\captionof{figure}{The Hertzsprung-Russell diagram (circa 1910), which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star}\label{fig:hrdiagram}
+\captionof{figure}{The Hertzsprung-Russell diagram (circa 1910), which allowed astrophysicists to make the connection between a star's temperature, visual color, and size, enabling a better understanding of the life cycle of a star.}\label{fig:hrdiagram}
 \end{minipage}\hfill
 \begin{minipage}{.45\textwidth}
 \centering
@@ -127,7 +131,7 @@ It is useful to consider a continuum from utilitarianism to artistry, where pure
 \captionof{figure}{Hurricane forecast map issued on October 9, 2018, shortly before Hurricane Michael made landfall in the Florida panhandle. The predicted hurricane path, wind field size, and coastal weather status allow consumers to make educated decisions about evacuation orders.}\label{fig:noaa-michael}
 \end{minipage}
 
-<<bdaychart, fig.width = 9, fig.height = 3, fig.cap = "A static version of the birthday chart, which shows the average number of births on a yearly basis in the United States, by month and day of the month. The interactive version, available at \\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}, provides estimated conception dates in addition to frequency information.", include = T, out.width = "\\textwidth">>=
+<<bdaychart, fig.width = 12, fig.height = 4, fig.cap = "A static reproduction of the birthday chart, which shows the average number of births on a yearly basis in the United States, by month and day of the month. The interactive version, available at \\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}, is designed to be a storyteller to encourage the viewer to interact, check the estimated conception dates and read the frequency.", include = T, out.width = "130%">>=
 bday <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv") %>%
   group_by(month, date_of_month) %>%
   summarize(birth = mean(births)) %>%
@@ -136,7 +140,7 @@ bday <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/
   mutate(birth = pmax(pmin(birth, 12000),9000))
 ggplot(data = bday) + 
   geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") + 
-  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Greens")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) + 
+  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Oranges")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) + 
   scale_y_continuous("Month", breaks = 1:12, trans = "reverse") + 
   scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) + 
   coord_fixed() + 
@@ -413,12 +417,12 @@ Need to figure out how to cite follow up study - color palette choice doesn't re
 
 \subsection{Cognitive Principles}
 
-A useful starting point is to apply Gestalt principles of visual perception (e.g. \cite{gestalt1}, \cite{gestalt2}), for example, figure-ground, similarity, proximity, common fate, continuity, closure, to data plots.
+A useful starting point is to apply Gestalt principles of visual perception (e.g. \cite{gestalt1}, \cite{gestalt2}), for example, figure-ground, similarity, proximity, common fate, continuity, closure, to data plots. Several of these are discussed here.
 
 
 \subsubsection{Proximity}
 
-The principle is `objects or shapes that are close to one another appear to form groups'. For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{fig:proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are *facetted by age*, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB. Conversely, when plots are facetted by gender, it means that the distribution of counts on age is easier to examine. We would learn that the age distribution of TB incidence for females skews heavily towards younger women. For males, TB incidence is more uniform across ages because there are high counts at young, old and middle age categories. Effectively utilizing proximity in organising plots, makes a huge difference in ease of information communication.
+The principle is `objects or shapes that are close to one another appear to form groups'. For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{fig:proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are {\em facetted by age}, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB. Conversely, when plots are {\em facetted by gender}, it means that the distribution of counts on age is easier to examine. We would learn that the age distribution of TB incidence for females skews heavily towards younger women. For males, TB incidence is more uniform across ages because there are high counts at young, old and middle age categories. Effectively utilizing proximity in organising plots, makes a huge difference in ease of information communication.
 
 \begin{figure}
 \begin{minipage}{.345\textwidth}
@@ -452,9 +456,9 @@ ggplot(tb_au_12,
 \caption{Two different arrangements of the same data, to illustrate how the proximity of elements makes a question easier to answer. }\label{fig:proximity}
 \end{figure}
 
-\subsection{Common fate}
+\subsection{Common fate and synchrony}
 
-Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis?
+Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
 
 \subsubsection{Change blindness}
 
