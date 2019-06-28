@@ -57,10 +57,11 @@ theme_set(theme_bw())
 
 %Authors, affiliations address.
 % No idea how this should be ordered, so just doing it alphabetically for now :)
-\author{ Susan Vanderplas$^1, Dianne Cook,$^2$ and  Heike Hofmann,$^3$$
+\author{ Susan Vanderplas$^1$, Dianne Cook,$^2$ and  Heike Hofmann,$^3$
 \affil{$^1$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011; email: srvander@iastate.edu}
 \affil{$^2$Econometrics and Business Statistics, Monash University, Melbourne,  Clayton VIC 3800, Australia}
 \affil{$^3$Statistics Department, Iowa State University, Ames, Iowa, United States, 50011}}
+
 
 %Abstract
 \begin{abstract}
