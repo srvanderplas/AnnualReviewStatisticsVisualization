@@ -507,11 +507,23 @@ Another cognitive limitation that affects plot comprehension is the limit on wor
 \subsubsection{Change blindness}
 Not all information is stored in memory (working or long-term) as it is represented. \citet{simonsChangeBlindness1997} suggests that the vivid details available to us instantaneously when examining the world fade quickly, and are replaced with broad semantic descriptions or less meaningful cognitive representations of a scene. As a result of this compression, it is difficult to identify changes between similar scenes. This phenomenon, known as change blindness, affects both static and interactive plots. In static plots, it can be difficult to compare between different small multiples or facets, because the content of the plots are not reliably represented in working memory when switching attention between them. In animated plots, it is important to use transition effects to connect successive frames of the animation: this reduces change blindness and also activates the gestalt principle of common fate, allowing us to quickly identify groups of objects which are transitioning in the same direction. 
 
-\subsection{Types of Charts}
+\subsubsection{Ease of Comparisons}
+Much of the psychophysics research on statistical charts examines the accuracy of comparisons and quantitative evaluations made during the process of understanding a plot. This research can be distilled into a hierarchy of comparisons (based primarily on \citep{cleveland_graphical_1984, cleveland_graphical_1985, shah_cambridge_2005, lewandowskyPerceptionStatisticalGraphs1989}, ranking tasks by their accuracy and difficulty as follows (roughly equivalent tasks are listed together):
+\begin{enumerate}
+\item Position (common scale)
+\item Position (non-aligned scale)
+\item Length, Direction, Angle, Slope
+\item Area
+\item Volume, Density, Curvature
+\item Shading, Color Saturation, Color Hue
+\item Discriminable Shape
+\item Indiscriminable Shape
+\end{enumerate}
 
+This ranking of cognitive tasks provides some consistent guidance for chart design: if the same data can be represented in a way that allows the user to make a comparison more accurately (based on the hierarchy), then that design is preferrable. Thus, this hierarchy indicates that in most cases, it is better to use a stacked bar chart than the equivalent polar-coordinate pie chart, because a stacked bar chart requires evaluation of length, while a pie chart requires area comparisons. While the hierarchy of graphical comparisons provides some guidance, there are other design choices that can be informed by experimental research in a less systematic way.
 
+\subsection{Chart Design}
 
-\subsection{Chart Aesthetics}
 \citep{vanderplasClustersBeatTrend2017} provides compelling evidence that the aesthetics used in a chart can significantly affect how plots of the same data are read, and explained these differences relative to the gestalt heuristics activated by each combination of aesthetics. The use of redundant aesthetics which activate the same gestalt principles (such as color and shape in a scatterplot, which both activate similarity) results in higher identification of corresponding data features. In addition, dual-encoding increases the accessibility of a chart to individuals who have impaired color vision or perceptual processing (e.g. dyslexia, dysgraphia). This experimental evidence directly contradicts the guidelines popularized by Tufte, which suggest the elimination of any feature which is not dedicated to representing the core data, including redundant encoding and other unnecessary graphical elements.
 
 \subsubsection{Color}
