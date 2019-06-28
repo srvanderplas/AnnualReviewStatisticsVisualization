@@ -232,7 +232,7 @@ ggplot(data = banknote,
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
-The grammar of graphics also enables data plots to be considered to be statistics \citep{majumderValidationVisualStatistical2013}. A statistic is a functional mapping of a variable or set of variables. When data is organised in tidy form~\citep{Wickham:2017:RDS:3086927}:
+The grammar of graphics also enables data plots to be considered to be statistics \citep{majumderValidationVisualStatistical2013}. A statistic is a functional mapping of a variable or set of variables. With ``tidy data", which adheres to the following rules~\citep{Wickham:2017:RDS:3086927}:
 
 \begin{enumerate}
 \item Each variable must have its own column.
