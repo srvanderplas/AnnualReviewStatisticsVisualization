@@ -497,7 +497,6 @@ The gestalt principle of common region suggests that elements contained within a
 \subsubsection{Common fate}
 The gestalt principle of common fate describes the tendency to group objects which are moving in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provides experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
 
-\todo{need a plot for this}
 \begin{figure}
 \includegraphics[width=.99\textwidth]{figure/common_fate1.pdf}
 \includegraphics[width=.99\textwidth]{figure/common_fate2.pdf}
