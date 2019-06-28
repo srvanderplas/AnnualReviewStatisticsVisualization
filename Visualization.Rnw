@@ -234,15 +234,7 @@ ggplot(data = banknote,
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
-The grammar of graphics also enables data plots to be considered to be statistics \citep{majumderValidationVisualStatistical2013}. A statistic is a functional mapping of a variable or set of variables. With ``tidy data", which adheres to the following rules~\citep{Wickham:2017:RDS:3086927}:
-
-\begin{enumerate}
-\item Each variable must have its own column.
-\item Each observation must have its own row.
-\item Each value must have its own cell.
-\end{enumerate}
-
-\noindent Variables, as columns in the data table, are then mapped to graphical elements, such as the $x$ axis, or $y$ axis, or to colour, shape or even facet, using the grammar. The data plot can then be treated like other statistics: by imagining what the plot might look like in the absence of of any structure, we can use the plot of the actual observed data to test for the likelihood of any perceived structure being significant.
+The grammar of graphics also enables data plots to be considered to be statistics \citep{majumderValidationVisualStatistical2013}. A statistic is a functional mapping of a variable or set of variables. With ``tidy data", that is, data where each variable is in it's own column, each observation is in its own row, and each value is in its own cell\citep{Wickham:2017:RDS:3086927}, the grammar of graphics creates visual statistics. Variables, as columns in the data table, are mapped to graphical elements, such as the $x$ axis, or $y$ axis, or to colour, shape or even facet, using the grammar. The data plot can then be treated like other statistics: by imagining what the plot might look like in the absence of of any structure, we can use the plot of the actual observed data to test for the likelihood of any perceived structure being significant.
 
 %\svp{Still need another page of content here...}
 
