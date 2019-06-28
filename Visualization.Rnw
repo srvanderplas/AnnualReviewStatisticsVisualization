@@ -148,11 +148,11 @@ bday <- c("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/
 ggplot(data = bday) +
   geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") +
   scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "BuGn")[-1], na.value = "transparent", breaks = (8:12)*1000, labels = c("<8", "9", "10", "11", ">12")) +
-  scale_y_continuous("Month", breaks = 1:12, trans = "reverse") +
-  scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) +
+  scale_y_continuous("Month", breaks = 1:12, trans = "reverse", expand = c(0,0)) +
+  scale_x_continuous("Day", breaks = seq(5, 30, by = 5), expand = c(0, 0)) +
   coord_fixed() +
   # theme(legend.position = "bottom", legend.direction = "horizontal") +
-  ggtitle("How Common is Your Birthday?\nUS Births by Date (1994-2014)")
+  ggtitle("How Common is Your Birthday? US Births by Date (1994-2014)")
 @
 
 \subsection{Statistical Mapping Using a Grammar of Graphics}
