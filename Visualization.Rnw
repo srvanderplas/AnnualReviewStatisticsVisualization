@@ -84,7 +84,7 @@ Any survey of literature on statistical charts and graphs will be complicated by
 % Whatever relates to extent and quantity may be represented by geometrical figures. Statistical projections which speak to the senses without fatiguing the mind, possess the advantage of fixing the attention on a great number of important facts." - Alexander von Humboldt, 1811, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
 % \end{quote}
 
-Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing information in abstract visual form since the origins of civilisation, e.g. spatial information using maps\citep{smithImagoMundiLogo1996} are displayed with varying degrees of abstraction. %\svp{there has to be a better transition here, but I've spent too much time on it to bother right now} 
+Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing information in abstract visual form since the origins of civilisation, e.g. spatial information using maps\citep{smithImagoMundiLogo1996} are displayed with varying degrees of abstraction. %\svp{there has to be a better transition here, but I've spent too much time on it to bother right now}
 Exploring visual abstractions of data, has been an active pursuit of the "polymaths" who, grappling with increasing collections of economic, demographics, and measurements on the natural world, developed the foundations of current scientific pursuits. During the 18$^{th}$ and 19$^{th}$ centuries, governments became involved, assembling data and graphical representations into the statistical atlases, and government issued reports, as created by \citet{Crome}, \citet{playfair1801statistical}, \citet{atlas}, and many other contemporary workman. In the 20th century, corporations began using charts and graphs to understand their inner workings - studies of the use of charts and graphs at AT\&T\citep{chandarGraphStandardizationManagement2012} and DuPont \citep{yatesGraphsManagerialTool1985a} show efforts to standardize and formalize the use of graphics in decision-making at both companies.
 
 As new charts were invented to represent data differently and highlight features of data~\citep{bernsteinGraphicPresentationTrend1937,yatesGraphsManagerialTool1985a,mcdonaldFlorenceNightingaleStatistics2014}, discussions about the use of statistical graphics began to appear in the literature~\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were heuristic based and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}.
@@ -101,7 +101,7 @@ As new charts were invented to represent data differently and highlight features
 
 %\todo{Need better transitions here between playfair and experimental graphics. Should probably discuss Tukey, the rise of computer generated graphics...}
 
-Calls for experimental validation of the perception of statistical charts were heeded, though, at first the experiments were fraught with methodological issues~\citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965}, until cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots~\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. In most cases, this testing has been limited to simply reading information from the charts, using accuracy or response time measurement. Very little work has been done to understand the effect of charts and graphs on higher cognitive processes such as learning or analysis~\citep{greenPersonalEquationComplex2011}.
+Calls for experimental validation of the perception and utility of statistical charts were heeded, though at first the experiments were fraught with methodological issues~\citep{croxtonBarChartsCircle1927}. Much of the early experimentation regarding the accuracy of graphical forms was based in psychophysics research \citep{teghtsoonian_judgment_1965} on the perception of size and shape. Eventually experiments became more naturalistic: cognitive psychologists and statisticians began testing different types of graphics, identifying types of perceptual errors associated with different plots~\citep{spenceVisualPsychophysicsSimple1990,cleveland_graphical_1985}. In most cases, this testing was limited to simply reading information from the charts, using accuracy or response time measurement. Very little work has been done to understand the effect of charts and graphs on higher cognitive processes such as learning or analysis~\citep{greenPersonalEquationComplex2011}.
 
 \subsection{Statistical Graphical Design}
 % We will also discuss the different approaches to graphical design, ranging from utilitarian charts used for quick data presentation to artistic renderings which encourage aesthetics over utility (2 pages).
@@ -109,9 +109,9 @@ Calls for experimental validation of the perception of statistical charts were h
 
 Charts and graphs are used for many purposes \citep{tukeyGraphicSemigraphicDisplays1972,fienbergGraphicalMethodsStatistics1979}: to summarize data, for analysis, exploration and discovery, diagnosis of statistical relationships, to make a rhetorical argument, or even as a substitute for tables. The initial heyday of graphic design was enabled by color lithography used charts and graphs to tell stories about nations and events~\citep{kostelnickReEmergenceEmotionalAppeals2016}, but in the first half of the 20th century, graphics were regularly used for mundane purposes as well, such as supporting business decisions \citep{chandarGraphStandardizationManagement2012,yatesGraphsManagerialTool1985a} and communicating weather forecasts. As technology has developed, allowing charts to be created quickly for exploratory purposes, the gaps between graphics for presentation, entertainment, and analysis have widened. The different purposes motivating the creation of the chart influence the form and complexity of the chart, and the intended audience and the reach of the chart are also important considerations.
 
-It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent. The infographic, often composed of many small simple lpots, is designed to attract attention and tell a story. While the statistical chart is designed to effectively and accurately show the data, potentially with accompanying statistical model information -- any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}. 
+It is useful to consider a continuum from utilitarianism to artistry, where purely utilitarian charts are, as advocated by \citet{tufte}, devoid of ``chartjunk" or any decoration, and purely artistic charts trade accurate representation of the data for visually compelling renderings. The distinction between infographics and statistical graphics is primarily one of intent. The infographic, often composed of many small simple plots interspersed with pictures and text, is designed to attract attention and tell a story. While the statistical chart is designed to effectively and accurately show the data, potentially with accompanying statistical model information -- any visual enhancements should contribute to that aim \citep{gelmanInfovisStatisticalGraphics2013,wickham2013graphical}.
 
-Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illustrate different plots for statistical purpose. The Hertzsprung-Russell diagram allowed astrophysicists to make a convincing argument about the lifecycle of a star, based on its tempoerature, colour, and size. The hurricane forecast map is designed to communicate urgent information and facilitate decision-making by the US National Hurricane Center. It shows forecasts of the hurricane's path, the wind field, forecasted strength, and coastal warnings. Figure \autoref{fig:noaa-michael} shows the prediction map for Hurricane Michael, which hit the Florida panhandle in October 2018. It is primarily utilitarian, with additional decorations such as ocean color and state boundaries provided for geographic context. The birthday chart shows the temporal distribution of birthdays. This plot shown here is a static reproduction of an  interactive plot used as part of a web page (\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}) telling a story about birth dates. It is simple in form, almost infographic style. By engaging with the interactive chart, a reader could easily deduce that there are relatively few babies born on major holidays, such as Memorial Day, Independence Day, and Christmas; there are also considerably more babies born in the summer months than in the winter. 
+Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illustrate different plots for statistical purpose. The Hertzsprung-Russell diagram allowed astrophysicists to make a convincing argument about the lifecycle of a star, based on its tempoerature, colour, and size. The hurricane forecast map is designed to communicate urgent information and facilitate decision-making by the US National Hurricane Center. It shows forecasts of the hurricane's path, the wind field, forecasted strength, and coastal warnings. Figure \autoref{fig:noaa-michael} shows the prediction map for Hurricane Michael, which hit the Florida panhandle in October 2018. It is primarily utilitarian, with additional decorations such as ocean color and state boundaries provided for geographic context. The birthday chart reproduced in \autoref{fig:bdaychart} shows the average number of births in the United States on each day of the year, organized by month. \autoref{fig:bdaychart} is a static reproduction of an  interactive plot used as part of a web page (\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}) telling a story about birth dates. It is simple in form, almost infographic style. By engaging with the interactive chart, a reader could easily deduce that there are relatively few babies born on major holidays, such as Memorial Day, Independence Day, and Christmas; there are also considerably more babies born in the summer months than in the winter.
 
 
 
@@ -135,23 +135,23 @@ Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illu
 bday <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv") %>%
   group_by(month, date_of_month) %>%
   summarize(birth = mean(births)) %>%
-  ungroup() %>% 
+  ungroup() %>%
   # complete(crossing(month, date_of_month), fill = list(birth = NA)) %>%
   mutate(birth = pmax(pmin(birth, 12000),9000))
-ggplot(data = bday) + 
-  geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") + 
-  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Oranges")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) + 
-  scale_y_continuous("Month", breaks = 1:12, trans = "reverse") + 
-  scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) + 
-  coord_fixed() + 
-  # theme(legend.position = "bottom", legend.direction = "horizontal") + 
+ggplot(data = bday) +
+  geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") +
+  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Oranges")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) +
+  scale_y_continuous("Month", breaks = 1:12, trans = "reverse") +
+  scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) +
+  coord_fixed() +
+  # theme(legend.position = "bottom", legend.direction = "horizontal") +
   ggtitle("How Common is Your Birthday?\nUS Births by Date (2000-2014, SSA)")
 @
 
 \subsection{Statistical Mapping Using a Grammar of Graphics}
 %We will also highlight the grammar of graphics as an important development which facilitates scientific analysis of statistical graphics by separating the physical representation from the underlying data (3 pages).
 
-In parallel with efforts to understand the perception of charts, there have been many attempts to develop systems for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. An analogy to conceptualise the difference is that the former is like treating plots like creatures in a zoo, with a unique name for each, and the latter is analgous to having a phylogeny based on genetic data showing how plots are related.  
+In parallel with efforts to understand the perception of charts, there have been many attempts to develop systems for classifying graphics, including \citet{bertin1983semiology}, \citet{desnoyersTaxonomyVisualsScience2011}, and \citet{wilkinson1999grammar}. Systems which attempt to categorize charts based on their geometric representations generally make no effort to include all types of graphics, and have difficulty accommodating charts which may fall into two or more categories. The classification of graphics based on the underlying components and their relationships, as in the grammar of graphics developed by \citeauthor{wilkinson1999grammar} are more robust; they also provide an elegant framework for comparing different types of graphical representations separate from the underlying data structure. An analogy to conceptualise the difference is that the former is like treating plots like creatures in a zoo, with a unique name for each, and the latter is analgous to having a phylogeny based on genetic data showing how plots are related.
 
 \autoref{fig:grammar-graphics-flowchart} shows the framework of the grammar of graphics, where the data is filtered, variables are mapped, transformations are specified, and then finally, transformed data are linked with plot aesthetics and coordinate system specifications to produce an abstract visual representation of the data. Full or partial implementations of the grammar of graphics are available for most common scientific computing languages: \texttt{ggplot2} in R \citep{wickhamLayeredGrammarGraphics2010}, \texttt{plotnine}, a python implementation of \texttt{ggplot2}, and \texttt{Gramm} in Matlab \citep{morelGrammGrammarGraphics2018}.
 
@@ -164,8 +164,8 @@ In parallel with efforts to understand the perception of charts, there have been
 Using the grammar of graphics, it is easy for experimenters to compare different types of charts using the same data, as the underlying structure of the graph remains the same. \autoref{fig:grammar-graphics-plots} shows three plots created using the same data and different geometric objects, with the \texttt{ggplot2} code to create the plots. Comparing these graphics experimentally would be reasonably simple as the grammar of graphics helps to control the extraneous variables introduced by utilizing different plot types. In addition, this approach to transformations and scales allows experimenters to easily test judgments made utilizing different axis transformations and color scales to compare perceptual accuracy \citep{hofmannGraphicalTestsPower2012,vanderplasClustersBeatTrend2017}.
 
 <<ggsetup, include = F, echo = F>>=
-data(banknote, package="alr3")
-banknote$Type <- factor(c("genuine", "counterfeit")[banknote$Y+1])
+data(banknote, package = "alr3")
+banknote$Type <- factor(c("genuine", "counterfeit")[banknote$Y + 1])
 library(ggplot2)
 theme_set(theme_bw())
 @
@@ -407,11 +407,11 @@ The real power of the lineup protocol is that when \emph{combined with the gramm
 
 % Might be worth mentioning papers which use visual inference casually (not experimentally) to make a point? Don't want to throw those in with the formal testing papers though...
 
-Statistical lineups have been used experimentally to examine single plot types in many contexts: residual plots in hierarchical linear models \citep{loyAreYouNormal2015}, perceived clustering in high-dimensional data \citep{roychowdhuryUsingVisualStatistical2015}, and spatial clustering in geographical research \citep{widen2016graphical}. \citet{loyVariationsQQPlots2016} used statistical lineups to evaluate different types of Q-Q plots for assessing violations of normality, determining that the visual tests were generally more powerful than common numerical tests when assessing violations of normality. \citet{beechamMapLineUpsEffects2017} used lineups to assess the effect of spatial autocorrelation when represented using different grid structures, finding that lineups can be used for chloropleth maps if the null plots are generated under models with reasonable spatial autocorrelation models. Other studies have also found that the approach to null model generation is critical: \citet{vanderplasClustersBeatTrend2017} examined the use of aesthetics to highlight clustering or linear trends in scatterplots using a modified two-target lineup approach, where 18 plots were generated as a mixture of a cluster-generating model and a linear model. In this experiment, the null plot generating model did not specify the number of points in each cluster, and participants identified null plots as significantly different due to the variable number of points in each cluster. It can be difficult to specify the null data generating model in a way that adequately mimics the data plots, which suggests that visually we are able to identify many more features than those typically tested using standard quantitative hypothesis tests.
+Statistical lineups have been used experimentally to examine single plot types in many contexts: residual plots in hierarchical linear models \citep{loyAreYouNormal2015}, perceived clustering in high-dimensional data \citep{roychowdhuryUsingVisualStatistical2015}, and spatial clustering in geographical research \citep{widen2016graphical}. \citet{loyVariationsQQPlots2016} used statistical lineups to evaluate different types of Q-Q plots for assessing violations of normality, determining that the visual tests were generally more powerful than common numerical tests when assessing violations of normality. \citet{beechamMapLineUpsEffects2017} used lineups to assess the effect of spatial autocorrelation when represented using different grid structures, finding that lineups can be used for chloropleth maps if the null plots are generated under models with reasonable spatial autocorrelation models. Other studies have also found that the approach to null model generation is critical: \citet{vanderplasClustersBeatTrend2017} examined the use of aesthetics to highlight clustering or linear trends in scatterplots using a modified lineup design. In this experiment, the null plot generating model did not specify the number of points in each cluster, and participants identified null plots as significantly different due to the variable number of points in each cluster. It can be difficult to specify the null data generating model in a way that adequately mimics the data plots, which suggests that visually we are able to identify many more features than those typically tested using standard quantitative hypothesis tests. This implicit testing of many different hypotheses does make null distribution specification challenging, but also highlights the power of visual cognition to detect subtle differences in data.
 
-The modification of the lineup protocol in \citet{vanderplasClustersBeatTrend2017} to use two competing target plots in a field of 18 null plots allows the testing of competing hypotheses using the implicit graphical testing framework. This modification enables tests of the interaction of graphical aesthetics and data features; for instance, when comparing a model generating clustered data to a model generating data with a linear association between y and x, this protocol establishes that color aesthetics increase the likelihood that the cluster target plot is selected, while a trend line aesthetic increases the probability that the linear relationship target plot will be selected. 
+Typical lineups contain a single target plot, but this is not a requirement. \citet{vanderplasClustersBeatTrend2017} used two targets, each generated from a competing data model: clustering, or linear association. The null plots in this experiment were composed of a mixture of points generated from each of the two data models, ensuring that the two targets were both slightly more extreme than the null plots, but that the null plots and the target plots shared some features. Using this approach, the authors tested the effect of different aesthetics on the selection of each of the two targets, examining the strength of aesthetics such as color, shape, trend lines, error bands, and 95\% ellipses for highlighting clustering or linear trends in the data. By providing viewers with a choice between data generated by competing models, the two-target lineup approach provides a way to directly examine the visual strength of each model compared to the null and comparing the models directly. For instance, when comparing a model generating clustered data to a model generating data with a linear association between y and x, this protocol establishes that color and shape aesthetics slightly increase the likelihood that the cluster target plot is selected, while a trend line aesthetic slightly increases the probability that the linear relationship target plot will be selected.
 
-\svp{Need a better transition here...}
+In the ten years since the introduction of the lineup protocol, many studies have leveraged the grammar of graphics to ensure that the underlying data mapping remains the same while manipulating the geometric representation of the data and overall visual appearance of the plot. Combining the conclusions from both implicit lineup tests and the explicit tests described in the previous section, what can we say about best graphical practices, beyond ``pie charts are awful"?
 
 \section{CURRENT BEST GRAPHICAL PRACTICE} % 3.5 pages
 % The previous section discussed methods for testing hypotheses about best graphical practice, but can we draw any conclusions about what current best graphical practice is? This section will summarize the conclusions from the testing methods, organized by topic. Potential topics include bar charts, the selection of aesthetics such as color, shape, and shading, double encoding, and polar coordinate systems.
@@ -440,9 +440,9 @@ The principle is `objects or shapes that are close to one another appear to form
 \begin{minipage}{.345\textwidth}
 <<tb-plots-1, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # gender in age
-ggplot(tb_au_12, 
-       aes(x = gender, 
-           y = count, 
+ggplot(tb_au_12,
+       aes(x = gender,
+           y = count,
            fill = gender)) +
   geom_bar(stat = "identity") +
   facet_grid(~ age)
@@ -454,9 +454,9 @@ ggplot(tb_au_12,
 \begin{minipage}{.345\textwidth}
 <<tb-plots-2, include = T, echo = T, eval = F, tidy.opts = list(width.cutoff = 37)>>=
 # age in gender
-ggplot(tb_au_12, 
-       aes(x = age, 
-           y = count, 
+ggplot(tb_au_12,
+       aes(x = age,
+           y = count,
            fill = age)) +
   geom_bar(stat = "identity") +
   facet_grid(~ gender)
@@ -474,9 +474,9 @@ Time series example: positive correlation between two curves as opposed to negat
 
 \subsubsection{Change blindness}
 
-Facetting: 
+Facetting:
 
-Animation: the importance of using fades, or even the full data faintly in background. 
+Animation: the importance of using fades, or even the full data faintly in background.
 
 Is this maybe lack of persistence of memory than change blindness? The Healey videos might call this change blindness.
 
@@ -495,7 +495,7 @@ what is interactive graphics? linked brushing, immediacy of time and location
 
 recent interactive approaches - grammar of interactive graphics
 
-vegalite, 
+vegalite,
 
 scripting interactive graphics - could be used for testing, Gabe Becker (trackr)
 
