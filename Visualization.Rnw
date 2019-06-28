@@ -413,12 +413,12 @@ Need to figure out how to cite follow up study - color palette choice doesn't re
 
 \subsection{Cognitive Principles}
 
-A useful starting point is to apply Gestalt principles of visual perception (e.g. \cite{gestalt}), for example, figure-ground, similarity, proximity, common fate, continuity, closure, to data plots.
+A useful starting point is to apply Gestalt principles of visual perception (e.g. \cite{gestalt1}, \cite{gestalt2}), for example, figure-ground, similarity, proximity, common fate, continuity, closure, to data plots.
 
 
 \subsubsection{Proximity}
 
-The principle is "objects or shapes that are close to one another appear to form groups". For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are facetted by age, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB.
+The principle is `objects or shapes that are close to one another appear to form groups'. For plot design, proximity is used to place items to compare close together, and less important comparisons further apart. Figure \ref{fig:proximity} illustrates this principle when using facetting in a plot, using data on tuberculosis (TB) incidence in Australia in 2012. When plots are *facetted by age*, it means gender is easier to compare. We would learn that females more than males are detected to have TB in their early 20s, but in the aging population, males more commonly are detected with TB. Conversely, when plots are facetted by gender, it means that the distribution of counts on age is easier to examine. We would learn that the age distribution of TB incidence for females skews heavily towards younger women. For males, TB incidence is more uniform across ages because there are high counts at young, old and middle age categories. Effectively utilizing proximity in organising plots, makes a huge difference in ease of information communication.
 
 \begin{figure}
 \begin{minipage}{.345\textwidth}
@@ -452,9 +452,17 @@ ggplot(tb_au_12,
 \caption{Two different arrangements of the same data, to illustrate how the proximity of elements makes a question easier to answer. }\label{fig:proximity}
 \end{figure}
 
+\subsection{Common fate}
+
+Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis?
+
 \subsubsection{Change blindness}
 
+Facetting: 
 
+Animation: the importance of using fades, or even the full data faintly in background. 
+
+Is this maybe lack of persistence of memory than change blindness? The Healey videos might call this change blindness.
 
 \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts.
