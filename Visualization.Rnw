@@ -131,21 +131,25 @@ Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} illu
 \captionof{figure}{Hurricane forecast map issued on October 9, 2018, shortly before Hurricane Michael made landfall in the Florida panhandle. The predicted hurricane path, wind field size, and coastal weather status allow consumers to make educated decisions about evacuation orders.}\label{fig:noaa-michael}
 \end{minipage}
 
-<<bdaychart, fig.width = 12, fig.height = 4, fig.cap = "A static reproduction of the birthday chart, which shows the average number of births on a yearly basis in the United States, by month and day of the month. The interactive version, available at \\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}, is designed to be a storyteller to encourage the viewer to interact, check the estimated conception dates and read the frequency.", include = T, out.width = "130%">>=
-bday <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv") %>%
+<<bdaychart, fig.width = 12, fig.height = 4, fig.cap = "A static reproduction of the birthday chart, which shows the average number of births on a yearly basis in the United States, by month and day of the month. The interactive version, available at \\url{http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/}, is designed to be a storyteller to encourage the viewer to interact, check the estimated conception dates and read the frequency. Data source: CDC National Center for Health Statistics (1994-2003) and Social Security Administration (2000-2014), as reproduced at \\url{https://github.com/fivethirtyeight/data/tree/master/births}.", include = T, out.width = "130%">>=
+bday <- c("https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv",
+          "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_2000-2014_SSA.csv") %>%
+  purrr::map_df(read.csv) %>%
+  group_by(year, month, date_of_month) %>%
+  summarize(births = mean(births)) %>% # Get rid of single year
   group_by(month, date_of_month) %>%
-  summarize(birth = mean(births)) %>%
+  summarize(births = mean(births)) %>%
   ungroup() %>%
   # complete(crossing(month, date_of_month), fill = list(birth = NA)) %>%
-  mutate(birth = pmax(pmin(birth, 12000),9000))
+  mutate(birth = pmax(pmin(births, 12000),8000))
 ggplot(data = bday) +
   geom_tile(aes(x = date_of_month, y = month, fill = birth), color = "black") +
-  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "Oranges")[-1], na.value = "transparent", breaks = (9:12)*1000, labels = c("<9", "10", "11", ">12")) +
+  scale_fill_gradientn("Average\n# Births\n(1000s)", colours = brewer.pal(9, "BuGn")[-1], na.value = "transparent", breaks = (8:12)*1000, labels = c("<8", "9", "10", "11", ">12")) +
   scale_y_continuous("Month", breaks = 1:12, trans = "reverse") +
   scale_x_continuous("Day", breaks = seq(5, 30, by = 5)) +
   coord_fixed() +
   # theme(legend.position = "bottom", legend.direction = "horizontal") +
-  ggtitle("How Common is Your Birthday?\nUS Births by Date (2000-2014, SSA)")
+  ggtitle("How Common is Your Birthday?\nUS Births by Date (1994-2014)")
 @
 
 \subsection{Statistical Mapping Using a Grammar of Graphics}
