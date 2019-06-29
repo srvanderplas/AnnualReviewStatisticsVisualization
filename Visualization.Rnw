@@ -578,6 +578,8 @@ Tons of historical research, but how much of it has been put into practice? Over
 
 \section{INTERACTIVE GRAPHICS}
 
+There is huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby} and now there is not much agreement over what `interactive graphics' actually means. 
+
 interactive graphics - \citet{plumbing}, \citet{pipeline}, \citet{cranvas}
 
 what is interactive graphics? linked brushing, immediacy of time and location
