@@ -569,81 +569,53 @@ While color is an extremely useful aesthetic for the majority of the population,
 %Where there are no pre-existing associations between variable and color choice, and color deficiency is not a concern, evidence \todo{how to cite?} suggests that different categorical color schemes do not produce significant changes in the perception of the same plot.DHC: I don't think that this is true, might be better to avoid saying, in light of the do no harm principle
 
 
-\section{ACCEPTANCE OF RESULTS} % 3.5 pages
-% There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts, dual axes, dynamite plots.
-
-Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
-
-% Not sure adding something liek this is useful: That said, there is room for improvement on adoption of best practices. Where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to to improve plots in published articles. 
-
-\section{INTERACTIVE GRAPHICS}
-
-There is huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby} and now there is not much agreement over what `interactive graphics' actually means. 
-
-interactive graphics - \citet{plumbing}, \citet{pipeline}, \citet{cranvas}
-
-what is interactive graphics? linked brushing, immediacy of time and location
-
-
-recent interactive approaches - grammar of interactive graphics
-
-vegalite,
-
-scripting interactive graphics - could be used for testing, Gabe Becker (trackr)
-
-incorporating interactivity into the workflow, no standalone interactive package
-
-is the script  to describe the interactive chart readable?
-
-can we use scripting to precisely and concisely describe a user's action
-
-connecting graphics to knowledge ("fly over" versus meaningful plots that answer questions)
-
-% \hh{copied from the Metrika paper}
-% There
-% is an almost bewildering abundance of applications which go under the
-% heading of  \textit {interactive software} - yet there seem to be
-% quite different opinions of what \textit {interactivity} means. \\
-% The definition and use of this term is not quite clear
-% even among computational statisticians as a recent survey
-% on this topic by \citeasnoun {interactive} made clear. \\
-% Human-computer interaction in this paper is based on the definition
-% proposed by \citeasnoun {unwin.interactive} as the \textit{direct manipulation
-% of plots and plotting elements in them}. This goes
-% back to one of the first definitions of interactivity made by
-% \citeasnoun {becker}: ``dynamic methods have two important properties:
-% direct manipulation
-% and instantaneous change. The data analyst takes an action of an input
-% device and something happens, virtually instantaneously, on a computer
-%  graphics screen''. \citeasnoun {huber} corrects the term of dynamic
-% graphics to \textit {high-interaction graphics}.
-% \textit {Virtually instantaneously} hereby is often interpreted as
-% real time changes, e.g. by \citeasnoun {graham}, with the maximum response
-% time set to 20 ms or equivalently an update speed of 20 frames per
-% second. This, however, looks rather dangerous as it emphasizes the
-% role of the underlying hardware and may even lead to different
-% decisions about which methods can be classified as interactive or not.
-% Therefore it is probably better to speak of a \textit {potentially
-% interactive} method, if it fulfills the proposition of being directly
-% manipulative. \textit {Direct manipulation} depends on two conditions:
-% \begin {itemize}
-% \item {\textbf {immediacy of place}\\ by using a pointing device such
-% as a mouse the
-% analyst can specify visually the areas of the plot, which are meant as
-% a starting point of an action.}
-% \item {\textbf {the immediacy of action}\\
-% the action is triggered by using a clicking device such as a mouse,
-% pressing keys
-% on the keyboard (but not typing in commands) or via some other such input
-% device}
-% \end {itemize}
-
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
-As cognitive perception research has advanced so dramatically, transitioning what has been learned into improving data plotting practices would be a fruitful direction. 
+One of the areas in graphics showing the most recent growth and creating the most excitement in the community are interactive graphics. 
+Unfortunately there is a huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}. 
+One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. On this basis, the R package shiny \citep{shiny} is built, which all by itself triggered the creation of thousands of interactive dashboards and web-applications. 
 
-A data plot is not designed to compete with numerical statistics. If accuracy is what is of interest, showing the data as a table is clearly preferable. Techniques to be able to quantify effectiveness of plots in ways other than accuracy and speed are needed. 
+Formal testing for interactive graphics is difficult without an established and generally accepted grammar of interactive graphics. However, there are several promising approaches into this direction, such as the Python framework vega-lite \citep{Satyanarayan:cb}, and R packages, e.g.\ ggvis \citep{ggvis} and plotly \citep{plotly}, and most recently ggvega \citep{ggvega}.
+
+Least well defined in these grammars is usually the aspect of linked brushing and highlighting in plots \citep{Becker:1987dh}, a technique crucial to interactive graphics for defining and exploring subsets of the data.
+
+An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result. 
+Very recent advances such as trackr \citep{Becker:2019hp} not only script the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code. 
+This approach might be used in testing, both to evaluate different user's approaches as well as the tools used.
+
+Another open question is the acceptance of results -- a lot of historical research on best practices exists, but how much of it is being put into practice? One does not have to look far to find astonishingly bad graphics in astonishingly good outlets. We are not going to point fingers, here, but will defer to online communities such as \url{https://www.reddit.com/r/dataisugly/} that have passionate discussions on the latest and baddest mis-uses of graphics.
+%Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
+What can we do about this? It is up to statisticians to teach more graphics and better graphics in the classroom in the hope to slowly change the climate (citation to Unwin discussion, to appear).   
+One incentive in the adoption of best practices might be where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to improve plots in published articles. 
+
+% \section{ACCEPTANCE OF RESULTS} % 3.5 pages
+% % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts, dual axes, dynamite plots.
+% 
+% Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
+% 
+% % Not sure adding something liek this is useful: That said, there is room for improvement on adoption of best practices. Where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to to improve plots in published articles. 
+% 
+% \section{INTERACTIVE GRAPHICS}
+% 
+% There is huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}. 
+% One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. On this basis, the R package shiny \citep{shiny} is built, which all by itself triggered the creation of thousands of interactive dashboards and web-applications. 
+% 
+% Formal testing for interactive graphics is difficult without an established and generally accepted grammar of interactive graphics. However, there are several promising approaches into this direction, such as the Python framework vega-lite \citep{Satyanarayan:cb}, and R packages, e.g.\ ggvis \citep{ggvis} and plotly \citep{plotly}, and most recently ggvega \citep{ggvega}.
+% 
+% Least well defined in these grammars is usually the aspect of linked brushing and highlighting in plots \citep{Becker:1987dh}, a technique crucial to interactive graphics for defining and exploring subsets of the data.
+% 
+% An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result. 
+% Very recent advances such as trackr \citep{Becker:2019hp} not only script the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code. 
+% This approach might be used in testing, both to evaluate different user's approaches as well as the tools used.
+% 
+% 
+% \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
+% % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
+% 
+% As cognitive perception research has advanced so dramatically, transitioning what has been learned into improving data plotting practices would be a fruitful direction. 
+% 
+% A data plot is not designed to compete with numerical statistics. If accuracy is what is of interest, showing the data as a table is clearly preferable. Techniques to be able to quantify effectiveness of plots in ways other than accuracy and speed are needed. 
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
