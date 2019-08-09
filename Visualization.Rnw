@@ -594,7 +594,7 @@ Much of the psychophysics research on statistical charts examines the accuracy o
 \item Indiscriminable Shape
 \end{enumerate}
 
-<<comparison-ranking>>=
+<<comparison-ranking, include = T, fig.width = 8, fig.height = 8, out.width = "\\textwidth">>=
 # Position common scale
 df <- tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
              y = .25*x + rnorm(101, 0, .5),
@@ -606,12 +606,12 @@ p1 <- ggplot(df, aes(x = x, y = y, color = a)) +
   geom_point() +
     scale_color_manual(guide = F, values = c("a" = "orange", "b" = "purple")) +
   ggtitle("Position (common scale)") +
-  theme(axis.title = element_blank())
+  theme(axis.title = element_blank(), axis.text = element_blank())
 
 p2 <- ggplot(filter(df, a == "a"), aes(x = x, y = y + .125 * (x-5)^2)) +
   geom_point() +
   ggtitle("Position (non-aligned scale)") +
-  theme(axis.title = element_blank())
+  theme(axis.title = element_blank(), axis.text = element_blank()) 
 
 p3 <- tibble(height = c(3, 6, 4, 2),
              start = c(1, -1, 2, 0),
@@ -620,12 +620,13 @@ p3 <- tibble(height = c(3, 6, 4, 2),
   ggplot(aes(xmin = x-.4, xmax = x+.4, ymin = start, ymax = end)) +
   geom_rect() +
   ggtitle("Length") +
-  theme(axis.title = element_blank())
+  theme(axis.title = element_blank(), axis.text = element_blank())
 
-p4 <- tibble(xmin = c(0, 4), xmax = c(3, 6), ymin = c(0, 0), ymax = c(3, 4), fill = c("orange", "purple")) %>%
+p4 <- tibble(x = runif(10, 1, 4), y = runif(10, 1, 4), size = runif(10, 1, 6)) %>%
   ggplot() +
-  geom_rect(aes(xmin = xmin, ymin = ymin, xmax = xmax, ymax = ymax, fill = fill), color = "black") +
-  scale_fill_identity() +
+  geom_point(aes(x = x, y = y, size = size)) + 
+  scale_size_area(guide = F, max_size = 6) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
   ggtitle("Area")
 
 p5 <- tibble(x = seq(0, 10, .1), y1 = -.25*(x - 5)^2, y2 = -.25*(x-5)^2 - seq(1, .5, length.out = 101)) %>%
@@ -633,12 +634,35 @@ p5 <- tibble(x = seq(0, 10, .1), y1 = -.25*(x - 5)^2, y2 = -.25*(x-5)^2 - seq(1,
   ggplot() +
   geom_line(aes(x = x, y = value + 8, color = key)) +
   scale_color_manual(values = c("orange", "purple"), guide = F) +
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
   ggtitle("Curvature") + theme(axis.title = element_blank())
 
-p6 <- ggplot(faithful, aes(x = eruptions, y = waiting)) +
- stat_density2d(geom = "raster", aes(fill = ..density..), contour = F) +
- xlim(0.5, 6) +
- ylim(40, 110)
+df <- purrr::map2_df(c(1, 2, 4), c(1, 4, 2), 
+                     function(.x, .y) tibble(x = rnorm(100, mean = .x), 
+                                             y = rnorm(100, mean = .y))) %>%
+  mutate(group = factor(rep(c(1, 2, 3), each = 100)))
+
+p6 <- ggplot(df, aes(x = x, y = y)) +
+  stat_density2d(geom = "raster", aes(fill = ..density..), contour = F) +
+  scale_fill_gradientn("Density", colors = brewer.pal(8, "BuGn")[-1], guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Color Saturation")
+  
+
+p7 <- ggplot(df, aes(x = x, y = y, shape = group)) + 
+  geom_point() +
+  scale_shape_manual(values = c("A", "C", "L"), guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Discriminable Shapes")
+
+
+p8 <- ggplot(df, aes(x = x, y = y, shape = group)) + 
+  geom_point() +
+  scale_shape_manual(values = c("E", "L", "F"), guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Indiscriminable Shapes")
+
+gridExtra::grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, nrow = 3)
 @
 This ranking of cognitive tasks provides some consistent guidance for chart design: if the same data can be represented in a way that allows the user to make a comparison more accurately (based on the hierarchy), then that design is preferrable. Thus, this hierarchy indicates that in most cases, it is better to use a stacked bar chart than the equivalent polar-coordinate pie chart, because a stacked bar chart requires evaluation of length, while a pie chart requires area comparisons. While the hierarchy of graphical comparisons provides some guidance, there are other design choices that can be informed by experimental research in a less systematic way.
 
