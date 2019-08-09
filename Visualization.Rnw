@@ -8,7 +8,7 @@
 %
 % For tracking purposes => this is v1.0 - Apr. 2013
 
-\documentclass{ar-1col}
+\documentclass[letterpaper]{ar-1col}
 <<initial-setup, echo = F, include = F>>=
 library(tidyverse)
 library(RColorBrewer)
@@ -22,7 +22,7 @@ theme_set(theme_bw())
 \bibliographystyle{ar-style1}
 
 \setcounter{secnumdepth}{4}
-\usepackage{fullpage}
+% \usepackage{fullpage}
 % \usepackage{lipsum}
 
 \usepackage{graphicx}
