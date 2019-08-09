@@ -324,7 +324,7 @@ ggplot(data = all_dat) +
 \includegraphics[width=\textwidth]{figure/hue-brightness-array-1}
 \end{minipage}\hfill
 \begin{minipage}[c]{.4\textwidth}
-\caption{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived.}\label{fig:hue-brightness-array}
+\caption{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived. The images shown here are examples of the types of stimuli used in the experiment. While hue and brightness can be manipulated separately, they are preattentively perceived as a single unit.}\label{fig:hue-brightness-array}
 \end{minipage}
 \end{figure}
 We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design does not involve any display of actual data. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}. Other preattentively processed features include shape, angle, size, and texture; however, typically, combinations of preattentive features which represent separate features in the data are processed attentively.
