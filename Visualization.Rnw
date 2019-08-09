@@ -465,7 +465,7 @@ banknote.lp %>%
 \end{figure}
 
 Implicit graphical tests approach the problem of spurious plot relationships at the level of the data, leveraging the human visual system to conduct a suite of visual tests for features such as outliers, clusters, linear and nonlinear relationships.
-The advantage to implicit testing is that lineups do not require a specification of a feature to of interest in the testing framework, i.e.\  we do not have to ask questions such as ``which group has a higher proportion of responses".
+The advantage to implicit testing is that lineups do not require a specification of a feature of interest in the testing framework, i.e.\  we do not have to ask questions such as ``which group has a higher proportion of responses".
 Much of the historical research of comparing different types of charts has been criticized because the specific question phrasing does not provide readily generalizable results; the lineup protocol removes this obstacle by charging the user with the task of identifying the most different looking plot and thereby selecting the feature with the visually most salient difference compared to the other plots.
 %Using visual inference, we simply show a series of plots and depend on the user to identify that one of the plots looks different.
 This allows an evaluation of competing plot designs without the complications of potentially steering participants towards a particular outcome by phrasing questions. This leads to a completely data-driven result: if bar charts are indeed better suited for a task than pie charts, the target plot will be selected more frequently when the lineup is presented with bar charts than when the lineup is presented with pie charts.
