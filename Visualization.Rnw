@@ -562,7 +562,7 @@ The gestalt principle of similarity suggests that we group things which have sim
 The gestalt principle of common region suggests that elements contained within a common region belong together. Common region helps us to easily read small multiple plots, because the graphical elements of each small plot are grouped into a single entity that can be examined on its own. In addition, confidence bands and bounding ellipses also activate this gestalt principle by grouping points within the boundaries together \citep{vanderplasClustersBeatTrend2017}, highlighting the presence of outliers which do not belong to the main group.
 
 \subsubsection{Common fate}
-The gestalt principle of common fate describes the tendency to group objects which are moving together in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Figure \ref{fig:commonfate} shows an example. Four examples are displayed as overlaid time series (top), and another four are shown as scatterplots (bottom). In the time series, plot 4 is likely perceived as having stronger association than plot 3, due to the lines moving roughly in a similar pattern. Strong negative association is not easily detected from overlaid line plots, but is reaily seen in a scatterplot~\citep{tomasetti}. If negative association is suspected, either using a scatterplot, or inverting one series are suggested.
+The gestalt principle of common fate describes the tendency to group objects which are moving together in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Figure \ref{fig:commonfate} shows an example. Four examples are displayed as overlaid time series (top), and another four are shown as scatterplots (bottom). In the time series, plot 4 is likely perceived as having stronger association than plot 3, due to the lines moving roughly in a similar pattern. Strong negative association is not easily detected from overlaid line plots, but is easily seen in a scatterplot~\citep{tomasetti}. If negative association is suspected, either using a scatterplot, or inverting one series are suggested.
 
 \begin{figure}
 \includegraphics[width=.80\textwidth]{figure/common_fate1.pdf}
@@ -572,7 +572,7 @@ The gestalt principle of common fate describes the tendency to group objects whi
 
 %Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
 
-Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provides experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
+Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provide experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
 
 
 \subsubsection{Working Memory}
@@ -594,6 +594,52 @@ Much of the psychophysics research on statistical charts examines the accuracy o
 \item Indiscriminable Shape
 \end{enumerate}
 
+<<comparison-ranking>>=
+# Position common scale
+df <- tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
+             y = .25*x + rnorm(101, 0, .5),
+             a = "a") %>%
+  bind_rows(tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
+             y = .25*x + seq(0, 3, length.out = 101) + rnorm(101, 0, .5),
+             a = "b"))
+p1 <- ggplot(df, aes(x = x, y = y, color = a)) +
+  geom_point() +
+    scale_color_manual(guide = F, values = c("a" = "orange", "b" = "purple")) +
+  ggtitle("Position (common scale)") +
+  theme(axis.title = element_blank())
+
+p2 <- ggplot(filter(df, a == "a"), aes(x = x, y = y + .125 * (x-5)^2)) +
+  geom_point() +
+  ggtitle("Position (non-aligned scale)") +
+  theme(axis.title = element_blank())
+
+p3 <- tibble(height = c(3, 6, 4, 2),
+             start = c(1, -1, 2, 0),
+             end = start + height,
+             x = c(1, 2, 3, 4)) %>%
+  ggplot(aes(xmin = x-.4, xmax = x+.4, ymin = start, ymax = end)) +
+  geom_rect() +
+  ggtitle("Length") +
+  theme(axis.title = element_blank())
+
+p4 <- tibble(xmin = c(0, 4), xmax = c(3, 6), ymin = c(0, 0), ymax = c(3, 4), fill = c("orange", "purple")) %>%
+  ggplot() +
+  geom_rect(aes(xmin = xmin, ymin = ymin, xmax = xmax, ymax = ymax, fill = fill), color = "black") +
+  scale_fill_identity() +
+  ggtitle("Area")
+
+p5 <- tibble(x = seq(0, 10, .1), y1 = -.25*(x - 5)^2, y2 = -.25*(x-5)^2 - seq(1, .5, length.out = 101)) %>%
+  gather(key = key, value = value, -x) %>%
+  ggplot() +
+  geom_line(aes(x = x, y = value + 8, color = key)) +
+  scale_color_manual(values = c("orange", "purple"), guide = F) +
+  ggtitle("Curvature") + theme(axis.title = element_blank())
+
+p6 <- ggplot(faithful, aes(x = eruptions, y = waiting)) +
+ stat_density2d(geom = "raster", aes(fill = ..density..), contour = F) +
+ xlim(0.5, 6) +
+ ylim(40, 110)
+@
 This ranking of cognitive tasks provides some consistent guidance for chart design: if the same data can be represented in a way that allows the user to make a comparison more accurately (based on the hierarchy), then that design is preferrable. Thus, this hierarchy indicates that in most cases, it is better to use a stacked bar chart than the equivalent polar-coordinate pie chart, because a stacked bar chart requires evaluation of length, while a pie chart requires area comparisons. While the hierarchy of graphical comparisons provides some guidance, there are other design choices that can be informed by experimental research in a less systematic way.
 
 \subsection{Chart Design}
