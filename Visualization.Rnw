@@ -8,7 +8,7 @@
 %
 % For tracking purposes => this is v1.0 - Apr. 2013
 
-\documentclass{ar-1col}
+\documentclass[letterpaper]{ar-1col}
 <<initial-setup, echo = F, include = F>>=
 library(tidyverse)
 library(RColorBrewer)
@@ -22,7 +22,7 @@ theme_set(theme_bw())
 \bibliographystyle{ar-style1}
 
 \setcounter{secnumdepth}{4}
-\usepackage{fullpage}
+% \usepackage{fullpage}
 % \usepackage{lipsum}
 
 \usepackage{graphicx}
@@ -87,10 +87,17 @@ Any survey of literature on statistical charts and graphs will be complicated by
 % Whatever relates to extent and quantity may be represented by geometrical figures. Statistical projections which speak to the senses without fatiguing the mind, possess the advantage of fixing the attention on a great number of important facts." - Alexander von Humboldt, 1811, in \citet{funkhouserHistoricalDevelopmentGraphical1937}
 % \end{quote}
 
-Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing information in abstract visual form since the origins of civilisation, e.g. spatial information using maps\citep{smithImagoMundiLogo1996} are displayed with varying degrees of abstraction. %\svp{there has to be a better transition here, but I've spent too much time on it to bother right now}
+Historically, the development of graphs and charts has been linked to the development of coordinate systems \citep{fienbergGraphicalMethodsStatistics1979,benigerQuantitativeGraphicsStatistics1978,funkhouserHistoricalDevelopmentGraphical1937} and abstract representations of data. Preceding the development of formal mathematical coordinates, however, humanity has been representing information in abstract visual form since the origins of civilisation, e.g. spatial information using maps\citep{smithImagoMundiLogo1996} are displayed with varying degrees of abstraction. \autoref{fig:imagomundi} shows the oldest known world map, which dates from 6th century BCE Babylon. %\svp{there has to be a better transition here, but I've spent too much time on it to bother right now}
+
+\begin{minipage}{.35\textwidth}
+\includegraphics[width=\textwidth]{figure/ImagoMundi.jpg}
+\end{minipage}\hfill
+\begin{minipage}{.6\textwidth}
+\captionof{figure}{Imago Mundi Babylonian map, which is the oldest known world map (6th centure BCE). The representation of the world is relatively abstract. The world is shown as a disc, with Babylon represented by a rectangle lat the right end of the Euphrates river, which flows south to the border of the disc. Several other population centers are marked with small circles. \citep{imagomundi}\\{\small Image courtesy of the British Museum, released under a CC By-NC-SA 4.0 license.}}\label{fig:imagomundi}
+\end{minipage}
 Exploring visual abstractions of data, has been an active pursuit of the ``polymaths" who, grappling with increasing collections of economic, demographics, and measurements on the natural world, developed the foundations of current scientific pursuits. During the 18$^{th}$ and 19$^{th}$ centuries, governments became involved, assembling data and graphical representations into the statistical atlases, and government issued reports, as created by \citet{Crome}, \citet{playfair1801statistical}, \citet{atlas}, and many other contemporary workman. In the 20th century, corporations began using charts and graphs to understand their inner workings - studies of the use of charts and graphs at AT\&T\citep{chandarGraphStandardizationManagement2012} and DuPont \citep{yatesGraphsManagerialTool1985a} show efforts to standardize and formalize the use of graphics in decision-making at both companies.
 
-As new charts were invented to represent data differently and highlight features of data~\citep{bernsteinGraphicPresentationTrend1937,yatesGraphsManagerialTool1985a,mcdonaldFlorenceNightingaleStatistics2014}, discussions about the use of statistical graphics began to appear in the literature~\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were  based on heuristics and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}. Many of these ad-hoc classification systems could not accommodate the large numbers of new plot types being developed. 
+As new charts were invented to represent data differently and highlight features of data~\citep{bernsteinGraphicPresentationTrend1937,yatesGraphsManagerialTool1985a,mcdonaldFlorenceNightingaleStatistics2014}, discussions about the use of statistical graphics began to appear in the literature~\citep{peuchet1805statistique,brinton1917graphic,karsten1923charts}, including the relative strengths and weaknesses of various types of charts. In most cases, the drive to produce a classification system for charts and graphs or a system of recommendations for presenting charts and graphs were  based on heuristics and largely unsupported by experimentation \citep{kruskalVisionsMapsGraphs1977,macdonald-rossHowNumbersAre1977}. Many of these ad-hoc classification systems could not accommodate the large numbers of new plot types being developed.
 
 \begin{marginnote}
 % \begin{quote}
@@ -233,7 +240,7 @@ ggplot(data = banknote,
 \begin{minipage}{.45\textwidth}
 \includegraphics[width=.99\textwidth]{figure/gg-plots-figs-3}
 \end{minipage}
-\caption{Three different plots of the Swiss banknote data \citep{banknote}, created using the grammar of graphics as implemented in \texttt{ggplot2}. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
+\caption{Three different plots of the Swiss banknote data \citep{banknote}, created using the grammar of graphics as implemented in \texttt{ggplot2}. The data consist of measurements of the dimensions of the banknotes, including the length of the bottom edge, which is shown in the plots. The main plot specification and syntax remain the same, with the form of the plot changing due to the specification of the geometric object used to represent the data.}\label{fig:grammar-graphics-plots}
 \end{figure}
 % \texttt{Vega-Lite}, a JSON graph specification schema \citep{satyanarayanVegaLiteGrammarInteractive2017} which incorporates interactivity, \texttt{Altair}, a python implmementation built on Vega-Lite \citep{vanderplasAltairInteractiveStatistical2018},
 
@@ -317,7 +324,7 @@ ggplot(data = all_dat) +
 \includegraphics[width=\textwidth]{figure/hue-brightness-array-1}
 \end{minipage}\hfill
 \begin{minipage}[c]{.4\textwidth}
-\caption{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived.}\label{fig:hue-brightness-array}
+\caption{\citet{callaghanDimensionalInteractionHue1984} showed irrelevant variation increases response times, indicating that hue and brightness are integrated and preattentively perceived. The images shown here are examples of the types of stimuli used in the experiment. While hue and brightness can be manipulated separately, they are preattentively perceived as a single unit.}\label{fig:hue-brightness-array}
 \end{minipage}
 \end{figure}
 We will distinguish between tests which use graphical forms and more primitive tests which use basic geometric elements during the testing process. The results from more primitive experimental designs still apply to the design of graphs and charts, but the experimental design does not involve any display of actual data. \citet{callaghanDimensionalInteractionHue1984} demonstrated that hue and brightness are integrated, that is, that even though they can be separately manipulated, they are still perceived preattentively as a single unit, using arrays of tiles similar to those shown in \autoref{fig:hue-brightness-array}. Other preattentively processed features include shape, angle, size, and texture; however, typically, combinations of preattentive features which represent separate features in the data are processed attentively.
@@ -326,23 +333,58 @@ Extending this work, \citet{healeyHighspeedVisualEstimation1996} has used the sa
 they do show the utility of designing with the preattentive perceptual process in mind.
 
 \subsubsection{Attention Mediated Testing Methods}
-Creators of a chart or graph typically operate under the (hopefully safe) assumption that readers will spend more than 300 milliseconds considering its contents; as a result, attention mediated testing methods allow a more realistic mechanism for testing overall performance of different graphical forms. \citet{clevelandGraphicalPerceptionVisual1987} discuss the different approaches to research methodology in this area, and while they do not include all of the experimental approaches we discuss, the paper makes an important distinction between informal and formal graphical exploration. In the informal approach, changes are made to the graph and the iterative versions are compared to determine what information can easily be gleamed; in the formal approach, an experiment is designed and participants are tested in a controlled manner. This section describes several different experimental approaches which can be used to answer the general question of ``how effective is this graph?"
+Creators of a chart or graph typically operate under the (hopefully safe) assumption that readers will spend more than 300 milliseconds considering its contents; as a result, attention mediated testing methods allow a more realistic mechanism for testing overall performance of different graphical forms. \citet{clevelandGraphicalPerceptionVisual1987} discuss the different approaches to research methodology in this area, and while they do not include all of the experimental approaches we discuss, the paper makes an important distinction between informal and formal graphical exploration. In the informal approach, changes are made to the graph and the iterative versions are compared to determine what information is easily accessible; in the formal approach, an experiment is designed and participants are tested in a controlled manner. This section describes several different experimental approaches which can be used to answer the general question of ``how effective is this graph at communicating useful information?"
 
 \paragraph{Direct Observation: Numerical Estimation, Speed, and Error Rates} % 1 page
 One of the simplest ways to test the utility of a graph is to verify that information can be accurately read from it. Charts are, after all, generally recognized as having more utility than tables for presenting information in an accessible and useful way; if that information cannot be read back out in a relatively accurate manner, the graph's utility is suspect. Early experiments, such as \citet{eellsRelativeMeritsCircles1926}, \citet{croxtonBarChartsCircle1927} and \citet{croxtonGraphicComparisonsBars1932} used accuracy alongside speed and other considerations for plot evaluation. Later studies~\citep{petersonHowAccuratelyAre1954,cleveland_graphical_1984,broersmaGraphicalPerceptionDistributional,dunnFramedRectangleCharts1988,tanHumanProcessingTwodimensional1994,amerBiasDueVisual2005} were conducted with similar methodology; in essence, the participants are provided with a chart and asked to estimate some quantity or answer a predefined question using the information provided in the chart. The accuracy of various types of charts, as measured by participants responses to the questions, is then used to determine which charts are superior. It is important to ensure that the specific charts and questions used are aligned; studies are commonly critiqued on the basis that the charts or the questions were not appropriate for the task  --- indeed, the first studies of pie vs. bar charts were heavily criticized on these grounds \citep{vonhuhnFurtherStudiesGraphic1927}.
 
-A similar type of study avoids the pitfalls associated with numerical estimation by showing participants multiple charts in sequence, and asking them to evaluate the differences in the charts with respect to the dimension of interest. \citet{shahConceptualLimitationsComprehending1995} required participants to examine the relationship between three variables as shown in several different types of line charts.
+\begin{minipage}{.4\textwidth}
+\includegraphics[width=\textwidth]{figure/Oregon-spine_with_frame3.png}
+\end{minipage}\hfill
+\begin{minipage}{.5\textwidth}
+\captionof{figure}{A framed spine plot similar to those shown in the 1874 Statistical Atlas, recreated using modern methods. The chart shows the proportion of church accomodations in Oregon, with the four largest denominationns in the state shown in the center and the unaccommodated population shown in the grey region framing the plot. Participants were asked to estimate the size of the area labeled ``A" relative to the entire chart; the presence of the frame significantly decreases the accuracy of these estimates. \citep{vanderplasFramedReproducingRevisiting2019}}\label{fig:framedspine}
+\end{minipage}
 
-In some studies, response time is the main quantity of interest. Participants are provided with a certain chart or stimulus, and the amount of time spent considering the stimulus before answering  are used together with accuracy of the answer to assess the difficulty of the task, under the premise that more difficult or mentally demanding tasks will require more time before a response is generated. \citet{carswellInformationIntegrationObject1987} uses the error rate and response time to determine whether object displays are superior to bar graphs; \citet{leggeEfficiencyGraphicalPerception1989} uses efficiency, a function of time and accuracy, to assess different types of charts. More modern studies may collect both response time and numerical estimation data online, using services such as Amazon Mechanical Turk to conduct usability studies in statistical graphics~\citep{heer2010crowdsourcing}. It should be noted that some of the other experimental paradigms, such as psychophysics and implicit tests, can also be used in combination with Amazon Turk and other services. We have even used direct estimation in combination with online testing to examine very old charts from the 1874 Statistical Atlas~ \citep{vanderplasFramedReproducingRevisiting2019}, determining that framed mosaic, spine, and pie charts are sub-optimal graphical representations.
+A similar type of study avoids the pitfalls associated with numerical estimation by showing participants multiple charts in sequence, and asking them to evaluate the differences in the charts with respect to the dimension of interest. \citet{shahConceptualLimitationsComprehending1995} required participants to examine the relationship between three variables as shown in several different types of line charts. One set of charts used in the experiment is recreated in \autoref{fig:shahcarpenter}; in the first plot, it is much easier to determine that there is no relationship between pupil size and depression for one level of thyroid activity compared with the second plot.
 
-There are limits to what one can test using direct estimation: it is generally preferable to test only very simple assessments of the content of a chart or graph, to fit within a simple experimental paradigm. In addition, open-ended estimation tasks elicit certain well-known biases such as the tendency to round to multiples of 5 or 10~\citep{bairdRelativeFrequenciesNumerical1970}. Long-term interaction with a complex graph or chart is generally not ideal within this paradigm, which may explain why there are so few studies of rich, complex graphics that may require domain expertise in addition to the ability to read information from a visual display. To approach situations with more complicated graphics, or charts which are known to induce perceptual biases in the participants, it is often more useful to utilize other experimental paradigms that facilitate examination of specific parts of the perceptual process - such as the use of eye tracking to measure attention and motivation, or the use of verbal descriptions to assess more complicated graphs. The next sections cover some of these more nuanced approaches to explicit testing of graphs.
+<<shahcarpenter, include = T, fig.cap = "Sample plots from \\citet{shahConceptualLimitationsComprehending1995}, showing data where one independent variable (pupil size) has no effect on the y variable (depression) for one value of the second independent variable (thyroid activity). The two representations of this data, referred to as line and point, are not equally effective for communicating the joint relationship of the two independent variables. ", out.width = "\\textwidth", fig.width = 8.2, fig.height = 4.1>>=
+df <- tribble(~pupil, ~depression, ~thyroid,
+              5, 70, 10,
+              10, 70, 10,
+              5, 50, 20,
+              10, 20, 20)
+p1 <- ggplot(df, aes(x = pupil, y = depression, shape = factor(thyroid), color = factor(thyroid))) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous("Pupil Size") +
+  scale_y_continuous("Depression") +
+  scale_color_discrete("Thyroid Activity") +
+  scale_shape_discrete("Thyroid Activity") +
+  ggtitle(label = "\"Line\"", subtitle = "Depression vs. Pupil Size by Thyroid Activity") +
+  theme(legend.position = c(0, 0), legend.justification = c(-0.01, -0.01))
+p2 <- ggplot(df, aes(x = thyroid, y = depression, shape = factor(pupil), color = factor(pupil))) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous("Thyroid Activity") +
+  scale_y_continuous("Depression") +
+  scale_color_discrete("Pupil Size") +
+  scale_shape_discrete("Pupil Size") +
+  ggtitle("\"Point\"", subtitle = "Depression vs. Thyroid Activity by Pupil Size") +
+  theme(legend.position = c(0, 0), legend.justification = c(-0.01, -0.01))
+
+gridExtra::grid.arrange(p1, p2, nrow = 1)
+@
+
+In some studies, response time is the main quantity of interest. Participants are provided with a certain chart or stimulus, and the amount of time spent considering the stimulus before answering  are used together with accuracy of the answer to assess the difficulty of the task, under the premise that more difficult or mentally demanding tasks will require more time before a response is generated. \citet{carswellInformationIntegrationObject1987} uses the error rate and response time to determine whether triangular ``object displays" are superior to bar graphs to represent the inputs and outputs of a dynamic system \citep[see Fig.2 in][for an example of an object display]{carswellInformationIntegrationObject1987}; \citet{leggeEfficiencyGraphicalPerception1989} uses efficiency, a function of time and accuracy, to assess different types of charts. More modern studies may collect both response time and numerical estimation data online, using services such as Amazon Mechanical Turk to conduct usability studies in statistical graphics~\citep{heer2010crowdsourcing}. We have even used direct estimation in combination with online testing to examine very old charts from the 1874 Statistical Atlas~ \citep{vanderplasFramedReproducingRevisiting2019}, determining that framed mosaic, spine, and pie charts are sub-optimal graphical representations. \autoref{fig:framedspine} shows an example of direct estimation used in the experiment; participants entered an estimate of the proportion of the chart represented by the area labeled ``A".It should be noted that some of the other experimental paradigms, such as psychophysics and implicit tests, can also be used in combination with Amazon Turk and other online testing services.
+
+There are limits to what one can test using direct estimation: it is generally preferable to test only very straightforward assessments of the content of a chart or graph, to fit within a simple experimental paradigm. In addition, open-ended estimation tasks elicit certain well-known biases such as the tendency to round to multiples of 5 or 10~\citep{bairdRelativeFrequenciesNumerical1970}. Long-term interaction with a complex graph or chart is generally not ideal within this paradigm, which may explain why there are so few studies of rich, complex graphics that may require domain expertise in addition to the ability to read information from a visual display. To approach situations with more complicated graphics, or charts which are known to induce perceptual biases in the participants, it is often more useful to utilize other experimental paradigms that facilitate examination of specific parts of the perceptual process - such as the use of eye tracking to measure attention and motivation, or the use of verbal descriptions to assess more complicated graphs. The next sections cover some of these more nuanced approaches to explicit testing of graphs.
 
 \paragraph{Psychophysics and Signal Detection Theory} % .5 page
 Some studies of graphs utilize psychophysics methods to assess data visualizations. Initially, of course, a significant portion of the research in statistical graphics came from the fields of psychophysics and cognitive psychology~\citep{spenceVisualPsychophysicsSimple1990,teghtsoonian_judgment_1965, lewandowskyPerceptionStatisticalGraphs1989}, but in most cases this was not accompanied by a  use of the methods of psychophysics for experimental testing of charts and graphs. Psychophysical experimental design is focused on whether an effect is detectable, and whether the magnitude of the effect can be accurately estimated. Common methods, such as the method of constant stimuli and the method of adjustment, involve repeatedly presenting a participant with charts and asking them to evaluate the chart on the basis of a particular question of interest. In the method of adjustment, this is done with the control of the participant, who adjusts the stimuli interactively until the effect is just barely noticable; in the method of constant stimuli, the effect size changes randomly from trial to trial to reduce continuity effects. In graphical testing, \citet{hughesJustNoticeableDifferences2001} used the method of constant stimuli to assess the ability to detect a difference in height in 2D or 3D barcharts; \citet{vanderplas_signs_2015} used the method of adjustment to experimentally determine the size of the line-width illusion's distortion of variance perception. Psychophysics methods also seem to be relatively common in studies of map perception, particularly when the goal is to estimate the amount of exaggeration or other corrective distortion necessary for realistic perception of the map \citep[for an overview of relevant cartography studies, see][]{brandesPresentStatePerceptual1976}.
 
 
 \paragraph{Thinking Aloud} % .5 page
-Another approach to testing graphics is to examine the cognitive processes which occur as a graph is read. Lacking mind-reading devices, the next best option is to ask participants to talk through their thoughts as they read and use a graph in a realistic setting (Concurrent Think Aloud, CTA), or as they recall a graph after the fact (Retrospective Think Aloud, RTA)~\citep{guan_validity_2006}. The think aloud process allows experimenters to examine the use of complex graphics ``in the wild" or at least in situations that are less artificial than the paradigms allowed by numerical estimation and psychophysics methods. Talk-aloud studies allow researchers to attempt to measure insight~\citep{northMeasuringVisualizationInsight2006} and reasoning~\citep{dunbar1995scientists} in complex situations such as experimental design, decision making~\citep{normandEffectsCelerationLines2006}, or the process of weather forecasting~\citep{traftonTurningPicturesNumbers2000,kirschenbaum2003comparative}. Studies using this protocol have also examined the process of exploratory data analysis, finding that unexpected results are more likely to be represented in informal terms initially, but that with familiarity language shifts to formal explanations~\citep{trickettDipsyDoodlesStreamingMotions2000,trickett2000blobs}. The talk-aloud protocol is also conducive to use with interactive graphics, combined with logging or video recording software which can record the state of the graphics device in parallel with the user's monologue. Studies have also combined talk aloud protocols and eye tracking studies with the goal of validating CTA \citep{cookeAssessingConcurrentThinkAloud2010} and RTA protocols~\citep{guan_validity_2006} for use with statistical graphics and general usability testing. While the data which results from the talk-aloud protocol is typically more qualitative and less quantitative than results produced using other methods, there is significant additional insight into the underlying cognitive processes  affecting visualization which cannot be obtained through other means.
+Another approach to testing graphics is to examine the cognitive processes which occur as a graph is read. Lacking mind-reading devices, the next best option is to ask participants to talk through their thoughts as they read and use a graph in a realistic setting (Concurrent Think Aloud, CTA), or as they recall a graph after the fact (Retrospective Think Aloud, RTA)~\citep{guan_validity_2006}. The think aloud process allows experimenters to examine the use of complex graphics ``in the wild" or at least in situations that are less artificial than the paradigms allowed by numerical estimation and psychophysics methods. Talk-aloud studies allow researchers to attempt to measure insight~\citep{northMeasuringVisualizationInsight2006} and reasoning~\citep{dunbar1995scientists} in complex situations such as experimental design, decision making~\citep{normandEffectsCelerationLines2006}, or the process of weather forecasting~\citep{traftonTurningPicturesNumbers2000,kirschenbaum2003comparative}. In forensics, think-aloud studies are known as ``white box" studies, because it is possible to ``see" what a forensic examiner is thinking and why they make a specific conclusion about the evidence\citep{Ulery7733}. Studies using think-aloud protocols have also examined the process of exploratory data analysis, finding that unexpected results are more likely to be represented in informal terms initially, but that with familiarity language shifts to formal explanations~\citep{trickettDipsyDoodlesStreamingMotions2000,trickett2000blobs}. The talk-aloud protocol is also conducive to use with interactive graphics, combined with logging or video recording software which can record the state of the graphics device in parallel with the user's monologue. Studies have also combined talk aloud protocols and eye tracking studies with the goal of validating CTA \citep{cookeAssessingConcurrentThinkAloud2010} and RTA protocols~\citep{guan_validity_2006} for use with statistical graphics and general usability testing. While the data which results from the talk-aloud protocol is typically more qualitative and less quantitative than results produced using other methods, there is significant additional insight into the underlying cognitive processes  affecting visualization which cannot be obtained through other means.
 
 \paragraph{Eye Tracking} % .5 page
 Where talk-aloud protocols allow insight into the cognitive process, eye tracking facilitates insight into the process of visual attention, providing data on the approximate spatial location of visual focus. The attention-fixation process occurs too quickly to be accurately verbally communicated, but eye-tracking equipment allows experimenters to identify the portions of the chart which require attention and sustained cognitive effort or which attract interest from participants, inferring from gaze and fixation the cognitive processes occurring during graph comprehension. Eye tracking allows researchers to determine that viewers spend relatively little time examining the axes in scatterplots, but significant amounts of time examining the axes in parallel coordinates plots \citep{netzelComparativeEyetrackingEvaluation2017}, suggesting that the process of reading these two chart types is fundamentally different. Another study leveraged eye tracking to identify features which provide useful information during the graph reading process for several different types of charts~\citep{goldbergComparingInformationGraphics2010}. Eye tracking is a powerful tool when combined with good experimental design: \citet{fabrikantCognitivelyInspiredPerceptually2010a} examined fixations when shown meterological charts before and after users are provided with introductory training about meterology, finding that after training users conclusions were more accurate, response time increased, and fixations were directed to more useful areas of the maps. The use of eye tracking with different source populations also allows researchers to understand how dyslexia \citep{kimInvestigatingGraphComprehension2014} and graph literacy \citep{wollercarterCommunicatingDistortingRisks2012,okanHowPeopleLow2016} affect the graph comprehension process, providing better design guidelines for specific target audiences.
@@ -362,12 +404,12 @@ Many studies use a combination of the explicitly structured graphical tests disc
 
 Explicit graphical tests, as we have referred to them, are tests where the user is directed to assess a specific feature of a plot or answer a specific question.
 That is, the tested hypothesis is explicitly stated, providing the user with cues to the intended purpose and function of the plot and/or the relevant features of the data shown within the plot.
-In contrast, in an implicit graphical test, the user is asked to identify both the purpose and function of the plot and to use that information to evaluate the plots as shown.
+In contrast, in an implicit graphical test, the user must identify both the purpose and function of the plot and use that information to evaluate the plots as shown.
 Typically, these tests are structured as visual inference problems, as introduced in \citet{bujaStatisticalInferenceExploratory2009}, though other formulations of implicit tests exist as well~ \citep{hasanhodzicHumansPerceiveTemporal2011}.
 Explicit tests are typically conducted on plots which have been created to showcase specific structure in the data in order to present results; in contrast, implicit tests are designed to inform exploratory data analysis \citep[as advocated by][]{tukeyTechnicalToolsStatistics1965} and the iterative model diagnostic process.
 During a data exploration (EDA), statisticians typically examine the data using many different plots considering different aspects of the data and selecting only those results which are visually interesting for further exploration.
-This raises the question whether the `visually interesting' features in those plots show actual signal and do not arise simply by chance. This question is a direct consequence of our general use of graphics and our definition of `interesting'. Generally speaking, something is `interesting' that does not follow our expectations in some way -- in other words, we are going through an implicit hypothesis test when drawing and looking at charts that results in a significant finding when we are faced with an interesting chart. Making this hypothesis test explicit is crucial to allow for a more formal evaluation of the significance of a visual finding.
-In terms of a classical  hypothesis test,  a plot of the data is taking the role of a (visual) test statistic. Null plots are created from data in aacordance with the null hypothesis (e.g\ permuted data, if the null hypothesis assumes that there is no non-random relationship between the variables). If the data plot is visibly different from the null plots, i.e.\ can be picked out through visual inspection by an independent evaluator, this counts as evidence against the null hypothesis and once enough evidence is accumulated we would conclude that the null hypothesis has to be rejected and accept that the feature in the data plot is not random. 
+This raises the question whether the `visually interesting' features in those plots show actual signal and do not arise simply by chance. This question is a direct consequence of our general use of graphics and our definition of `interesting'. Generally speaking, something is `interesting' that does not follow our expectations in some way -- in other words, we conduct an implicit hypothesis test when drawing and looking at charts; `interesting' charts are those which are deemed `significant' according to this implicit hypothesis test. Making this hypothesis test explicit allows for a more formal evaluation of the significance of a visual finding.
+In terms of a classical  hypothesis test,  a plot of the data is taking the role of a (visual) test statistic. Null plots are created from data in acordance with the null hypothesis (e.g\ permuted data, if the null hypothesis assumes that there is no non-random relationship between the variables). If the data plot is visibly different from the null plots, i.e.\ can be picked out through visual inspection by an independent evaluator, this counts as evidence against the null hypothesis and once enough evidence is accumulated we would conclude that the null hypothesis has to be rejected and accept that the feature in the data plot is not random.
 Formally, a statistical lineup of $m$ visual statistics consists of $m-1$ plots $T(y_0)$ simulated from the model specified by the null hypothesis, and the test statistic $T(y)$ produced by plotting the actual data, which may arise from the alternative hypothesis. \autoref{fig:lineup-demo} demonstrates this process, with the 19 null plots generated by randomizing the values of $y$. The statistical lineup is then evaluated by $K$ independent observers, with the resultant p-value calculated according to the null hypothesis that each of the $m$ visual statistics are equally likely to be selected \citep{majumderValidationVisualStatistical2013}. The `nullabor` package contains tools for graphical inference \citep{nullabor}, including p-value calculations and power calculations for visual inference.
 
 \begin{figure}
@@ -400,8 +442,8 @@ Formally, a statistical lineup of $m$ visual statistics consists of $m-1$ plots 
 set.seed(4209510)
 banknote.lp <- lineup(method=null_permute('Type'), banknote)
 
-banknote %>% 
-  ggplot(aes(x = Bottom, y=Left)) + 
+banknote %>%
+  ggplot(aes(x = Bottom, y=Left)) +
   geom_point(aes(colour=Type, shape=Type), size = 3)  +
 #  facet_wrap(~.sample) +
   scale_colour_manual(values=c("darkorange", "steelblue")) +
@@ -411,8 +453,8 @@ banknote %>%
 \end{minipage}
 \begin{minipage}[c]{.69\textwidth}
 <<lineup-creation2, fig.width = 10, fig.height = 8, out.width = "\\textwidth", include = T, echo = F>>=
-banknote.lp %>% 
-  ggplot(aes(x = Bottom, y=Left)) + 
+banknote.lp %>%
+  ggplot(aes(x = Bottom, y=Left)) +
   geom_point(aes(colour=Type, shape=Type), size = 3)  +
   facet_wrap(~.sample) +
   scale_colour_manual(values=c("darkorange", "steelblue")) +
@@ -423,8 +465,8 @@ banknote.lp %>%
 \end{figure}
 
 Implicit graphical tests approach the problem of spurious plot relationships at the level of the data, leveraging the human visual system to conduct a suite of visual tests for features such as outliers, clusters, linear and nonlinear relationships.
-The advantage to implicit testing is that lineups do not require a specification of a feature to of interest in the testing framework, i.e.\  we do not have to ask questions such as ``which group has a higher proportion of responses".
-Much of the historical research of comparing different types of charts has been criticized because the specific question phrasing does not provide readily generalizable results; the lineup protocol removes this obstacle by charging the user with the task of identifying the most different looking plot and thereby selecting the feature with the visually most salient difference compared to the other plots.  
+The advantage to implicit testing is that lineups do not require a specification of a feature of interest in the testing framework, i.e.\  we do not have to ask questions such as ``which group has a higher proportion of responses".
+Much of the historical research of comparing different types of charts has been criticized because the specific question phrasing does not provide readily generalizable results; the lineup protocol removes this obstacle by charging the user with the task of identifying the most different looking plot and thereby selecting the feature with the visually most salient difference compared to the other plots.
 %Using visual inference, we simply show a series of plots and depend on the user to identify that one of the plots looks different.
 This allows an evaluation of competing plot designs without the complications of potentially steering participants towards a particular outcome by phrasing questions. This leads to a completely data-driven result: if bar charts are indeed better suited for a task than pie charts, the target plot will be selected more frequently when the lineup is presented with bar charts than when the lineup is presented with pie charts.
 The real power of the lineup protocol is that when \emph{combined with the grammar of graphics}, we can hold the underlying data and summary statistics constant, isolating the effect of different plot types, coordinate transformations, and aesthetic mappings on our ability to detect effects in the data.
@@ -520,7 +562,7 @@ The gestalt principle of similarity suggests that we group things which have sim
 The gestalt principle of common region suggests that elements contained within a common region belong together. Common region helps us to easily read small multiple plots, because the graphical elements of each small plot are grouped into a single entity that can be examined on its own. In addition, confidence bands and bounding ellipses also activate this gestalt principle by grouping points within the boundaries together \citep{vanderplasClustersBeatTrend2017}, highlighting the presence of outliers which do not belong to the main group.
 
 \subsubsection{Common fate}
-The gestalt principle of common fate describes the tendency to group objects which are moving together in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Figure \ref{fig:commonfate} shows an example. Four examples are displayed as overlaid time series (top), and another four are shown as scatterplots (bottom). In the time series, plot 4 is likely perceived as having stronger association than plot 3, due to the lines moving roughly in a similar pattern. Strong negative association is not easily detected from overlaid line plots, but is reaily seen in a scatterplot~\citep{tomasetti}. If negative association is suspected, either using a scatterplot, or inverting one series are suggested. 
+The gestalt principle of common fate describes the tendency to group objects which are moving together in the same direction and at the same speed together. Common fate is certainly active in animated plots which use fading or transitions over time, but even in static plots, continuity can be activated when multiple time series plots are shown together. Figure \ref{fig:commonfate} shows an example. Four examples are displayed as overlaid time series (top), and another four are shown as scatterplots (bottom). In the time series, plot 4 is likely perceived as having stronger association than plot 3, due to the lines moving roughly in a similar pattern. Strong negative association is not easily detected from overlaid line plots, but is easily seen in a scatterplot~\citep{tomasetti}. If negative association is suspected, either using a scatterplot, or inverting one series are suggested.
 
 \begin{figure}
 \includegraphics[width=.80\textwidth]{figure/common_fate1.pdf}
@@ -530,14 +572,14 @@ The gestalt principle of common fate describes the tendency to group objects whi
 
 %Time series example: positive correlation between two curves as opposed to negative correlation. Plot the two as a scatterplot to communicate correlation, or reverse the sign of one series to check. Refer to Nathaniel Tomasetti's honours thesis? Double axes
 
-Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provides experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
+Overlaying a few time series on a common scale is one way to activate the heuristic of common fate, but this does not scale well to larger numbers of simultaneous measurements. \citet{javedGraphicalPerceptionMultiple2010a} provide experimental evidence that small multiples are better than other alternatives when there are many simultaneous time series to display and the series cover a large visual span.
 
 
 \subsubsection{Working Memory}
-Another cognitive limitation that affects plot comprehension is the limit on working memory. Typically, working memory is limited to approximately 7 (plus or minus 2) items, or 'chunks'. In practice, this means that categorical scales with more than 7 categories decrease readability, increase comprehension time, and require significant attentional resources, because it is not possible to hold the legend mapping in working memory. 
+Another cognitive limitation that affects plot comprehension is the limit on working memory. Typically, working memory is limited to approximately 7 (plus or minus 2) items, or 'chunks'. In practice, this means that categorical scales with more than 7 categories decrease readability, increase comprehension time, and require significant attentional resources, because it is not possible to hold the legend mapping in working memory.
 
 \subsubsection{Change blindness}
-Not all information is stored in memory (working or long-term) as it is represented. \citet{simonsChangeBlindness1997} suggests that the vivid details available to us instantaneously when examining the world fade quickly, and are replaced with broad semantic descriptions or less meaningful cognitive representations of a scene. As a result of this compression, it is difficult to identify changes between similar scenes. This phenomenon, known as change blindness, affects both static and interactive plots. In static plots, it can be difficult to compare between different small multiples or facets, because the content of the plots are not reliably represented in working memory when switching attention between them. In animated plots, it is important to use transition effects to connect successive frames of the animation: this reduces change blindness and also activates the gestalt principle of common fate, allowing us to quickly identify groups of objects which are transitioning in the same direction. 
+Not all information is stored in memory (working or long-term) as it is represented. \citet{simonsChangeBlindness1997} suggests that the vivid details available to us instantaneously when examining the world fade quickly, and are replaced with broad semantic descriptions or less meaningful cognitive representations of a scene. As a result of this compression, it is difficult to identify changes between similar scenes. This phenomenon, known as change blindness, affects both static and interactive plots. In static plots, it can be difficult to compare between different small multiples or facets, because the content of the plots are not reliably represented in working memory when switching attention between them. In animated plots, it is important to use transition effects to connect successive frames of the animation: this reduces change blindness and also activates the gestalt principle of common fate, allowing us to quickly identify groups of objects which are transitioning in the same direction.
 
 \subsubsection{Ease of Comparisons}
 Much of the psychophysics research on statistical charts examines the accuracy of comparisons and quantitative evaluations made during the process of understanding a plot. This research can be distilled into a hierarchy of comparisons (based primarily on \citep{cleveland_graphical_1984, cleveland_graphical_1985, shah_cambridge_2005, lewandowskyPerceptionStatisticalGraphs1989}, ranking tasks by their accuracy and difficulty as follows (roughly equivalent tasks are listed together):
@@ -552,6 +594,76 @@ Much of the psychophysics research on statistical charts examines the accuracy o
 \item Indiscriminable Shape
 \end{enumerate}
 
+<<comparison-ranking, include = T, fig.width = 8, fig.height = 8, out.width = "\\textwidth">>=
+# Position common scale
+df <- tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
+             y = .25*x + rnorm(101, 0, .5),
+             a = "a") %>%
+  bind_rows(tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
+             y = .25*x + seq(0, 3, length.out = 101) + rnorm(101, 0, .5),
+             a = "b"))
+p1 <- ggplot(df, aes(x = x, y = y, color = a)) +
+  geom_point() +
+    scale_color_manual(guide = F, values = c("a" = "orange", "b" = "purple")) +
+  ggtitle("Position (common scale)") +
+  theme(axis.title = element_blank(), axis.text = element_blank())
+
+p2 <- ggplot(filter(df, a == "a"), aes(x = x, y = y + .125 * (x-5)^2)) +
+  geom_point() +
+  ggtitle("Position (non-aligned scale)") +
+  theme(axis.title = element_blank(), axis.text = element_blank()) 
+
+p3 <- tibble(height = c(3, 6, 4, 2),
+             start = c(1, -1, 2, 0),
+             end = start + height,
+             x = c(1, 2, 3, 4)) %>%
+  ggplot(aes(xmin = x-.4, xmax = x+.4, ymin = start, ymax = end)) +
+  geom_rect() +
+  ggtitle("Length") +
+  theme(axis.title = element_blank(), axis.text = element_blank())
+
+p4 <- tibble(x = runif(10, 1, 4), y = runif(10, 1, 4), size = runif(10, 1, 6)) %>%
+  ggplot() +
+  geom_point(aes(x = x, y = y, size = size)) + 
+  scale_size_area(guide = F, max_size = 6) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Area")
+
+p5 <- tibble(x = seq(0, 10, .1), y1 = -.25*(x - 5)^2, y2 = -.25*(x-5)^2 - seq(1, .5, length.out = 101)) %>%
+  gather(key = key, value = value, -x) %>%
+  ggplot() +
+  geom_line(aes(x = x, y = value + 8, color = key)) +
+  scale_color_manual(values = c("orange", "purple"), guide = F) +
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Curvature") + theme(axis.title = element_blank())
+
+df <- purrr::map2_df(c(1, 2, 4), c(1, 4, 2), 
+                     function(.x, .y) tibble(x = rnorm(100, mean = .x), 
+                                             y = rnorm(100, mean = .y))) %>%
+  mutate(group = factor(rep(c(1, 2, 3), each = 100)))
+
+p6 <- ggplot(df, aes(x = x, y = y)) +
+  stat_density2d(geom = "raster", aes(fill = ..density..), contour = F) +
+  scale_fill_gradientn("Density", colors = brewer.pal(8, "BuGn")[-1], guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Color Saturation")
+  
+
+p7 <- ggplot(df, aes(x = x, y = y, shape = group)) + 
+  geom_point() +
+  scale_shape_manual(values = c("A", "C", "L"), guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Discriminable Shapes")
+
+
+p8 <- ggplot(df, aes(x = x, y = y, shape = group)) + 
+  geom_point() +
+  scale_shape_manual(values = c("E", "L", "F"), guide = F) + 
+  theme(axis.title = element_blank(), axis.text = element_blank()) + 
+  ggtitle("Indiscriminable Shapes")
+
+gridExtra::grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, nrow = 3)
+@
 This ranking of cognitive tasks provides some consistent guidance for chart design: if the same data can be represented in a way that allows the user to make a comparison more accurately (based on the hierarchy), then that design is preferrable. Thus, this hierarchy indicates that in most cases, it is better to use a stacked bar chart than the equivalent polar-coordinate pie chart, because a stacked bar chart requires evaluation of length, while a pie chart requires area comparisons. While the hierarchy of graphical comparisons provides some guidance, there are other design choices that can be informed by experimental research in a less systematic way.
 
 \subsection{Chart Design}
@@ -572,50 +684,50 @@ While color is an extremely useful aesthetic for the majority of the population,
 \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
 
-One of the areas in graphics showing the most recent growth and creating the most excitement in the community are interactive graphics. 
-There are a huge abundance of applications and graphics claiming to be \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}. 
-One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. The R package \texttt{shiny}\citep{shiny} is built on this idea; thousands of interactive dashboards and web-applications have been created using that platform. 
+One of the areas in graphics showing the most recent growth and creating the most excitement in the community are interactive graphics.
+There are a huge abundance of applications and graphics claiming to be \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}.
+One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. The R package \texttt{shiny}\citep{shiny} is built on this idea; thousands of interactive dashboards and web-applications have been created using that platform.
 
-Formal testing for interactive graphics is difficult without an established and generally accepted grammar of interactive graphics. However, there are several promising approaches into this direction, such as the Python framework vega-lite \citep{Satyanarayan:cb}, and R packages, e.g.\ ggvis \citep{ggvis} and plotly \citep{plotly}, and most recently ggvega \citep{ggvega}. 
-Least well defined in these grammars is usually the aspect of linked brushing and highlighting in plots \citep{Becker:1987dh}, a technique crucial to interactive graphics for defining and exploring subsets of the data. 
-An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result. 
-Very recent advances such as trackr \citep{Becker:2019hp} not only script\svp{record?} the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code. 
+Formal testing for interactive graphics is difficult without an established and generally accepted grammar of interactive graphics. However, there are several promising approaches into this direction, such as the Python framework vega-lite \citep{Satyanarayan:cb}, and R packages, e.g.\ ggvis \citep{ggvis} and plotly \citep{plotly}, and most recently ggvega \citep{ggvega}.
+Least well defined in these grammars is usually the aspect of linked brushing and highlighting in plots \citep{Becker:1987dh}, a technique crucial to interactive graphics for defining and exploring subsets of the data.
+An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result.
+Very recent advances such as trackr \citep{Becker:2019hp} not only script\svp{record?} the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code.
 This approach might be used in testing, both to evaluate different user's approaches as well as the tools used.
 
 Another open question is the acceptance of results -- a lot of historical research on best practices exists, but how much of it is being put into practice? One does not have to look far to find astonishingly bad graphics in astonishingly good outlets. We are not going to point fingers, here, but will defer to online communities such as \url{https://www.reddit.com/r/dataisugly/} that have passionate discussions on the worst mis-uses of graphics.
 %Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
-What can we do about this? It is up to statisticians to teach more graphics and better graphics in the classroom in the hope to slowly change the climate (citation to Unwin discussion, to appear).   
+What can we do about this? It is up to statisticians to teach more graphics and better graphics in the classroom in the hope to slowly change the climate (citation to Unwin discussion, to appear).
 One incentive in the adoption of best practices might be where there is a cost benefit, such as when assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is also significant room to improve plots in academic publications. \svp{Is there anything of Antony's to cite here?}
 
-In the 100 years of empirical evaluation of the perception and utility of statistical graphics, we have assembled a working knowledge of how to best create graphs which are easily read and understood. Once rare, charts are now everywhere we look - on the news, in papers and magazines, and online in interactive form. Going forward, we must do a better job of translating the academic research into practice, making it easier for academics and non-academics alike to create useful, well-designed graphics. 
+In the 100 years of empirical evaluation of the perception and utility of statistical graphics, we have assembled a working knowledge of how to best create graphs which are easily read and understood. Once rare, charts are now everywhere we look - on the news, in papers and magazines, and online in interactive form. Going forward, we must do a better job of translating the academic research into practice, making it easier for academics and non-academics alike to create useful, well-designed graphics.
 
 % \section{ACCEPTANCE OF RESULTS} % 3.5 pages
 % % There is often a considerable distance between best practice and common practice: researchers have been complaining about pie charts for more than 100 years. We will discuss the acceptance of the results summarized in the previous section, including an examination of persistent offenders, such as pie and candlestick charts, dual axes, dynamite plots.
-% 
+%
 % Tons of historical research, but how much of it has been put into practice? Overall, there are still very large holes in the graphical testing literature, in part because our brains are so complex that it's extremely hard to control for everything but the one effect a single experiment is examining.
-% 
-% % Not sure adding something liek this is useful: That said, there is room for improvement on adoption of best practices. Where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to to improve plots in published articles. 
-% 
+%
+% % Not sure adding something liek this is useful: That said, there is room for improvement on adoption of best practices. Where there is a cost benefit, such as assessing business performance, or a marketing campaign, there is scope for providing a measure on which to gauge effective visual communication. There is scope in academic publications to to improve plots in published articles.
+%
 % \section{INTERACTIVE GRAPHICS}
-% 
-% There is huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}. 
-% One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. On this basis, the R package shiny \citep{shiny} is built, which all by itself triggered the creation of thousands of interactive dashboards and web-applications. 
-% 
+%
+% There is huge abundance of applications and graphics calling itself \textit {interactive} - yet then \citep{debby.interactive} and now there is not much agreement over what `interactive graphics' actually means. While any communication between user and device can be considered an interaction, interactive graphics should be defined as a user-driven direct manipulation of plots and plotting elements with an immediate reaction \citep{unwin.interactive, becker1987, eick:1995}.
+% One of the foundations of implementing interactive graphics is the formalization of the data pipeline necessary to support user interactions with the plot \citep{buja:1988, plumbing, pipeline, cranvas}. On this basis, the R package shiny \citep{shiny} is built, which all by itself triggered the creation of thousands of interactive dashboards and web-applications.
+%
 % Formal testing for interactive graphics is difficult without an established and generally accepted grammar of interactive graphics. However, there are several promising approaches into this direction, such as the Python framework vega-lite \citep{Satyanarayan:cb}, and R packages, e.g.\ ggvis \citep{ggvis} and plotly \citep{plotly}, and most recently ggvega \citep{ggvega}.
-% 
+%
 % Least well defined in these grammars is usually the aspect of linked brushing and highlighting in plots \citep{Becker:1987dh}, a technique crucial to interactive graphics for defining and exploring subsets of the data.
-% 
-% An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result. 
-% Very recent advances such as trackr \citep{Becker:2019hp} not only script the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code. 
+%
+% An additional problem for interactive graphics is reproducibility of a user's work. By definition, interactive graphics enable a flow, rather than a single static result.
+% Very recent advances such as trackr \citep{Becker:2019hp} not only script the user's interactions with the data, but also try to infer the user's intent by collecting metadata and automatically analysing the structure of the data and the code.
 % This approach might be used in testing, both to evaluate different user's approaches as well as the tools used.
-% 
-% 
+%
+%
 % \section{OPEN QUESTIONS AND FUTURE RESEARCH} % 3 pages
 % % We will conclude by identifying promising areas of active research. We will also briefly discuss the use and testing of interactive graphics.
-% 
-% As cognitive perception research has advanced so dramatically, transitioning what has been learned into improving data plotting practices would be a fruitful direction. 
-% 
-% A data plot is not designed to compete with numerical statistics. If accuracy is what is of interest, showing the data as a table is clearly preferable. Techniques to be able to quantify effectiveness of plots in ways other than accuracy and speed are needed. 
+%
+% As cognitive perception research has advanced so dramatically, transitioning what has been learned into improving data plotting practices would be a fruitful direction.
+%
+% A data plot is not designed to compete with numerical statistics. If accuracy is what is of interest, showing the data as a table is clearly preferable. Techniques to be able to quantify effectiveness of plots in ways other than accuracy and speed are needed.
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
