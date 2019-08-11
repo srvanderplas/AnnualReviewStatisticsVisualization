@@ -785,7 +785,8 @@ ggplot(col_df, aes(x = x, y = 1, fill = values), expand = c(0,0)) +
   scale_x_continuous(expand = c(0,0)) +
   scale_y_continuous(expand = c(0,0)) +
   theme(axis.ticks = element_blank(), axis.text = element_blank(), axis.title = element_blank()) +
-  coord_fixed()
+  coord_fixed() +
+  ggtitle("Divergent Color Schemes")
 @
 
 It is also important to consider the human perceptual system, which does not perceive hues uniformly: we can distinguish more shades of green than any other hue, and fewer shades of yellow, so green univariate color schemes will provide finer discriminability than other colors because the human perceptual system evolved to work in the natural world where shades of green are plentiful. \autoref{fig:perceptual-colorspace} shows the CIE 1931 color space which maps the wavelength of a color to a physologically based perceptual space; a significant portion of the color space is dedicated to greens and blues, while much smaller regions are dedicated to violet, red, orange, and yellow colors. This unevenness in mapping color is one reason that the multi-hued rainbow color scheme is suboptimal - the distance between points in a given color space may not be the same as the distance between points in perceptual space\citep{lightEndRainbowColor2004,wakitaSmartColorDisambiguationFramework2005,borlandRainbowColorMap2007}. As a result of the uneven mapping between color space and perceptual space, multi-hued color schemes are not recommended.
@@ -860,6 +861,7 @@ might be perceived as affecting the objectivity of this review.
 % Acknowledgements
 \section*{ACKNOWLEDGMENTS}
 % Acknowledgements, general annotations, funding.
+Heike Hofmann and Susan Vanderplas are partially supported by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreement \#70NANB15H176 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, University of California Irvine, and University of Virginia.
 \clearpage
 % \section*{REFERENCES}
 \bibliography{references}
