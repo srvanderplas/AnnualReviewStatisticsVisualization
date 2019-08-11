@@ -777,7 +777,7 @@ good <- scales::div_gradient_pal(low = "purple", mid = "white", high = "orange")
 col_df <- tibble(scale = rep(c("Suboptimal", "Good", "Colorblind accessible"), each = 30),
                  x = rep(1:30, times = 3),
                  values = c(bad, ok, good)) %>%
-  mutate(scale = factor(scale, levels = c("Bad", "Good", "Colorblind accessible"), ordered = T))
+  mutate(scale = factor(scale, levels = c("Suboptimal", "Good", "Colorblind accessible"), ordered = T))
 ggplot(col_df, aes(x = x, y = 1, fill = values), expand = c(0,0)) +
   facet_wrap(~scale, nrow = 3) +
   geom_tile(color = "white") +
