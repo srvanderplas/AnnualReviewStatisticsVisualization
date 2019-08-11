@@ -682,6 +682,8 @@ Much of the psychophysics research on statistical charts examines the accuracy o
 \item Indiscriminable Shape
 \end{enumerate}
 
+Examples of these charts are shown in \autoref{fig:comparison-ranking}.
+
 <<comparison-ranking, include = T, fig.width = 8, fig.height = 8, out.width = "\\textwidth", fig.cap = "Examples of comparisons, by difficulty. The first plot shows two sets of points plotted on a common scale; it is easy to compare the relative trajectories of the two lines. The second plot shows another set of points which could be compared to the points in the first plot, however, because the scales are not common between the two, accurate comparisons are more difficult. In the third plot, the rectangles must be compared by length, because they are do not start or end at the same point. In the fourth plot, points are sized based on another variable, requiring comparisons of area; these comparisons are harder to make with numerical accuracy. The fifth plot shows two curves which are not completely parallel, requiring us to make a comparison of curvature; in addition, note that the difference between the two curves is hard to perceive accurately \\citep{vanderplas_signs_2015}. The sixth plot shows two-dimensional density using the fill of the tiles; it is possible to make ordered comparisons here but much more difficult to estimate numerical values from the plot even when a legend is provided. The seventh and eighth plots show the same data as the sixth plot, but using discriminable shapes and indiscriminable shapes respectively. Discriminable shapes have different features, while indiscriminable shapes tend to have the same features and require more cognitive effort to separate the clusters." >>=
 # Position common scale
 df <- tibble(x = seq(0, 10, .1) + rnorm(101, 0, .1),
@@ -753,6 +755,7 @@ p8 <- ggplot(df, aes(x = x, y = y, shape = group)) +
 
 gridExtra::grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, layout_matrix = matrix(c(NA, 1, 1, 1, NA, 2, 2, 2, NA, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8), nrow = 3, byrow = T))
 @
+
 This ranking of cognitive tasks provides some consistent guidance for chart design: if the same data can be represented in a way that allows the user to make a comparison more accurately (based on the hierarchy), then that design is preferrable. Thus, this hierarchy indicates that in most cases, it is better to use a stacked bar chart than the equivalent polar-coordinate pie chart, because a stacked bar chart requires evaluation of length, while a pie chart requires area comparisons. While the hierarchy of graphical comparisons provides some guidance, there are other design choices that can be informed by experimental research in a less systematic way.
 
 \subsection{Chart Design}
@@ -761,11 +764,41 @@ This ranking of cognitive tasks provides some consistent guidance for chart desi
 
 \subsubsection{Color}
 While historically there were constraints on the use of color in graphics due to technological limitations and the economics of printing, these restrictions have evaporated with the advent of computer-generated graphics, relatively inexpensive color printing, and an increasing tendency to share charts and graphs digitally instead of in print. Color can encode categorical and continuous variables, and when used effectively, provides a nearly effortless way to group plot elements using a medium that does not require conscious attention. Unfortunately, while there are many ways to use color correctly in a plot, there are generally even more ways to use it incorrectly.
-Color scales should be chosen to best match the data values and the plot type: if the goal is to show magnitude, a univariate color scheme is typically preferrable, while a double-ended color scale is typically more effective when showing data which differs in sign and magnitude. Where possible, color scales should use a minimal number of hues, varying intensity or lightness of the color to show magnitude, and transitioning through neutral colors when utilizing a gradient. Cognitive load can also be reduced by selecting colors which have cultural associations that match the data display, such as the use of blue for men and red (or pink) for women.
 
-It is also important to consider the human perceptual system, which does not perceive hues uniformly: we can distinguish more shades of green than any other hue, and fewer shades of yellow, so green univariate color schemes will provide finer discriminability than other colors because the human perceptual system evolved to work in the natural world. This unevenness in mapping color is one reason that the multi-hued rainbow color scheme is suboptimal - the distance between points in a given color space may not be the same as the distance between points in perceptual space\citep{lightEndRainbowColor2004,wakitaSmartColorDisambiguationFramework2005,borlandRainbowColorMap2007}. This uneven mapping between color space and perceptual space is one reason why multi-hued color schemes are not recommended.
+Color scales should be chosen to best match the data values and the plot type: if the goal is to show magnitude, a univariate color scheme is typically preferrable, while a double-ended color scale is typically more effective when showing data which differs in sign and magnitude. Where possible, color scales should use a minimal number of hues, varying intensity or lightness of the color to show magnitude, and transitioning through neutral colors when utilizing a gradient. \autoref{fig:color-schemes} shows an example of perceptually suboptimal, good, and colorblind accessible diverging color schemes. Cognitive load can also be reduced by selecting colors which have cultural associations that match the data display, such as the use of blue for men and red (or pink) for women, or the use of blue for Democrats and red for Republicans in US politics.
 
-While color is an extremely useful aesthetic for the majority of the population, between 4 and 8 percent of males (and a much smaller proportion of females) have some sort of color perception deficiency (`colorblindness') \citep{wakitaSmartColorDisambiguationFramework2005} which reduces the space of distinguishable colors. Colorblindness is common enough that it is reasonable to expect that any given chart used in a presentation or publication will be read by someone who is color deficient. The use of dual encoding allows colorblind individuals to more readily read graphics which utilize color, and as hue and lightness can be varied separately, it is possible to use dual-encoding without adding another aesthetic. There are also pre-existing color schemes which may be more discriminable to color deficient individuals, such as those provided in \citet{dichromatpackage} or \citet{colorbrewer}.
+<<color-schemes, fig.width = 6, fig.height = 1.5, out.width = "\\textwidth", fig.cap = "Examples of diverging color schemes which are perceptually suboptimal (no transition through a neutral color), good, and colorblind accessible. The purple - orange gradient through white is distinguishable by individuals with any type of color deficiency affecting one of the three cones in the retina." >>=
+bad <- scales::seq_gradient_pal(low = "blue", high = "red")(seq(0, 1, length.out = 30))
+
+ok <- scales::div_gradient_pal(low = "blue", mid = "white", high = "red")(seq(0, 1, length.out = 30))
+
+good <- scales::div_gradient_pal(low = "purple", mid = "white", high = "orange")(seq(0, 1, length.out = 30))
+
+col_df <- tibble(scale = rep(c("Suboptimal", "Good", "Colorblind accessible"), each = 30),
+                 x = rep(1:30, times = 3),
+                 values = c(bad, ok, good)) %>%
+  mutate(scale = factor(scale, levels = c("Bad", "Good", "Colorblind accessible"), ordered = T))
+ggplot(col_df, aes(x = x, y = 1, fill = values), expand = c(0,0)) +
+  facet_wrap(~scale, nrow = 3) +
+  geom_tile(color = "white") +
+  scale_fill_identity() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  theme(axis.ticks = element_blank(), axis.text = element_blank(), axis.title = element_blank()) +
+  coord_fixed()
+@
+
+It is also important to consider the human perceptual system, which does not perceive hues uniformly: we can distinguish more shades of green than any other hue, and fewer shades of yellow, so green univariate color schemes will provide finer discriminability than other colors because the human perceptual system evolved to work in the natural world where shades of green are plentiful. \autoref{fig:perceptual-colorspace} shows the CIE 1931 color space which maps the wavelength of a color to a physologically based perceptual space; a significant portion of the color space is dedicated to greens and blues, while much smaller regions are dedicated to violet, red, orange, and yellow colors. This unevenness in mapping color is one reason that the multi-hued rainbow color scheme is suboptimal - the distance between points in a given color space may not be the same as the distance between points in perceptual space\citep{lightEndRainbowColor2004,wakitaSmartColorDisambiguationFramework2005,borlandRainbowColorMap2007}. As a result of the uneven mapping between color space and perceptual space, multi-hued color schemes are not recommended.
+
+\begin{minipage}{.4\textwidth}
+\includegraphics[width =\textwidth]{figure/CIE1931_color_space.png}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+\captionof{figure}{The CIE 1931 color space chromaticity diagram. The CIE 1931 color spaces defined the color space based on physiologically perceived colors in human color vision. The outer boundary of the curve marks the color spectrum, with wavelengths in nm. Note that the distance between successive markings on this boundary is not constant, indicating that the perceptual distance between colors does not match the physical distance in wavelength. More broadly, there is much less area devoted to red, orange, yellow, and violet compared to blue and green; as a result, a rainbow color scheme with equal spacing by wavelength would perceptually over-emphasize the tails of the range of values represented by the scheme.\\
+Image from BenRG (https://commons.wikimedia.org/wiki/File:CIE1931xy_blank.svg), ``CIE1931xy blank", marked as public domain, more details on Wikimedia Commons.}\label{fig:perceptual-colorspace}
+\end{minipage}
+
+While color is an extremely useful aesthetic for the majority of the population, between 4 and 8 percent of males (and a much smaller proportion of females) have some sort of color perception deficiency (`colorblindness') \citep{wakitaSmartColorDisambiguationFramework2005} which reduces the space of distinguishable colors. Colorblindness is common enough that it is reasonable to expect that any given chart used in a presentation or publication will be read by someone who is color deficient. The use of dual encoding allows colorblind individuals to more readily read graphics which utilize color, and as hue and lightness can be varied separately, it is possible to use dual-encoding without adding another aesthetic. If accessibility is the goal, the munsell color space (used by default in \citet{ggplot2}) should be avoided as it holds saturation constant and varies only hue; similarly, the use of the default grey background in ggplot2 and other plotting systems should be replaced with white to maximize the difference between background and plotted features. There are several pre-existing color schemes which may be more discriminable to color deficient individuals, such as those provided in \citet{dichromatpackage} or \citet{colorbrewer}.
 
 %Where there are no pre-existing associations between variable and color choice, and color deficiency is not a concern, evidence \todo{how to cite?} suggests that different categorical color schemes do not produce significant changes in the perception of the same plot.DHC: I don't think that this is true, might be better to avoid saying, in light of the do no harm principle
 
