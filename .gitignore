@@ -41,7 +41,7 @@ rsconnect/
 *.dvi
 *.log
 *.synctex.gz
-*.tex
+#*.tex
 *.toc
 
 # Rmarkdown
