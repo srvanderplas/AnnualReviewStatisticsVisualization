@@ -16,7 +16,8 @@ library(knitr)
 library(nullabor)
 library(mnormt)
 library(random)
-opts_chunk$set(echo = F, include = F)
+library(ggplot2)
+opts_chunk$set(echo = F, include = F, dpi = 600)
 theme_set(theme_bw())
 @
 
@@ -133,10 +134,36 @@ Figures \ref{fig:hrdiagram}, \ref{fig:noaa-michael} and \ref{fig:bdaychart} show
 
 % Sample plots for some of these purposes might be good - HR diagram (discovery/analysis), Minard/Napoleon (rhetorical argument), pie chart or mosaic plot from the statistical atlas or a pictoral chart as in Vernon (1946) (table substitute), data summary (some sort of process control chart? - dupont?)
 
+<<hrdiag, include = F, fig.width = 10, fig.height = 12, dpi = 600>>=
+ggplot(aes(x = ci, y = log_lum, color = hex), data = read_csv("data/Stars_HRdiag.csv")) +
+  geom_point(alpha = .5, size = .5) +
+  scale_color_identity() +
+  scale_y_continuous("Luminosity", breaks = -5:8, limits = c(-5, 8), labels = function(x) parse(text = paste0("10^{", x, "}"))) +
+  scale_x_continuous("Colour (B-V)", limits = c(-.375, 2.25)) +
+  annotate("text", x = .5, y = -4.25, label = "White Dwarfs", color = "white", size = 6) +
+  annotate("text", x = 2, y = -2.25, label = "Main Sequence", color = "white", size = 6) +
+  annotate("text", x = 1.5, y = 2, label = "Giants", color = "black", size = 6) +
+  annotate("text", x = 1, y = 7.5, label = "Supergiants", color = "white", size = 6) +
+  ggtitle("Hertzsprung-Russell diagram") +
+  theme_dark(base_size = 16) +
+  theme(
+    rect = element_rect(fill = "black", colour = "grey80"),
+    line = element_line(colour = "grey60"),
+    axis.line = element_line(colour = "black"),
+    axis.ticks = element_line(colour = "black"),
+    text = element_text(color = "white"),
+    axis.text = element_text(color = "white"),
+    panel.grid = element_line(colour = "grey60"),
+    panel.background = element_rect(fill = "black", colour = "grey60", size = 1.25),
+    plot.title = element_text(color = "white", face = "bold", size = 18)
+  )
 
-\begin{minipage}{.45\textwidth}
+@
+
+
+\begin{minipage}{.475\textwidth}
 \centering
-\includegraphics[width=.98\textwidth]{figure/HRDiagram.png}
+\includegraphics[width=.99\textwidth]{figure/hrdiag-1}
 \captionof{figure}{The Hertzsprung-Russell diagram (circa 1910) allowed astrophysicists to make the connection between a star's temperature, visual colour, and size, enabling a better understanding of the life cycle of a star.}\label{fig:hrdiagram}
 \end{minipage}\hfill
 \begin{minipage}{.45\textwidth}
